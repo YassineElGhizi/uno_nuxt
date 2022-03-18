@@ -30,123 +30,17 @@
                         <div class="card border" id='slider_image_selector'>
                           <div class="card-img">
                             <div class="carousel_wrap">
-                              <div id="carouselSliderIndicators" class="carousel carousel-fade" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                  <li data-target="#carouselSliderIndicators" data-slide-to="0" class="active"></li>
-                                  <li data-target="#carouselSliderIndicators" data-slide-to="1" class=""></li>
-                                  <li data-target="#carouselSliderIndicators" data-slide-to="2" class=""></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                  <div class="carousel-item active">
-                                    <img class="d-block card-img w-100 " src="https://ma.jumia.is/cms/000_2021/Week10/712x384.jpg" alt="First slide">
-                                  </div>
-                                  <div class="carousel-item">
-                                    <img class="d-block card-img w-100 " src="https://ma.jumia.is/cms/000_2021/Week10/Slider/MA_W10_SX_Le-printemps-arrive.jpg" alt="Second slide">
-                                  </div>
-                                  <div class="carousel-item">
-                                    <img class="d-block card-img w-100 " src="https://ma.jumia.is/cms/000_2021/Week10/Slider/MA_SX_Welcome20_02032021.jpg" alt="Third slide">
-                                  </div>
-                                </div>
-                              </div>
+                              <Carousel></Carousel>
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <div class="col col-lg-3 col-md-3 p-0">
-                        <div class="card card-icon-bg card-icon-bg-primary o-hidden border mr-3">
-                          <img class="card-img" src="/images/apple_watch.jpg" alt="Card image">
-                        </div>
-                      </div>
+                      <LazyAd></LazyAd>
 
                     </div>
                   </div>
-                  <div class="tab-pane" id="index-Category-1">
-                    <div class="card  o-hidden w-100 p-0">
-                      <img class="card-img" src="/images/img1.png" alt="Card image">
-                      <div class="card-image-overlay">
-                        <div class="row">
-                          <div class="col-9 pr-0">
-                            <div class="row">
-                              <div class="col-md-4 p-3 pt-0">
-                                <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">SANTÉ &amp; PREMIERS SOINS</p>
-                                <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=13">Masques</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=14">Vitamines et compléments alimentaires</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=15">Nutrition sportive</a></li>
-                                </ul>
-                              </div>
-                              <div class="col-md-4 p-3 pt-0">
-                                <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">MAQUILLAGE</p>
-                                <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=17">Teint</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=18">Yeux &amp; Sourcils</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=19">Lèvres</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=20">Palettes maquillage</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=21">Ongles</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=22">Pinceaux &amp; accessoires</a></li>
-                                </ul>
-                              </div>
-                              <div class="col-md-4 p-3 pt-0">
-                                <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">PARFUM</p>
-                                <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=24">Parfums Femme</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=25">Parfums Homme</a></li>
-                                </ul>
-                              </div>
-                              <div class="col-md-4 p-3 pt-0">
-                                <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">SOIN VISAGE</p>
-                                <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=27">Crèmes et hydratants</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=28">Nettoyants</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=29">Traitements &amp; Masques</a></li>
-                                </ul>
-                              </div>
-                              <div class="col-md-4 p-3 pt-0">
-                                <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">SOINS CORPS</p>
-                                <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=31">Hydratants</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=32">Nettoyants</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=33">Gommages &amp; traitement corporels</a></li>
-                                </ul>
-                              </div>
-                              <div class="col-md-4 p-3 pt-0">
-                                <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">HYGIÈNE BUCCO DENTAIRE</p>
-                                <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=35">Bain de bouche</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=36">Blanchiment des dents</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=37">Brosses</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=38">Dentifrice</a></li>
-                                </ul>
-                              </div>
-                              <div class="col-md-4 p-3 pt-0">
-                                <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">SOIN DES CHEVEUX</p>
-                                <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=40">Shampoing</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=41">Conditionneur</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=42">Soins &amp; Masques Capillaires</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=43">Appareils &amp; Outils de Coiffure</a></li>
-                                </ul>
-                              </div>
-                              <div class="col-md-4 p-3 pt-0">
-                                <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">HOMMES</p>
-                                <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=45">Tondeuses à cheveux nez &amp; oreilles</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=46">Soins barbe &amp; moustache</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=47">Crèmes à raser, lotions et gels</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-3 pl-0">
-                            <p class="font-weight-semibold  text-default text-16 t-font-boldest" style="    white-space: nowrap !important;overflow: hidden !important;text-overflow: ellipsis !important;max-width: 300px;">best store of Beauté &amp; Santé</p>
-                            <div class="row">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <Pane></Pane>
                   <div class="tab-pane" id="index-Category-2">
                     <div class="card  o-hidden w-100 p-0">
                       <img class="card-img" src="/images/img2.png" alt="Card image">
@@ -157,56 +51,56 @@
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">VÊTEMENTS FEMME</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=49">T-shirts, tops &amp; chemisiers</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=50">Robes</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=51">Pantalon</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=52">Jeans</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=53">Maillots de bains</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=54">Combinaisons, Combishorts &amp; Salopettes</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=55">Jupes</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=56">Shorts</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=57">Ensemble Pyjama</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=58">Lingerie</a></li>
+                                  <li><a href="#">T-shirts, tops &amp; chemisiers</a></li>
+                                  <li><a href="#">Robes</a></li>
+                                  <li><a href="#">Pantalon</a></li>
+                                  <li><a href="#">Jeans</a></li>
+                                  <li><a href="#">Maillots de bains</a></li>
+                                  <li><a href="#">Combinaisons, Combishorts &amp; Salopettes</a></li>
+                                  <li><a href="#">Jupes</a></li>
+                                  <li><a href="#">Shorts</a></li>
+                                  <li><a href="#">Ensemble Pyjama</a></li>
+                                  <li><a href="#">Lingerie</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">CHAUSSURES FEMME</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=60">Sandales</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=61">Baskets</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=62">Escarpins</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=63">Mocassins</a></li>
+                                  <li><a href="#">Sandales</a></li>
+                                  <li><a href="#">Baskets</a></li>
+                                  <li><a href="#">Escarpins</a></li>
+                                  <li><a href="#">Mocassins</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">VÊTEMENTS HOMME</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=65">T-Shirts</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=66">Polos</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=67">Chemises</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=68">Pulls &amp; Gilets</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=69">Sous-vêtements</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=70">Pantalons</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=71">Jeans</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=72">Shorts</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=73">Maillots de bain</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=74">Pyjamas</a></li>
+                                  <li><a href="#">T-Shirts</a></li>
+                                  <li><a href="#">Polos</a></li>
+                                  <li><a href="#">Chemises</a></li>
+                                  <li><a href="#">Pulls &amp; Gilets</a></li>
+                                  <li><a href="#">Sous-vêtements</a></li>
+                                  <li><a href="#">Pantalons</a></li>
+                                  <li><a href="#">Jeans</a></li>
+                                  <li><a href="#">Shorts</a></li>
+                                  <li><a href="#">Maillots de bain</a></li>
+                                  <li><a href="#">Pyjamas</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">CHAUSSURES HOMME</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=76">Baskets</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=77">Chaussures de ville</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=78">Mocassins</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=79">Sandales</a></li>
+                                  <li><a href="#">Baskets</a></li>
+                                  <li><a href="#">Chaussures de ville</a></li>
+                                  <li><a href="#">Mocassins</a></li>
+                                  <li><a href="#">Sandales</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">MODE ENFANT</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=81">Mode Fille</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=82">Mode Garçon</a></li>
+                                  <li><a href="#">Mode Fille</a></li>
+                                  <li><a href="#">Mode Garçon</a></li>
                                 </ul>
                               </div>
                             </div>
@@ -230,39 +124,39 @@
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">ACCESSOIRES FEMME</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=84">Montres</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=85">Sacs à main &amp; portefeuilles</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=86">Lunettes de soleil</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=87">Bijoux</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=88">Ceintures</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=89">Chapeaux &amp; casquettes</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=90">Foulards &amp; Écharpes</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=91">Gants &amp; Mitaines</a></li>
+                                  <li><a href="#">Montres</a></li>
+                                  <li><a href="#">Sacs à main &amp; portefeuilles</a></li>
+                                  <li><a href="#">Lunettes de soleil</a></li>
+                                  <li><a href="#">Bijoux</a></li>
+                                  <li><a href="#">Ceintures</a></li>
+                                  <li><a href="#">Chapeaux &amp; casquettes</a></li>
+                                  <li><a href="#">Foulards &amp; Écharpes</a></li>
+                                  <li><a href="#">Gants &amp; Mitaines</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">ACCESSOIRES HOMME</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=93">Montres</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=94">Lunettes de soleil</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=95">Chapeaux &amp; casquettes</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=96">Portefeuilles</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=97">Bijoux</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=98">Ceintures</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=99">Cravates</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=100">Écharpes</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=101">Gants</a></li>
+                                  <li><a href="#">Montres</a></li>
+                                  <li><a href="#">Lunettes de soleil</a></li>
+                                  <li><a href="#">Chapeaux &amp; casquettes</a></li>
+                                  <li><a href="#">Portefeuilles</a></li>
+                                  <li><a href="#">Bijoux</a></li>
+                                  <li><a href="#">Ceintures</a></li>
+                                  <li><a href="#">Cravates</a></li>
+                                  <li><a href="#">Écharpes</a></li>
+                                  <li><a href="#">Gants</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">BAGAGE &amp; SACS DE VOYAGE</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=103">Sacs à dos</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=104">Bagage</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=105">Sacs Bandoulière</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=106">Accessoires de voyage</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=107">Sacs de sport</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=108">Parapluies</a></li>
+                                  <li><a href="#">Sacs à dos</a></li>
+                                  <li><a href="#">Bagage</a></li>
+                                  <li><a href="#">Sacs Bandoulière</a></li>
+                                  <li><a href="#">Accessoires de voyage</a></li>
+                                  <li><a href="#">Sacs de sport</a></li>
+                                  <li><a href="#">Parapluies</a></li>
                                 </ul>
                               </div>
                             </div>
@@ -286,43 +180,43 @@
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">CUISINE &amp; ARTS CULINAIRES</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=110">Casseroles, Poêles &amp; Faitouts</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=111">Cocottes &amp; Plats de Cuisson</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=112">Accessoires coutellerie et couteaux</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=113">Ustensiles de cuisine</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=114">Stockage et organisation</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=115">Fontaines d&#039;Eau, Filtres &amp; Cartouches</a></li>
+                                  <li><a href="#">Casseroles, Poêles &amp; Faitouts</a></li>
+                                  <li><a href="#">Cocottes &amp; Plats de Cuisson</a></li>
+                                  <li><a href="#">Accessoires coutellerie et couteaux</a></li>
+                                  <li><a href="#">Ustensiles de cuisine</a></li>
+                                  <li><a href="#">Stockage et organisation</a></li>
+                                  <li><a href="#">Fontaines d&#039;Eau, Filtres &amp; Cartouches</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">BRICOLAGE &amp; RÉNOVATION</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=117">Quincaillerie</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=118">Électricité</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=119">Outils de mesure et de mise en page</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=120">Plomberie &amp; Chauffe-Eau</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=121">Peintures, Outils &amp; Traitement des Murs</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=122">Outillage à Main &amp; Électroportatif</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=123">Sécurité &amp; Protection</a></li>
+                                  <li><a href="#">Quincaillerie</a></li>
+                                  <li><a href="#">Électricité</a></li>
+                                  <li><a href="#">Outils de mesure et de mise en page</a></li>
+                                  <li><a href="#">Plomberie &amp; Chauffe-Eau</a></li>
+                                  <li><a href="#">Peintures, Outils &amp; Traitement des Murs</a></li>
+                                  <li><a href="#">Outillage à Main &amp; Électroportatif</a></li>
+                                  <li><a href="#">Sécurité &amp; Protection</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">CUISINE &amp; MAISON</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=125">Meubles</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=126">Literie</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=127">Salle de bain</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=128">Lampes, Luminaires &amp; Plafonniers</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=129">Décoration de Maison</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=130">Rangements &amp; Organisation</a></li>
+                                  <li><a href="#">Meubles</a></li>
+                                  <li><a href="#">Literie</a></li>
+                                  <li><a href="#">Salle de bain</a></li>
+                                  <li><a href="#">Lampes, Luminaires &amp; Plafonniers</a></li>
+                                  <li><a href="#">Décoration de Maison</a></li>
+                                  <li><a href="#">Rangements &amp; Organisation</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">FOURNITURES SCOLAIRES &amp; BUREAU</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=132">Électroniques de bureau</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=133">Papeterie &amp; Petites Fournitures</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=134">Mobilier de bureau et éclairage</a></li>
+                                  <li><a href="#">Électroniques de bureau</a></li>
+                                  <li><a href="#">Papeterie &amp; Petites Fournitures</a></li>
+                                  <li><a href="#">Mobilier de bureau et éclairage</a></li>
                                 </ul>
                               </div>
                             </div>
@@ -346,33 +240,33 @@
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">TÉLÉPHONE PORTABLE</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=136">Téléphones Android</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=137">iPhones</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=138">Téléphones Basiques</a></li>
+                                  <li><a href="#">Téléphones Android</a></li>
+                                  <li><a href="#">iPhones</a></li>
+                                  <li><a href="#">Téléphones Basiques</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">ACCÉSSOIRES TÉLÉPHONE</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=141">Films &amp; Protections d&#039;écran</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=142">Batteries Téléphones</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=143">Ecouteurs Bluetooth</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=144">Chargeurs Téléphones</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=145">Câbles</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=146">Accessoires de voiture</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=147">Cartes mémoires</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=148">Smartwatch</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=149">Casques de réalité virtuelle</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=150">Objectifs pour Appareil Photo</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=308">Accessoires pour telephone</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=310">Powerbank</a></li>
+                                  <li><a href="#">Films &amp; Protections d&#039;écran</a></li>
+                                  <li><a href="#">Batteries Téléphones</a></li>
+                                  <li><a href="#">Ecouteurs Bluetooth</a></li>
+                                  <li><a href="#">Chargeurs Téléphones</a></li>
+                                  <li><a href="#">Câbles</a></li>
+                                  <li><a href="#">Accessoires de voiture</a></li>
+                                  <li><a href="#">Cartes mémoires</a></li>
+                                  <li><a href="#">Smartwatch</a></li>
+                                  <li><a href="#">Casques de réalité virtuelle</a></li>
+                                  <li><a href="#">Objectifs pour Appareil Photo</a></li>
+                                  <li><a href="#">Accessoires pour telephone</a></li>
+                                  <li><a href="#">Powerbank</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">TABLETTES</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=152">Tablettes</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=153">Accessoires pour tablette</a></li>
+                                  <li><a href="#">Tablettes</a></li>
+                                  <li><a href="#">Accessoires pour tablette</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
@@ -401,29 +295,29 @@
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">PETIT ÉLECTROMÉNAGER</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=156">Robots Cuisine</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=157">Blenders</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=158">Mixeurs &amp; Batteurs</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=159">Bouilloires</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=160">Café, Thé &amp; Expresso</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=161">Centrifugeuses</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=162">Fours &amp; Grille-pain</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=163">Micro-ondes</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=164">Friteuses</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=165">Fers à Repasser</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=166">Aspirateurs</a></li>
+                                  <li><a href="#">Robots Cuisine</a></li>
+                                  <li><a href="#">Blenders</a></li>
+                                  <li><a href="#">Mixeurs &amp; Batteurs</a></li>
+                                  <li><a href="#">Bouilloires</a></li>
+                                  <li><a href="#">Café, Thé &amp; Expresso</a></li>
+                                  <li><a href="#">Centrifugeuses</a></li>
+                                  <li><a href="#">Fours &amp; Grille-pain</a></li>
+                                  <li><a href="#">Micro-ondes</a></li>
+                                  <li><a href="#">Friteuses</a></li>
+                                  <li><a href="#">Fers à Repasser</a></li>
+                                  <li><a href="#">Aspirateurs</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">GROS ÉLECTROMÉNAGER</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=168">Climatiseurs</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=169">Réfrigérateurs</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=170">Congélateurs</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=171">Machines à Laver</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=172">Lave-vaisselle</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=173">Cuisinières</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=174">Plaques de Cuisson</a></li>
+                                  <li><a href="#">Climatiseurs</a></li>
+                                  <li><a href="#">Réfrigérateurs</a></li>
+                                  <li><a href="#">Congélateurs</a></li>
+                                  <li><a href="#">Machines à Laver</a></li>
+                                  <li><a href="#">Lave-vaisselle</a></li>
+                                  <li><a href="#">Cuisinières</a></li>
+                                  <li><a href="#">Plaques de Cuisson</a></li>
                                 </ul>
                               </div>
                             </div>
@@ -447,58 +341,58 @@
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">ORDINATEURS</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=176">Probook</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=177">Windows</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=178">Gaming</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=307">Mac</a></li>
+                                  <li><a href="#">Probook</a></li>
+                                  <li><a href="#">Windows</a></li>
+                                  <li><a href="#">Gaming</a></li>
+                                  <li><a href="#">Mac</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">ORDINATEUR FIXE &amp; ECRANS</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=180">Tout-en-un</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=181">Unités centrales</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=182">Ecran</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=183">Imprimantes</a></li>
+                                  <li><a href="#">Tout-en-un</a></li>
+                                  <li><a href="#">Unités centrales</a></li>
+                                  <li><a href="#">Ecran</a></li>
+                                  <li><a href="#">Imprimantes</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">ACCESSOIRES</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=185">Souris</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=186">Clavier</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=187">Casques</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=188">Webcam</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=189">Enceintes PC</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=309">Accessoires mac</a></li>
+                                  <li><a href="#">Souris</a></li>
+                                  <li><a href="#">Clavier</a></li>
+                                  <li><a href="#">Casques</a></li>
+                                  <li><a href="#">Webcam</a></li>
+                                  <li><a href="#">Enceintes PC</a></li>
+                                  <li><a href="#">Accessoires mac</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">STOCKAGE</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=191">Disque Dur Externe</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=192">SSD Externe</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=193">Clé USB</a></li>
+                                  <li><a href="#">Disque Dur Externe</a></li>
+                                  <li><a href="#">SSD Externe</a></li>
+                                  <li><a href="#">Clé USB</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">COMPOSANTS PC</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=195">Processeurs</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=196">Lecteurs Optique Externe</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=197">Cartes Son Externes</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=198">Ventilateurs &amp; Refroidissement</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=199">Cartes Graphiques</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=200">Disques Durs Internes</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=201">Disques Durs SSD</a></li>
+                                  <li><a href="#">Processeurs</a></li>
+                                  <li><a href="#">Lecteurs Optique Externe</a></li>
+                                  <li><a href="#">Cartes Son Externes</a></li>
+                                  <li><a href="#">Ventilateurs &amp; Refroidissement</a></li>
+                                  <li><a href="#">Cartes Graphiques</a></li>
+                                  <li><a href="#">Disques Durs Internes</a></li>
+                                  <li><a href="#">Disques Durs SSD</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">RÉSEAUX</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=203">Modems</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=204">Routeurs</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=205">Répéteurs</a></li>
+                                  <li><a href="#">Modems</a></li>
+                                  <li><a href="#">Routeurs</a></li>
+                                  <li><a href="#">Répéteurs</a></li>
                                 </ul>
                               </div>
                             </div>
@@ -522,56 +416,56 @@
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">EAUX, BOISSONS</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=207">Café, thé et cacao</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=208">Lait</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=209">Eau</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=210">Boissons gazeuses</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=211">Jus</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=212">Sirops</a></li>
+                                  <li><a href="#">Café, thé et cacao</a></li>
+                                  <li><a href="#">Lait</a></li>
+                                  <li><a href="#">Eau</a></li>
+                                  <li><a href="#">Boissons gazeuses</a></li>
+                                  <li><a href="#">Jus</a></li>
+                                  <li><a href="#">Sirops</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">ÉPICERIE SALÉE</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=214">Chips</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=215">Aliments en conserve, en pot et emballés</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=216">Sauces &amp; Condiments</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=217">Pâtes &amp; Nouilles</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=218">Huiles</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=219">Riz &amp; Féculents</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=220">Épices &amp; Bouillons</a></li>
+                                  <li><a href="#">Chips</a></li>
+                                  <li><a href="#">Aliments en conserve, en pot et emballés</a></li>
+                                  <li><a href="#">Sauces &amp; Condiments</a></li>
+                                  <li><a href="#">Pâtes &amp; Nouilles</a></li>
+                                  <li><a href="#">Huiles</a></li>
+                                  <li><a href="#">Riz &amp; Féculents</a></li>
+                                  <li><a href="#">Épices &amp; Bouillons</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">ÉPICERIE SUCRÉE</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=222">Bonbons &amp; Chocolats</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=223">Biscuiterie</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=224">Pâtisserie &amp; Desserts</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=225">Sucres</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=226">Céréales</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=227">Margarine, confitures, miel et tartinades</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=228">Fruits Secs</a></li>
+                                  <li><a href="#">Bonbons &amp; Chocolats</a></li>
+                                  <li><a href="#">Biscuiterie</a></li>
+                                  <li><a href="#">Pâtisserie &amp; Desserts</a></li>
+                                  <li><a href="#">Sucres</a></li>
+                                  <li><a href="#">Céréales</a></li>
+                                  <li><a href="#">Margarine, confitures, miel et tartinades</a></li>
+                                  <li><a href="#">Fruits Secs</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">PRODUITS DOMESTIQUES</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=230">Lessive</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=231">Vaisselle</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=232">Désodorisants</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=233">Nettoyage</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=234">Papier &amp; Plastique</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=235">Articles de toilette</a></li>
+                                  <li><a href="#">Lessive</a></li>
+                                  <li><a href="#">Vaisselle</a></li>
+                                  <li><a href="#">Désodorisants</a></li>
+                                  <li><a href="#">Nettoyage</a></li>
+                                  <li><a href="#">Papier &amp; Plastique</a></li>
+                                  <li><a href="#">Articles de toilette</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">FOURNITURES POUR ANIMAUX</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=237">Chats</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=238">Chiens</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=239">Oiseaux</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=240">Poissons et animaux aquatiques</a></li>
+                                  <li><a href="#">Chats</a></li>
+                                  <li><a href="#">Chiens</a></li>
+                                  <li><a href="#">Oiseaux</a></li>
+                                  <li><a href="#">Poissons et animaux aquatiques</a></li>
                                 </ul>
                               </div>
                             </div>
@@ -595,13 +489,13 @@
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">SPORT &amp; FITNESS</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=242">Musculation</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=243">Football</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=244">Exercice et remise en forme</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=245">Sports d&#039;équipe</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=246">Natation</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=247">Vêtements</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=248">Chasse &amp; Pêche</a></li>
+                                  <li><a href="#">Musculation</a></li>
+                                  <li><a href="#">Football</a></li>
+                                  <li><a href="#">Exercice et remise en forme</a></li>
+                                  <li><a href="#">Sports d&#039;équipe</a></li>
+                                  <li><a href="#">Natation</a></li>
+                                  <li><a href="#">Vêtements</a></li>
+                                  <li><a href="#">Chasse &amp; Pêche</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
@@ -612,28 +506,28 @@
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">CYCLISME</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=255">Vélos (VTT,VTC...)</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=256">Casques &amp; accessoires</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=257">Outils de vélo &amp; entretien</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=258">Vêtements</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=259">Accessoires</a></li>
+                                  <li><a href="#">Vélos (VTT,VTC...)</a></li>
+                                  <li><a href="#">Casques &amp; accessoires</a></li>
+                                  <li><a href="#">Outils de vélo &amp; entretien</a></li>
+                                  <li><a href="#">Vêtements</a></li>
+                                  <li><a href="#">Accessoires</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">SURVÊTEMENTS DE SPORT</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=261">Homme</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=262">Femme</a></li>
+                                  <li><a href="#">Homme</a></li>
+                                  <li><a href="#">Femme</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">TOP MARQUES</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=264">WeekWiki</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=265">Hitchonson</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=266">Scoutyway</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=267">Nike</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=268">Adidas</a></li>
+                                  <li><a href="#">WeekWiki</a></li>
+                                  <li><a href="#">Hitchonson</a></li>
+                                  <li><a href="#">Scoutyway</a></li>
+                                  <li><a href="#">Nike</a></li>
+                                  <li><a href="#">Adidas</a></li>
                                 </ul>
                               </div>
                             </div>
@@ -657,59 +551,59 @@
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">TÉLÉVISIONS</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=270">Smart TV</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=271">TV 4K</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=272">TV 32&quot;</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=273">TV 40&quot; à 55&quot;</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=274">TV Extra-large</a></li>
+                                  <li><a href="#">Smart TV</a></li>
+                                  <li><a href="#">TV 4K</a></li>
+                                  <li><a href="#">TV 32&quot;</a></li>
+                                  <li><a href="#">TV 40&quot; à 55&quot;</a></li>
+                                  <li><a href="#">TV Extra-large</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">ACCESSOIRES TV</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=276">Récepteurs et IPTV</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=277">TV box</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=278">Supports TV</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=279">Meubles TV</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=280">Câbles et adaptateurs</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=281">Projecteurs</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=282">Écrans de projection</a></li>
+                                  <li><a href="#">Récepteurs et IPTV</a></li>
+                                  <li><a href="#">TV box</a></li>
+                                  <li><a href="#">Supports TV</a></li>
+                                  <li><a href="#">Meubles TV</a></li>
+                                  <li><a href="#">Câbles et adaptateurs</a></li>
+                                  <li><a href="#">Projecteurs</a></li>
+                                  <li><a href="#">Écrans de projection</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">APPAREIL PHOTO</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=284">Caméras digitales</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=285">Caméras d&#039;action</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=286">Accessoires</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=287">Univers espion</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=288">Vidéo</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=289">Video Surveillance</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=290">Jumelles et lunettes</a></li>
+                                  <li><a href="#">Caméras digitales</a></li>
+                                  <li><a href="#">Caméras d&#039;action</a></li>
+                                  <li><a href="#">Accessoires</a></li>
+                                  <li><a href="#">Univers espion</a></li>
+                                  <li><a href="#">Vidéo</a></li>
+                                  <li><a href="#">Video Surveillance</a></li>
+                                  <li><a href="#">Jumelles et lunettes</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">AUDIO</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=292">Home cinéma</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=293">Microphones</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=294">Haut-parleurs</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=295">Radio cassette &amp; Lecteurs CD</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=296">Radio réveil</a></li>
+                                  <li><a href="#">Home cinéma</a></li>
+                                  <li><a href="#">Microphones</a></li>
+                                  <li><a href="#">Haut-parleurs</a></li>
+                                  <li><a href="#">Radio cassette &amp; Lecteurs CD</a></li>
+                                  <li><a href="#">Radio réveil</a></li>
                                 </ul>
                               </div>
                               <div class="col-md-4 p-3 pt-0">
                                 <p class="text-success font-weight-semibold  text-14 t-font-boldest text--cap border-bottom-success d-inline-block">TOP MARQUES</p>
                                 <ul class="links">
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=298">Samsung</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=299">LG</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=300">Sony</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=301">Daiko</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=302">Philips</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=303">Moulinex</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=304">Taurus</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=305">Echolink</a></li>
-                                  <li><a href="http://127.0.0.1:8000/Products_list?category%5B%5D=306">Découvrez d&#039;autres produits</a></li>
+                                  <li><a href="#">Samsung</a></li>
+                                  <li><a href="#">LG</a></li>
+                                  <li><a href="#">Sony</a></li>
+                                  <li><a href="#">Daiko</a></li>
+                                  <li><a href="#">Philips</a></li>
+                                  <li><a href="#">Moulinex</a></li>
+                                  <li><a href="#">Taurus</a></li>
+                                  <li><a href="#">Echolink</a></li>
+                                  <li><a href="#">Découvrez d&#039;autres produits</a></li>
                                 </ul>
                               </div>
                             </div>
@@ -1908,3 +1802,43 @@
 
   </div>
 </template>
+
+
+<script>
+import axios from 'axios'
+export default {
+  computed:{
+    categories(){
+      return this.$store.getters["categories/getData"]
+    }
+  },
+  async fetch() {
+    await axios.get('http://localhost:8000/api/categories').then( (res) => {
+      this.$store.dispatch('categories/getData',res.data)
+      console.log('res' , res.data)
+    })
+  },
+
+}
+</script>
+
+
+<style>
+body{
+  zoom:83% !important;
+}
+
+.main-content-wrap {
+  background-color: white !important;
+}
+
+.text-success {
+  color: #03A84D !important;
+}
+
+.btn-success:hover, .btn-outline-success:hover {
+  background: #03A84D !important;
+  box-shadow: 0 px 25px -8px #4caf50;
+  border-color: #03A84D !important;
+}
+</style>

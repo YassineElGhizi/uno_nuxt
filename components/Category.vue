@@ -2,19 +2,33 @@
   <div>
     <a
       class="list-group-item  t-font-boldest border-0"
-      style="padding: 0.40rem 0.5rem;" id="list-settings-list"
+      style="padding: 0.40rem 0.5rem;"
+      id="list-settings-list"
       data-toggle="tab"
-      href="#index-Category-1"
+      :href="'#index-Category-' + cat.id"
       role="tab"
+      v-on:mouseleave="toggleClass()"
+      ref="a_cat"
+
     >
         <i class="nav-icon i-Pen-2 mr-3"></i>
-        {{cat.name}} -- {{cat.id}}
+        {{cat.name}}
     </a>
   </div>
 </template>
 
 <script>
   export default {
-    props: ['cat', 'key']
+    props: ['cat',],
+    methods: {
+      toggleClass: function () {
+        this.$refs.a_cat.classList.value = 'list-group-item  t-font-boldest border-0'
+      }
+    },
+
   }
+
+
+
+
 </script>

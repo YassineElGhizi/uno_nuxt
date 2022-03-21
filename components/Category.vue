@@ -9,7 +9,6 @@
       role="tab"
       v-on:mouseleave="toggleClass()"
       ref="a_cat"
-
     >
         <i class="nav-icon i-Pen-2 mr-3"></i>
         {{cat.name}}

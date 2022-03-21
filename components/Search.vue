@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row justify-content-center mb-3">
-      <div class="col col-xl-11 col-lg-11  col-md-12 p-0">
+      <div class="col col-sm-11">
         <div class="card border">
           <div class="card-body">
             <div class="row justify-content-center w-100">
@@ -34,7 +34,7 @@
               </div>
               <div class="col-lg-8 pl-5 mt-3">
                 <div class="d-flex justify-content-center">
-                  <strong class="text-16 text-success mr-2">Recherche de Tendances : </strong>
+                  <strong class="text-16 text-success mr-2">Tendances : </strong>
                   <a href="#" class="font-weight-semibold  text-default text-14 t-font-boldest mr-3">
                     iPhone 12 pro
                   </a>

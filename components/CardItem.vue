@@ -13,9 +13,9 @@
 
       <div class="flex-grow-1 d-bock">
         <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center">
-          <a class="w-40 w-sm-100" href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-256-gb-or-neuf-1-an-de-garantie-66657034">
+          <a class="w-40 w-sm-100" href="#">
             <div class="item-title">
-              iPhone 12 PRO MAX
+              {{ pro_title }}
             </div>
           </a>
           <div class="row w-15 w-sm-100 mt-2">
@@ -24,7 +24,7 @@
                 Best price
               </p>
               <p class="ml-0 text-muted text-center text-16 font-weight-800 ">
-                13990.00 DH  </p>
+                {{prod_best_price}} DH  </p>
             </div>
             <div class="col mt-1">
               <a href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-256-gb-or-neuf-1-an-de-garantie-66657034">
@@ -40,3 +40,11 @@
     </div>
   </div>
 </template>
+
+
+<script>
+export default {
+  props : ['pro_title', 'prod_best_price', 'img_url',]
+}
+
+</script>

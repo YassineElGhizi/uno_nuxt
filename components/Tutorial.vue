@@ -6,6 +6,7 @@
     <UpperNav></UpperNav>
     <Navbar></Navbar>
 
+
       <div class="main-content-wrap  d-flex flex-column   flex-grow-1">
         <div class="main-content">
           <section>
@@ -28,7 +29,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col col-xl-9 col-lg-9 col-md-3 pr-0">
+                <div class="col col-sm-8 pr-0">
                   <div class="tab-content p-0 pl-2">
                     <div class="tab-pane show active" id="index-Home">
                       <div class="row">
@@ -69,345 +70,19 @@
             <div class="col col-xl-11 col-lg-11  col-md-12 p-0">
               <div class="card border mb-4">
                 <div class="card-body">
-                  <div class="card-title">
-                    <div class="row justify-content-between border-bottom mb-2">
-                      <div class="col-3 border-bottom-success" style="border-bottom: 2px solid #4caf50;">
-                        Product popular
-                      </div>
-                      <div class="col-4 mb-2">
-                        <a href="http://127.0.0.1:8000/Products_list">
-                          <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">
-                            <span class="ul-btn__text">See all</span>
-                            <i class="fas fa-chevron-circle-right ml-1"></i>
-                          </button>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+
+                  <CardHeader :card_title=" String('Product popular')"></CardHeader>
 
                   <section class="product-cart">
                     <div class="row list-grid">
-                      <CardItem></CardItem>
-<!--                      <div class="list-item col-lg-3 col-md-3 col-sm-6">-->
-<!--                        <div class="card o-hidden border mb-4 d-flex flex-column">-->
-<!--                          <div>-->
-<!--                            <div class="list-thumb d-flex" style=" width:100%;height: 180px;background-position: center;-->
-<!--                                                                       background-image:url('/images/https%3A%2F%2Funo.ma%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F1%2Fsmall_image%2F217x217%2F9df78eab33525d08d6e5fb8d27136e95%2Fi%2Fp%2Fiphone12promaxpromosite_3.jpg');-->
-<!--                                                                       background-repeat: no-repeat;background-size:contain;">-->
 
-<!--                            </div>-->
-<!--                            <a class="" href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-256-gb-or-neuf-1-an-de-garantie-66657034" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>-->
+                      <CardItem
+                        v-for="p in top_products"
+                        :pro_title="p.name"
+                        :prod_best_price="p.best_price"
+                        :img_url="p.images"
+                      ></CardItem>
 
-<!--                          </div>-->
-
-<!--                          <div class="flex-grow-1 d-bock">-->
-<!--                            <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center">-->
-<!--                              <a class="w-40 w-sm-100" href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-256-gb-or-neuf-1-an-de-garantie-66657034">-->
-<!--                                <div class="item-title">-->
-<!--                                  iPhone 12 PRO MAX-->
-<!--                                </div>-->
-<!--                              </a>-->
-<!--                              <div class="row w-15 w-sm-100 mt-2">-->
-<!--                                <div class="col-6 align-self-center align-items-lg-center pr-0">-->
-<!--                                  <p class="m-0 text-success text-13 font-weight-800 ">-->
-<!--                                    Best price-->
-<!--                                  </p>-->
-<!--                                  <p class="ml-0 text-muted text-center text-16 font-weight-800 ">-->
-<!--                                    13990.00 DH  </p>-->
-<!--                                </div>-->
-<!--                                <div class="col mt-1">-->
-<!--                                  <a href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-256-gb-or-neuf-1-an-de-garantie-66657034">-->
-<!--                                    <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">-->
-<!--                                      <span class="ul-btn__text">details</span>-->
-<!--                                      <i class="fas fa-chevron-circle-right ml-1"></i>-->
-<!--                                    </button>-->
-<!--                                  </a>-->
-<!--                                </div>-->
-<!--                              </div>-->
-<!--                            </div>-->
-<!--                          </div>-->
-<!--                        </div>-->
-<!--                      </div>-->
-                      <div class="list-item col-lg-3 col-md-3 col-sm-6">
-                        <div class="card o-hidden border mb-4 d-flex flex-column">
-                          <div>
-                            <div class="list-thumb d-flex" style=" width:100%;height: 180px;background-position: center;
-                                                                       background-image:url('/images/https%3A%2F%2Funo.ma%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F1%2Fsmall_image%2F217x217%2F9df78eab33525d08d6e5fb8d27136e95%2Fl%2Fd%2Fld0003955214_2.jpg');
-                                                                       background-repeat: no-repeat;background-size:contain;">
-
-                            </div>
-                            <a class="" href="http://127.0.0.1:8000/Product_Details/apple-earpods-avec-connecteur-lightning-43677374" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>
-
-                          </div>
-
-                          <div class="flex-grow-1 d-bock">
-                            <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center">
-                              <a class="w-40 w-sm-100" href="http://127.0.0.1:8000/Product_Details/apple-earpods-avec-connecteur-lightning-43677374">
-                                <div class="item-title">
-                                  accessoires Iphone
-                                </div>
-                              </a>
-                              <div class="row w-15 w-sm-100 mt-2">
-                                <div class="col-6 align-self-center align-items-lg-center pr-0">
-                                  <p class="m-0 text-success text-13 font-weight-800 ">
-                                    Best price
-                                  </p>
-                                  <p class="ml-0 text-muted text-center text-16 font-weight-800 ">
-                                    429.00 DH  </p>
-                                </div>
-                                <div class="col mt-1">
-                                  <a href="http://127.0.0.1:8000/Product_Details/apple-earpods-avec-connecteur-lightning-43677374">
-                                    <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">
-                                      <span class="ul-btn__text">details</span>
-                                      <i class="fas fa-chevron-circle-right ml-1"></i>
-                                    </button>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-item col-lg-3 col-md-3 col-sm-6">
-                        <div class="card o-hidden border mb-4 d-flex flex-column">
-                          <div>
-                            <div class="list-thumb d-flex" style=" width:100%;height: 180px;background-position: center;
-                                                                       background-image:url('/images/https%3A%2F%2Funo.ma%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F1%2Fsmall_image%2F217x217%2F9df78eab33525d08d6e5fb8d27136e95%2Fl%2Fd%2Fld0005743536_1_1.jpg');
-                                                                       background-repeat: no-repeat;background-size:contain;">
-
-                            </div>
-                            <a class="" href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-256-gb-argent-neuf-1-an-de-garantie-75777247" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>
-
-                          </div>
-
-                          <div class="flex-grow-1 d-bock">
-                            <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center">
-                              <a class="w-40 w-sm-100" href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-256-gb-argent-neuf-1-an-de-garantie-75777247">
-                                <div class="item-title">
-                                  iPhone 12 PRO MAX
-                                </div>
-                              </a>
-                              <div class="row w-15 w-sm-100 mt-2">
-                                <div class="col-6 align-self-center align-items-lg-center pr-0">
-                                  <p class="m-0 text-success text-13 font-weight-800 ">
-                                    Best price
-                                  </p>
-                                  <p class="ml-0 text-muted text-center text-16 font-weight-800 ">
-                                    13990.00 DH  </p>
-                                </div>
-                                <div class="col mt-1">
-                                  <a href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-256-gb-argent-neuf-1-an-de-garantie-75777247">
-                                    <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">
-                                      <span class="ul-btn__text">details</span>
-                                      <i class="fas fa-chevron-circle-right ml-1"></i>
-                                    </button>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-item col-lg-3 col-md-3 col-sm-6">
-                        <div class="card o-hidden border mb-4 d-flex flex-column">
-                          <div>
-                            <div class="list-thumb d-flex" style=" width:100%;height: 180px;background-position: center;
-                                                                       background-image:url('/images/https%3A%2F%2Funo.ma%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F1%2Fsmall_image%2F217x217%2F9df78eab33525d08d6e5fb8d27136e95%2Fa%2Fp%2Fapple-laniere-airtag-marine-intense-airtag-loop-deep-navy-uno-maroc_.jpeg');
-                                                                       background-repeat: no-repeat;background-size:contain;">
-
-                            </div>
-                            <a class="" href="http://127.0.0.1:8000/Product_Details/apple-laniere-airtag-airtag-loop-deep-navy-17307512" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>
-
-                          </div>
-
-                          <div class="flex-grow-1 d-bock">
-                            <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center">
-                              <a class="w-40 w-sm-100" href="http://127.0.0.1:8000/Product_Details/apple-laniere-airtag-airtag-loop-deep-navy-17307512">
-                                <div class="item-title">
-                                  accessoires Iphone
-                                </div>
-                              </a>
-                              <div class="row w-15 w-sm-100 mt-2">
-                                <div class="col-6 align-self-center align-items-lg-center pr-0">
-                                  <p class="m-0 text-success text-13 font-weight-800 ">
-                                    Best price
-                                  </p>
-                                  <p class="ml-0 text-muted text-center text-16 font-weight-800 ">
-                                    449.00 DH  </p>
-                                </div>
-                                <div class="col mt-1">
-                                  <a href="http://127.0.0.1:8000/Product_Details/apple-laniere-airtag-airtag-loop-deep-navy-17307512">
-                                    <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">
-                                      <span class="ul-btn__text">details</span>
-                                      <i class="fas fa-chevron-circle-right ml-1"></i>
-                                    </button>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-item col-lg-3 col-md-3 col-sm-6">
-                        <div class="card o-hidden border mb-4 d-flex flex-column">
-                          <div>
-                            <div class="list-thumb d-flex" style=" width:100%;height: 180px;background-position: center;
-                                                                       background-image:url('/images/https%3A%2F%2Funo.ma%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F1%2Fsmall_image%2F217x217%2F9df78eab33525d08d6e5fb8d27136e95%2Fl%2Fd%2Fld0005743536_1_2.jpg');
-                                                                       background-repeat: no-repeat;background-size:contain;">
-
-                            </div>
-                            <a class="" href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-512-gb-argent-neuf-1-an-de-garantie-57688529" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>
-
-                          </div>
-
-                          <div class="flex-grow-1 d-bock">
-                            <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center">
-                              <a class="w-40 w-sm-100" href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-512-gb-argent-neuf-1-an-de-garantie-57688529">
-                                <div class="item-title">
-                                  iPhone 12 PRO MAX
-                                </div>
-                              </a>
-                              <div class="row w-15 w-sm-100 mt-2">
-                                <div class="col-6 align-self-center align-items-lg-center pr-0">
-                                  <p class="m-0 text-success text-13 font-weight-800 ">
-                                    Best price
-                                  </p>
-                                  <p class="ml-0 text-muted text-center text-16 font-weight-800 ">
-                                    14990.00 DH  </p>
-                                </div>
-                                <div class="col mt-1">
-                                  <a href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-512-gb-argent-neuf-1-an-de-garantie-57688529">
-                                    <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">
-                                      <span class="ul-btn__text">details</span>
-                                      <i class="fas fa-chevron-circle-right ml-1"></i>
-                                    </button>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-item col-lg-3 col-md-3 col-sm-6">
-                        <div class="card o-hidden border mb-4 d-flex flex-column">
-                          <div>
-                            <div class="list-thumb d-flex" style=" width:100%;height: 180px;background-position: center;
-                                                                       background-image:url('/images/https%3A%2F%2Funo.ma%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F1%2Fsmall_image%2F217x217%2F9df78eab33525d08d6e5fb8d27136e95%2Fa%2Fp%2Fapple-laniere-cuir-airtag-product-red-uno-maroc.jpeg');
-                                                                       background-repeat: no-repeat;background-size:contain;">
-
-                            </div>
-                            <a class="" href="http://127.0.0.1:8000/Product_Details/apple-laniere-airtag-cuir-airtag-leather-loop-product-red-78175418" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>
-
-                          </div>
-
-                          <div class="flex-grow-1 d-bock">
-                            <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center">
-                              <a class="w-40 w-sm-100" href="http://127.0.0.1:8000/Product_Details/apple-laniere-airtag-cuir-airtag-leather-loop-product-red-78175418">
-                                <div class="item-title">
-                                  accessoires Iphone
-                                </div>
-                              </a>
-                              <div class="row w-15 w-sm-100 mt-2">
-                                <div class="col-6 align-self-center align-items-lg-center pr-0">
-                                  <p class="m-0 text-success text-13 font-weight-800 ">
-                                    Best price
-                                  </p>
-                                  <p class="ml-0 text-muted text-center text-16 font-weight-800 ">
-                                    549.00 DH  </p>
-                                </div>
-                                <div class="col mt-1">
-                                  <a href="http://127.0.0.1:8000/Product_Details/apple-laniere-airtag-cuir-airtag-leather-loop-product-red-78175418">
-                                    <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">
-                                      <span class="ul-btn__text">details</span>
-                                      <i class="fas fa-chevron-circle-right ml-1"></i>
-                                    </button>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-item col-lg-3 col-md-3 col-sm-6">
-                        <div class="card o-hidden border mb-4 d-flex flex-column">
-                          <div>
-                            <div class="list-thumb d-flex" style=" width:100%;height: 180px;background-position: center;
-                                                                       background-image:url('/images/https%3A%2F%2Funo.ma%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F1%2Fsmall_image%2F217x217%2F9df78eab33525d08d6e5fb8d27136e95%2Fl%2Fd%2Fld0005735821_1_1.jpg');
-                                                                       background-repeat: no-repeat;background-size:contain;">
-
-                            </div>
-                            <a class="" href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-128-gb-or-neuf-1-an-de-garantie-67378276" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>
-
-                          </div>
-
-                          <div class="flex-grow-1 d-bock">
-                            <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center">
-                              <a class="w-40 w-sm-100" href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-128-gb-or-neuf-1-an-de-garantie-67378276">
-                                <div class="item-title">
-                                  iPhone 12 PRO
-                                </div>
-                              </a>
-                              <div class="row w-15 w-sm-100 mt-2">
-                                <div class="col-6 align-self-center align-items-lg-center pr-0">
-                                  <p class="m-0 text-success text-13 font-weight-800 ">
-                                    Best price
-                                  </p>
-                                  <p class="ml-0 text-muted text-center text-16 font-weight-800 ">
-                                    11490.00 DH  </p>
-                                </div>
-                                <div class="col mt-1">
-                                  <a href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-128-gb-or-neuf-1-an-de-garantie-67378276">
-                                    <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">
-                                      <span class="ul-btn__text">details</span>
-                                      <i class="fas fa-chevron-circle-right ml-1"></i>
-                                    </button>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-item col-lg-3 col-md-3 col-sm-6">
-                        <div class="card o-hidden border mb-4 d-flex flex-column">
-                          <div>
-                            <div class="list-thumb d-flex" style=" width:100%;height: 180px;background-position: center;
-                                                                       background-image:url('/images/https%3A%2F%2Funo.ma%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F1%2Fsmall_image%2F217x217%2F9df78eab33525d08d6e5fb8d27136e95%2Fa%2Fp%2Fapple-porte-cles-airtag-cuir-product-red-uno-maroc.jpeg');
-                                                                       background-repeat: no-repeat;background-size:contain;">
-
-                            </div>
-                            <a class="" href="http://127.0.0.1:8000/Product_Details/apple-porte-cles-airtag-cuir-product-red-66962824" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>
-
-                          </div>
-
-                          <div class="flex-grow-1 d-bock">
-                            <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center">
-                              <a class="w-40 w-sm-100" href="http://127.0.0.1:8000/Product_Details/apple-porte-cles-airtag-cuir-product-red-66962824">
-                                <div class="item-title">
-                                  accessoires Iphone
-                                </div>
-                              </a>
-                              <div class="row w-15 w-sm-100 mt-2">
-                                <div class="col-6 align-self-center align-items-lg-center pr-0">
-                                  <p class="m-0 text-success text-13 font-weight-800 ">
-                                    Best price
-                                  </p>
-                                  <p class="ml-0 text-muted text-center text-16 font-weight-800 ">
-                                    449.00 DH  </p>
-                                </div>
-                                <div class="col mt-1">
-                                  <a href="http://127.0.0.1:8000/Product_Details/apple-porte-cles-airtag-cuir-product-red-66962824">
-                                    <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">
-                                      <span class="ul-btn__text">details</span>
-                                      <i class="fas fa-chevron-circle-right ml-1"></i>
-                                    </button>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </section>
                 </div>
@@ -1251,12 +926,18 @@ export default {
   computed:{
     categories(){
       return this.$store.getters["categories/getData"]
+    },
+    top_products(){
+      return this.$store.getters["products/getTopProducts"]
     }
   },
   async fetch() {
     await axios.get('http://localhost:8000/api/categories').then( (res) => {
       this.$store.dispatch('categories/getData',res.data)
-      console.log('res' , res.data)
+    })
+
+    await axios.get('http://localhost:8000/api/product_popular').then( (res) => {
+      this.$store.dispatch('products/getData',res.data)
     })
   },
 
@@ -1294,4 +975,3 @@ margin-top: 5rem !important;
   padding: 0 !important;
 }
 </style>
-

@@ -13,14 +13,30 @@
                   </a>
                 </div>
               </div>
+              {{search_results.length}}
               <div class="col col-lg-8 col-md-3 pr-0 pl-6">
                 <div class="row justify-content-center ml-1">
-
-                  <div class="card shadow-sm border rounded-pill pr-0 w-90" id="search_card" style="overflow: hidden;position: absolute;z-index: 7;border-radius:1.25rem;">
+                  <div class="card shadow-sm border pr-0 w-90" id="search_card" style="overflow: hidden;position: absolute;z-index: 7;border-radius:1.25rem;">
                     <div class="card-body p-1">
                       <input type="hidden" name="_token" value="33mdN0P3qtNMUTbx5kZ684WcLUyvAwAgyYFtd0BR">
                       <div class="input-group input-group">
-                        <input class="search-bar shadow-none border-0 py-1 pl-4 w-100" id="search_selector" name="searchText" type="text" placeholder="Cherchez un produit" autocomplete="off">
+                        <input
+                          class="search-bar shadow-none border-0 py-1 pl-4 w-100"
+                          type="text"
+                          placeholder="Cherchez un produit"
+                          v-model="search_input"
+                        >
+                      </div>
+                      <div class="ul-widget__body" id="search_body" style="display: block;">
+                        <div class="separator-breadcrumb border-top m-2"></div>
+                        <div class="ul-widget1 mx-3" id="search_resultat_slector">
+
+                          <SeachResultsItem
+                            v-for="sr in search_results"
+                          >
+                          </SeachResultsItem>
+
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -57,3 +73,40 @@
     </div>
   </div>
 </template>
+
+<script>
+import axios from 'axios'
+export default {
+
+  data(){
+    return{
+      search_input : ''
+    }
+  },
+
+  computed:{
+    search_results(){
+      return this.$store.getters['search/getSearchResults']
+    }
+  },
+
+  watch:{
+    search_input: function (value){
+      this.handleChnage(value)
+    }
+  },
+
+  methods:{
+    handleChnage: function (txt){
+      console.log('posting ', txt)
+      axios.post('http://localhost:8000/api/search' , {
+          search_input : txt
+      }).then( (res) => {
+        console.log('res ==' , res.data)
+        this.$store.dispatch('search/getData' , res.data)
+      })
+    },
+
+  }
+}
+</script>

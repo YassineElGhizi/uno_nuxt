@@ -1,5 +1,5 @@
 const state = () => ({
-  search_results:[1,2,4,5,6]
+  search_results:[]
 })
 
 const getters = {
@@ -12,12 +12,17 @@ const mutations = {
   SET_SEARCHRESULTS(state,data) {
     state.search_results = data
   },
+  SET_EMPTY(state){
+    state.search_results=[]
+  },
 }
 
 const actions = {
   getData({commit}, data){
-    alert('action commited')
     commit('SET_SEARCHRESULTS', data)
+  },
+  emptyData({commit}){
+    commit('SET_EMPTY')
   }
 }
 

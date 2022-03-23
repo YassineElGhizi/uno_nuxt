@@ -13,7 +13,7 @@
                   </a>
                 </div>
               </div>
-              {{search_results.length}}
+
               <div class="col col-lg-8 col-md-3 pr-0 pl-6">
                 <div class="row justify-content-center ml-1">
                   <div class="card shadow-sm border pr-0 w-90" id="search_card" style="overflow: hidden;position: absolute;z-index: 7;border-radius:1.25rem;">
@@ -27,14 +27,21 @@
                           v-model="search_input"
                         >
                       </div>
-                      <div class="ul-widget__body" id="search_body" style="display: block;">
+                      <div v-if="toggle_visibility" class="ul-widget__body" id="search_body" style="display: block;">
                         <div class="separator-breadcrumb border-top m-2"></div>
                         <div class="ul-widget1 mx-3" id="search_resultat_slector">
 
                           <SeachResultsItem
                             v-for="sr in search_results"
+                            :id="sr.id"
+                            :name="sr.name"
+                            :img="sr.images"
+                            :search_input="search_input"
                           >
                           </SeachResultsItem>
+                          <div v-if="search_results.length == 0">
+                            <EmptySearchResults/>
+                          </div>
 
                         </div>
                       </div>
@@ -49,21 +56,9 @@
                 </button>
               </div>
               <div class="col-lg-8 pl-5 mt-3">
-                <div class="d-flex justify-content-center">
-                  <strong class="text-16 text-success mr-2">Tendances : </strong>
-                  <a href="#" class="font-weight-semibold  text-default text-14 t-font-boldest mr-3">
-                    iPhone 12 pro
-                  </a>
-                  <a href="#" class="font-weight-semibold text-default text-14 t-font-boldest mr-3">
-                    Galaxy S30
-                  </a>
-                  <a href="#" class="font-weight-semibold text-default text-14 t-font-boldest mr-3">
-                    Canon EOS
-                  </a>
-                  <a href="#" class="font-weight-semibold text-default text-14 t-font-boldest mr-3">
-                    Huawei P30
-                  </a>
-                </div>
+
+                <Tendance/>
+
               </div>
 
             </div>
@@ -80,7 +75,8 @@ export default {
 
   data(){
     return{
-      search_input : ''
+      search_input : '',
+      toggle_visibility : false
     }
   },
 
@@ -92,19 +88,32 @@ export default {
 
   watch:{
     search_input: function (value){
-      this.handleChnage(value)
+      if(value === ''){
+        this.empty_products()
+        this.toggle_visibility_fx()
+      }else{
+        this.handleChnage(value)
+        this.toggle_visibility_fx()
+      }
     }
   },
 
   methods:{
     handleChnage: function (txt){
-      console.log('posting ', txt)
-      axios.post('http://localhost:8000/api/search' , {
-          search_input : txt
-      }).then( (res) => {
-        console.log('res ==' , res.data)
-        this.$store.dispatch('search/getData' , res.data)
-      })
+      setTimeout(
+        axios.post('http://localhost:8000/api/search' , {search_input : txt}).then( (res) => {
+          this.$store.dispatch('search/getData' , res.data)
+        }) ,
+        500
+      )
+    },
+
+    empty_products: function (){
+      this.$store.dispatch('search/emptyData')
+    },
+
+    toggle_visibility_fx : function (){
+      this.search_input === '' ? this.toggle_visibility = false : this.toggle_visibility = true
     },
 
   }

@@ -971,7 +971,11 @@ export default {
 }
 
 .main-content-wrap {
-margin-top: 5rem !important;
+  margin-top: 1% !important;
   padding: 0 !important;
+}
+
+.dropdown-menu.show{
+  z-index: 9999;
 }
 </style>

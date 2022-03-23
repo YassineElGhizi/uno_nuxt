@@ -16,7 +16,8 @@
 
               <div class="col col-lg-8 col-md-3 pr-0 pl-6">
                 <div class="row justify-content-center ml-1">
-                  <div class="card shadow-sm border pr-0 w-90" id="search_card" style="overflow: hidden;position: absolute;z-index: 7;border-radius:1.25rem;">
+                  <div class="card shadow-sm border pr-0 w-90" id="search_card"
+                       style="overflow: hidden;position: absolute;z-index: 7;border-radius:1.25rem;">
                     <div class="card-body p-1">
                       <input type="hidden" name="_token" value="33mdN0P3qtNMUTbx5kZ684WcLUyvAwAgyYFtd0BR">
                       <div class="input-group input-group">
@@ -50,9 +51,14 @@
                 </div>
               </div>
               <div class="col-2 p-0">
-                <button type="button" id="submit_search" class="btn btn-outline-success btn-rounded btn-icon btn-lg w-100">
-                  <span class="ul-btn__icon"><i class="i-Magnifi-Glass1"></i></span>
+                <button type="button" id="submit_search"
+                        class="btn btn-outline-success btn-rounded btn-icon btn-lg w-100"
+                >
                   <span class="ul-btn__text">Search</span>
+                  <span class="ul-btn__icon">
+                    <i class="fas fa-search" style="transform: rotateY(180deg);"></i>
+                    <font-awesome-icon icon="magnifying-glass" />
+                  </span>
                 </button>
               </div>
               <div class="col-lg-8 pl-5 mt-3">
@@ -71,51 +77,62 @@
 
 <script>
 import axios from 'axios'
+
 export default {
 
-  data(){
-    return{
-      search_input : '',
-      toggle_visibility : false
+  data() {
+    return {
+      search_input: '',
+      toggle_visibility: false
     }
   },
 
-  computed:{
-    search_results(){
+  computed: {
+    search_results() {
       return this.$store.getters['search/getSearchResults']
     }
   },
 
-  watch:{
-    search_input: function (value){
-      if(value === ''){
+  watch: {
+    search_input: function (value) {
+      if (value === '') {
         this.empty_products()
         this.toggle_visibility_fx()
-      }else{
+      } else {
         this.handleChnage(value)
         this.toggle_visibility_fx()
       }
     }
   },
 
-  methods:{
-    handleChnage: function (txt){
+  methods: {
+    handleChnage: function (txt) {
       setTimeout(
-        axios.post('http://localhost:8000/api/search' , {search_input : txt}).then( (res) => {
-          this.$store.dispatch('search/getData' , res.data)
-        }) ,
+        axios.post('http://localhost:8000/api/search', {search_input: txt}).then((res) => {
+          this.$store.dispatch('search/getData', res.data)
+        }),
         500
       )
     },
 
-    empty_products: function (){
+    empty_products: function () {
       this.$store.dispatch('search/emptyData')
     },
 
-    toggle_visibility_fx : function (){
+    toggle_visibility_fx: function () {
       this.search_input === '' ? this.toggle_visibility = false : this.toggle_visibility = true
     },
 
   }
 }
 </script>
+
+
+<style scoped>
+#submit_search{
+  background-color: #17b960;
+  color: white;
+  font-weight: bold;
+  border-color: #17b960;
+}
+</style>

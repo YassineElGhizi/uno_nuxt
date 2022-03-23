@@ -10,8 +10,10 @@
           >
         </div>
       </div>
-      <div class="ul-widget4__pic-icon"><i class="far fa-times-circle"></i></div>
-      <p class="ul-widget4__title font-weight-semibold  text-20">Aucun résultat</p></div>
+      <div class="ul-widget4__pic-icon">
+        <font-awesome-icon icon="circle-xmark" />
+      </div>
+      <p class="pt-1 ul-widget4__title font-weight-semibold  text-20">Aucun résultat</p></div>
   </div>
 </template>
 

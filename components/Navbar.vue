@@ -1,51 +1,52 @@
 <template>
-  <div class="border navbar sticky-top justify-content-center">
-    <div class="">
-      <div class="container">
-        <div class="d-flex">
+  <div class="border sticky-top" style="background-color: white">
+    <div class="d-flex justify-content-around centre_my-nav">
+        <div class="pt-2 pb-3">
           <a href="#">
             <img src="/logo_supero.jpg" alt="" width='180'>
           </a>
-          <div class="d-inline-flex mt-2">
-            <div class="pr-4">
-              <a href="#" class="text-18 typo_link text-success t-font-boldest">
-                Nos magasins
-              </a>
-            </div>
-            <div class="pr-4">
-              <a href="#" class="text-18 typo_link text-success t-font-boldest">
-                Nos Marques
-              </a>
-            </div>
-            <div class="pr-4">
-              <a href="#" class="text-18 typo_link text-success t-font-boldest">
-                A Propos de Nous
-              </a>
-            </div>
-            <div class="pr-4">
-              <a href="#" class="text-18 typo_link text-success t-font-boldest">
-                Nous Contacter
-              </a>
-            </div>
-          </div>
+        </div>
+        <div class="pt-4">
+          <a href="#" class="text-18 typo_link text-success t-font-boldest black_color"
+             style="color: black !important;">
+            Nos magasins
+          </a>
+        </div>
+        <div class="pt-4">
+          <a href="#" class="text-18 typo_link text-success t-font-boldest black_color"
+             style="color: black !important;">
+            Nos Marques
+          </a>
+        </div>
+        <div class="pt-4">
+          <a href="#" class="text-18 typo_link text-success t-font-boldest black_color"
+             style="color: black !important;">
+            A Propos de Nous
+          </a>
+        </div>
+        <div class="pt-4">
+          <a href="#" class="text-18 typo_link text-success t-font-boldest black_color"
+             style="color: black !important;">
+            Contacter Nous
+          </a>
         </div>
       </div>
-    </div>
   </div>
 </template>
 
 
+<style scoped>
 
-<style>
-.text-success {
-  color: #000000 !important;
+.centre_my-nav{
+  width: 64%;
+  margin: auto;
 }
 
 a.text-success:hover, a.text-success:focus {
   color: #03A84D !important;
 }
 
-.navbar{
+.navbar {
   background-color: white !important;
 }
 </style>

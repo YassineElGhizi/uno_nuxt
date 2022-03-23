@@ -38,12 +38,14 @@
         Connecter
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 33px, 0px);">
-        <a class="dropdown-item" href="http://127.0.0.1:8000/login">
-          <i class="i-Bell"> </i>
-          Log in</a>
-        <a class="dropdown-item" href="http://127.0.0.1:8000/register">
-          <i class="i-Download-from-Cloud"> </i>
-          Register</a>
+        <a class="dropdown-item my-icon" href="http://127.0.0.1:8000/login">
+          Log in
+          <font-awesome-icon icon="arrow-right-to-bracket" class="my-icon" />
+        </a>
+        <a class="dropdown-item my-icon" href="http://127.0.0.1:8000/register">
+          Register
+          <font-awesome-icon icon="user-plus" class="my-icon"/>
+        </a>
 
       </div>
     </div>
@@ -51,3 +53,9 @@
   </div>
 </div>
 </template>
+
+<style scoped>
+.my-icon{
+  color: black;
+}
+</style>

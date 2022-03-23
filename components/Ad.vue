@@ -5,3 +5,9 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+img{
+  height: 26rem;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
   <div class="card-title">
     <div class="row justify-content-between border-bottom mb-2">
-      <div class="col-3 border-bottom-success" style="border-bottom: 2px solid #4caf50;">
+      <div class="col-3 border-bottom-success title" style="border-bottom: 2px solid #4caf50;">
         Product popular
       </div>
       <div class="col-4 mb-2">
@@ -26,3 +26,10 @@ export default {
   }
 }
 </script>
+
+
+<style scoped>
+.title{
+  font-weight: bold;
+}
+</style>

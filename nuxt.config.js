@@ -16,7 +16,6 @@ export default {
     ],
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900'},
-      { rel: 'stylesheet', href: '/css/all.css'},
       { rel: 'stylesheet', href: '/css/metisMenu.min.css'},
       { rel: 'stylesheet', href: '/css/lightgallery.css'},
       { rel: 'stylesheet', href: '/css/iconsmind.css'},
@@ -60,7 +59,18 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    // Font Awesome
+    '@nuxtjs/fontawesome',
   ],
+
+  fontawesome: {
+    components: 'fa',
+    icons: {
+      solid:true,
+      brands:true
+    },
+  },
+
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

@@ -12,18 +12,11 @@
 
 
 <script>
-// import axios from 'axios'
 export default {
   computed:{
     categories(){
       return this.$store.getters["categories/getData"]
     }
   },
-  // async fetch() {
-  //   await axios.get('http://localhost:8000/api/categories').then( (res) => {
-  //     this.$store.dispatch('categories/getData',res.data)
-  //     console.log('res' , res.data)
-  //   })
-  // },
 }
 </script>

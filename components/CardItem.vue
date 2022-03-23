@@ -23,13 +23,13 @@
               <p class="m-0 text-success text-13 font-weight-800 ">
                 Best price
               </p>
-              <p class="ml-0 text-muted text-center text-16 font-weight-800 ">
+              <p class="price ml-0 text-muted text-center text-16 font-weight-800 ">
                 {{prod_best_price}} DH  </p>
             </div>
             <div class="col mt-1">
               <a href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-256-gb-or-neuf-1-an-de-garantie-66657034">
-                <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">
-                  <span class="ul-btn__text">Details</span>
+                <button type="button" class="ma_btn btn btn-outline-success btn-rounded btn-icon float-right">
+                  <span class="ul-btn__text">Détails</span>
                   <i class="fas fa-chevron-circle-right ml-1"></i>
                 </button>
               </a>
@@ -48,3 +48,14 @@ export default {
 }
 
 </script>
+
+<style scoped>
+.price{
+  color:black !important;
+}
+.ma_btn{
+  background-color: #17B960;
+  color:white;
+}
+
+</style>

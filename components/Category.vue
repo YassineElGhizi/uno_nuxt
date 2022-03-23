@@ -10,7 +10,12 @@
       v-on:mouseleave="toggleClass()"
       ref="a_cat"
     >
-        <i class="nav-icon i-Pen-2 mr-3"></i>
+<!--        <i class="nav-icon i-Pen-2 mr-3"></i>-->
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
         {{cat.name}}
     </a>
   </div>
@@ -26,8 +31,10 @@
     },
 
   }
-
-
-
-
 </script>
+
+<style scoped>
+a{
+  color: black;
+}
+</style>

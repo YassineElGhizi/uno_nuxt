@@ -20,7 +20,7 @@
         <div class="d-flex align-items-center">
           <img class="logo" src="/images/logo.png" alt="">
           <div>
-            <p class="m-0">&copy; 2019 UI-Lib</p>
+            <p class="m-0">&copy; 2022 UI-Lib</p>
             <p class="m-0">All rights reserved</p>
           </div>
         </div>

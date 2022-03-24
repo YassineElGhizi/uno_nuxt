@@ -2,7 +2,6 @@ const state = () => ({
   eco_stores: null
 })
 
-
 const getters = {
   getEco_stores(state){
     return state.eco_stores
@@ -15,13 +14,14 @@ const mutations = {
   }
 }
 
-
 const actions = {
-  getEco_stores({commit}, eco_stores){
-    commit('SET_ECO_STORES', eco_stores)
+  async getEco_stores({commit}){
+    await this.$axios.get('http://localhost:8000/api/stores_by_name').then( (res) => {
+      commit('SET_ECO_STORES', res.data
+    )}
+    )
   }
 }
-
 
 export default {
   state,

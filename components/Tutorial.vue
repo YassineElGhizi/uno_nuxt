@@ -1,16 +1,14 @@
-<!-- Please remove this file from your project -->
 <template>
   <div>
-    <div class="app-admin-wrap layout-sidebar-large clearfix">
+    <div class="app-admin-wrap layout-sidebar-large clearfix mybackground">
 
-    <UpperNav></UpperNav>
-    <Navbar></Navbar>
+    <NavbarUpperNav/>
+    <Navbar/>
 
-
-      <div class="main-content-wrap d-flex flex-column flex-grow-1">
-        <div class="main-content">
+      <div class="main-content-wrap d-flex flex-column flex-grow-1 ">
+        <div class="main-content mybackground">
           <section>
-            <LazySearch></LazySearch>
+            <LazySearch/>
               <div class="row justify-content-center" id='index_content'>
                 <div class="col col-sm-3">
                   <div class="card border h-100">
@@ -20,14 +18,14 @@
                         <span class="text-22 font-weight-800" style="color: black">Catégories</span>
                       </div>
 
-                      <CategoryContainer></CategoryContainer>
+                      <CategoryContainer/>
 
                     </div>
                   </div>
                 </div>
 
                 <div class="col col-sm-8 d-flex align-items-stretch">
-                  <div class="tab-content p-0 pl-2">
+                  <div class="tab-content p-0 pl-2" style="width: 100%">
                     <div class="tab-pane show active" id="index-Home">
                       <div class="row">
                         <div class="col-sm-9">
@@ -61,7 +59,7 @@
               <div class="card border mb-4">
                 <div class="card-body">
 
-                  <CardHeader :card_title=" String('Product popular')"></CardHeader>
+                  <CardHeader :card_title="String('Produit populaire')"></CardHeader>
 
                   <section class="product-cart">
                     <div class="row list-grid">
@@ -95,6 +93,8 @@
 <script>
 import axios from 'axios'
 export default {
+  components: {},
+
   computed:{
     categories(){
       return this.$store.getters["categories/getData"]
@@ -150,4 +150,9 @@ export default {
 .dropdown-menu.show{
   z-index: 9999;
 }
+
+.mybackground{
+  background-color: rgba(244, 248, 244, 0.35);
+}
+
 </style>

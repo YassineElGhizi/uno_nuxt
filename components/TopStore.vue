@@ -6,8 +6,8 @@
           <div class="card-body">
             <div class="card-title">
               <div class="row justify-content-between border-bottom mb-2">
-                <div class="title ol-3 border-bottom-success" style="border-bottom: 2px solid #4caf50;">
-                  Meilleurs Magasins
+                <div class="title ol-3 border-bottom-success black_color" style="border-bottom: 2px solid #4caf50;">
+                  Top Magasins
                 </div>
                 <div class="col-4 mb-2">
                   <a href="http://127.0.0.1:8000/Products_list">
@@ -52,19 +52,15 @@
 
 
 <script>
-import axios from 'axios'
 export default {
-  // COMPUTED PROPORTIE
   computed:{
     eco_stores(){
       return this.$store.getters["ecommerce_stores/getEco_stores"]
     }
   },
   async fetch() {
-    await axios.get('http://localhost:8000/api/stores_by_name').then( (res) => {
-      this.$store.dispatch('ecommerce_stores/getEco_stores',res.data)
-    })
-  },
+    await this.$store.dispatch('ecommerce_stores/getEco_stores')
+  }
 }
 
 </script>
@@ -73,5 +69,8 @@ export default {
 <style scoped>
 .title{
   font-weight: bold;
+}
+.black_color{
+  color: black;
 }
 </style>

@@ -32,16 +32,15 @@
                         <div class="separator-breadcrumb border-top m-2"></div>
                         <div class="ul-widget1 mx-3" id="search_resultat_slector">
 
-                          <SeachResultsItem
+                          <SearchResultsItem
                             v-for="sr in search_results"
                             :id="sr.id"
                             :name="sr.name"
                             :img="sr.images"
                             :search_input="search_input"
-                          >
-                          </SeachResultsItem>
+                          />
                           <div v-if="search_results.length == 0">
-                            <EmptySearchResults/>
+                            <SearchEmptyResults/>
                           </div>
 
                         </div>

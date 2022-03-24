@@ -28,7 +28,12 @@
 <script>
 export default {
   props: ['cat','id_count'],
-
 }
-
 </script>
+
+
+<style scoped>
+img{
+  height: 26rem;
+}
+</style>

@@ -38,5 +38,6 @@ export default {
 <style scoped>
 .black_color{
   color: black;
+  padding-top: 0.14rem;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
-<div style="background-color: #03A84D;" >
+<div class="green-background" >
   <div class="row justify-content-end">
-    <div class="dropdown col col-sm-1" style="color: white !important;"  >
+    <div class="dropdown col col-sm-1 white_color"  >
       <button
-        class="btn text-16 dropdown-toggle"
+        class="btn text-16 dropdown-toggle no_top_padding"
         type="button"
         id="dropdownMenuButton"
         data-toggle="dropdown"
@@ -27,7 +27,7 @@
     </div>
     <div class="dropdown col col-sm-1" style="color: white !important;"  >
       <button
-        class="btn text-16 dropdown-toggle"
+        class="btn text-16 dropdown-toggle no_top_padding"
         type="button"
         id="dropdownMenuButton"
         data-toggle="dropdown"
@@ -57,5 +57,18 @@
 <style scoped>
 .my-icon{
   color: black;
+}
+
+.green-background{
+  background-color: #03A84D;
+  height: 2rem !important;
+}
+
+.white_color{
+  color: white !important;
+}
+
+.no_top_padding{
+  padding-top: 1px;
 }
 </style>

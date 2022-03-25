@@ -6,7 +6,11 @@
 import NavbarUpperNav from "@/components/Navbar/NavbarUpperNav";
 export default {
   name: "search-results",
-  components: {NavbarUpperNav}
+  components: {NavbarUpperNav},
+
+  async fetch(){
+    await this.$store.dispatch('categories/getData')
+  }
 }
 </script>
 

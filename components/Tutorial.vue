@@ -104,9 +104,7 @@ export default {
     }
   },
   async fetch() {
-    await axios.get('http://localhost:8000/api/categories').then( (res) => {
-      this.$store.dispatch('categories/getData',res.data)
-    })
+    await this.$store.dispatch('categories/getData')
 
     await axios.get('http://localhost:8000/api/product_popular').then( (res) => {
       this.$store.dispatch('products/getData',res.data)

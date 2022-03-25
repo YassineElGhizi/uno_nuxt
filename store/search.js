@@ -1,5 +1,5 @@
 const state = () => ({
-  search_results:[]
+  search_results:[],
 })
 
 const getters = {
@@ -23,7 +23,8 @@ const actions = {
   },
   emptyData({commit}){
     commit('SET_EMPTY')
-  }
+  },
+
 }
 
 export default {

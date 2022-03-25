@@ -3,7 +3,7 @@
     <a>
       <font-awesome-icon icon="filter"/>
       &nbsp;&nbsp;&nbsp
-      <span class="item-name text-18 font-weight-semibold  ">{{ name }} </span>
+      <span class="item-name text-18 font-weight-semibold">{{ name }} </span>
     </a>
     <div class="submenu">
       <div class="m-2">
@@ -15,7 +15,7 @@
             :value=b.id
             :id="b.id"
           >
-            {{ b.name }}
+            {{ b.value }}
           </option>
 
         </select>
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: "SidebarFilteComponent",
+  name: "SidebarFilteComponentValueBased",
   props: ['name', 'body_content', 'select_space_holder'],
 }
 </script>

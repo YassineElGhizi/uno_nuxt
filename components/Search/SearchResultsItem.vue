@@ -14,7 +14,7 @@
         >
       </div>
       <div class="ul-widget2__info">
-        <p class="ul-widget2__title" v-html="p_tag_str"></p>
+        <p class="ul-widget2__title" v-html="p_tag_str" @click="postSearch(p_tag_str)"></p>
       </div>
     </div>
   </a>
@@ -22,6 +22,7 @@
 
 
 <script>
+import axios from "axios";
 export default {
 
   data(){
@@ -31,7 +32,6 @@ export default {
   },
 
   props:['search_input','name','img',],
-
   methods:{
     //Colorate the keywrod that the user is looking for
     handle_detecting_search_input : function (){
@@ -46,6 +46,14 @@ export default {
 
       this.p_tag_str = name_after_green_marker
     },
+
+    postSearch(val){
+      axios.post('http://localhost:8000/api/search_product' , {
+        'product' : vals
+      }).then( (res) => {
+        console.log('res = ' , res.data)
+      })
+    }
   },
 
   mounted() {

@@ -1,5 +1,5 @@
 <template>
-  <a href="#">
+  <a href="javascript: void(0);">
     <div class="ul-widget10__item  ul-widget4__users">
       <div class="ul-widget4__img ml-3">
         <img
@@ -49,7 +49,7 @@ export default {
 
     postSearch(val){
       axios.post('http://localhost:8000/api/search_product' , {
-        'product' : vals
+        'product' : val
       }).then( (res) => {
         console.log('res = ' , res.data)
       })

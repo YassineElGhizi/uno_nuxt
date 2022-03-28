@@ -101,7 +101,7 @@ export default {
     },
     top_products(){
       return this.$store.getters["products/getTopProducts"]
-    }
+    },
   },
   async fetch() {
     await this.$store.dispatch('categories/getData')
@@ -110,6 +110,10 @@ export default {
       this.$store.dispatch('products/getData',res.data)
     })
   },
+
+  mounted() {
+    this.$store.dispatch('search/SearchSetDefault')
+  }
 
 }
 </script>

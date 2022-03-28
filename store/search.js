@@ -35,6 +35,12 @@ const mutations = {
     state.pureData = data.data
     state.search_count = data.data.length
     state.paginated_search_results = data
+  },
+  SET_DEFAULT(state){
+    state.search_results = []
+    state.paginated_search_results = null
+    state.pureData = null
+    state.search_count = 0
   }
 }
 
@@ -52,7 +58,10 @@ const actions = {
     }).then( (res) => {
       commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
     })
+  },
 
+  SearchSetDefault({commit}){
+    commit('SET_DEFAULT')
   }
 }
 

@@ -1,29 +1,37 @@
 <template>
   <div>
-    <button type="button" class="btn btn-success dropdown-toggle _r_btn border-0 mybtn"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button
+      type="button" class="btn btn-success dropdown-toggle _r_btn border-0 mybtn"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Sort by
     </button>
-    <div class="dropdown-menu" x-placement="bottom-start"
-         style="position: absolute; transform: translate3d(0px, 33px, 0px); top: 0px; left: 0px; will-change: transform;">
+    <div
+      class="dropdown-menu"
+       x-placement="bottom-start"
+      id="costume_style"
+    >
       <a class="dropdown-item ul-widget__link--font"
-         href="http://127.0.0.1:9999/getResult_product?sort=lowprice">
-        <i class="i-Bar-Chart-4"> </i>
+         href="#">
+        <font-awesome-icon
+          icon="arrow-down-short-wide"
+        />
         prix croissant</a>
       <a class="dropdown-item ul-widget__link--font"
-         href="http://127.0.0.1:9999/getResult_product?sort=highprice">
-        <i class="i-Data-Save"> </i>
-        prix decroissant
+         href="#">
+        <font-awesome-icon
+          icon="arrow-down-wide-short"
+        />
+        prix décroissant
       </a>
       <a class="dropdown-item ul-widget__link--font"
-         href="http://127.0.0.1:9999/getResult_product?sort=best_rating">
-        <i class="i-Data-Save"> </i>
-        Top Rating
+         href="#">
+        <font-awesome-icon icon="trophy" />
+        meilleur classement
       </a>
       <a class="dropdown-item ul-widget__link--font"
-         href="http://127.0.0.1:9999/getResult_product?sort=new">
-        <i class="i-Data-Save"> </i>
-        Neuveau
+         href="#">
+        <font-awesome-icon icon="boxes-packing" />
+        nouveau
       </a>
     </div>
   </div>
@@ -36,10 +44,32 @@ export default {
 </script>
 
 <style scoped>
-.mytitle{
+.mytitle {
   color: black !important;
 }
-.mybtn{
+
+.mybtn {
   background-color: #17B960;
 }
+
+.dropdown-item.active, .dropdown-item:active{
+  background-color: #17B960;
+}
+
+#costume_style{
+  position: absolute;
+  transform: translate3d(0px, 33px, 0px);
+  top: 0px;
+  left: 0px;
+  will-change: transform;
+}
+
+#rotate_me{
+  transform: scaleY(-1);
+}
+
+.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active, .show>.btn-success.dropdown-toggle{
+  background-color: #17B960;
+}
+
 </style>

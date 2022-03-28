@@ -2,11 +2,12 @@
   <div class="side-content-wrap rounded-3" style="display: block;">
     <div class="sidebar-left-secondary position-relative w-100 h-auto"
          style="left:auto;top:auto;z-index: auto;border-radius: 10px;border: 1px solid #dee2e6">
-      <!-- Submenu Dashboards -->
-      <p class="text-success text-22  border-bottom-primary-200 m-1 ml-3 my_title">Filter : 56321 results</p>
+      <p
+        class="text-success text-22  border-bottom-primary-200 m-1 ml-3 my_title"
+      >Filtrer : {{ products_count }} produits
+      </p>
 
       <ul class="childNav" data-parent="apps" style="display: block;">
-
         <SidebarFilteComponent
           name="Categories"
           :body_content="categories"
@@ -93,6 +94,9 @@ export default {
     },
     storage(){
       return this.$store.getters["options/get_storage"]
+    },
+    products_count(){
+      return this.$store.getters["search/getCount"]
     }
 
   },
@@ -106,6 +110,8 @@ export default {
 
 }
 </script>
+
+
 
 <style scoped>
 .search_btn{

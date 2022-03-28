@@ -1,0 +1,46 @@
+<template>
+  <div class="ul-widget4__item  ul-widget4__users">
+    <div class="ul-widget4__img">
+      <img
+        src=""
+        id="userDropdown" alt=""
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+    </div>
+    <div class="ul-widget2__info ul-widget4__users-info">
+      <div class="card-body p-0">
+        <h5 class="card-title ul-widget2__title text_black">
+          {{ title }}
+        </h5>
+        <p class="ul-widget2__description">
+          {{ desc }}
+        </p>
+        <ListProductRating/>
+
+      </div>
+    </div>
+    <div class="ul-widget4__actions justify-content-center">
+      <p class="text-22 text-success align-top">Best Price</p>
+      <p class="ul-widget__number text-default align-top mb-3"> {{ best_price }} DH </p>
+      <div class="d-flex justify-content-center">
+        <a type="button" class="btn btn-outline-success float-right"
+           :href="slug">voir plus</a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ListProductItem",
+  props : ['title' ,'desc' , 'best_price' , 'images' ,'slug', ],
+}
+</script>
+
+<style scoped>
+.text_black{
+  color: black !important;
+}
+</style>

@@ -1,5 +1,9 @@
 <template>
-  <li class="nav-item dropdown-sidemenu">
+  <li
+    class="nav-item dropdown-sidemenu"
+    :class="{open : clicked}"
+    @click="toggle_open_class"
+  >
     <a>
       <font-awesome-icon icon="filter"/>
       &nbsp;&nbsp;&nbsp
@@ -28,6 +32,16 @@
 export default {
   name: "SidebarFilteComponent",
   props: ['name', 'body_content', 'select_space_holder'],
+  data: function (){
+    return{
+      clicked : false
+    }
+  },
+  methods :{
+    toggle_open_class(){
+      this.clicked ? this.clicked = true : this.clicked = true
+    }
+  },
 }
 </script>
 

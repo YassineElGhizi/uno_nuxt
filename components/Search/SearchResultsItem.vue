@@ -1,5 +1,8 @@
 <template>
-  <a href="javascript: void(0);">
+  <NuxtLink
+    to="/search-results"
+    @click.native="postSearch(p_tag_str)"
+  >
     <div class="ul-widget10__item  ul-widget4__users">
       <div class="ul-widget4__img ml-3">
         <img
@@ -14,10 +17,10 @@
         >
       </div>
       <div class="ul-widget2__info">
-        <p class="ul-widget2__title" v-html="p_tag_str" @click="postSearch(p_tag_str)"></p>
+        <p class="ul-widget2__title" v-html="p_tag_str" ></p>
       </div>
     </div>
-  </a>
+  </NuxtLink >
 </template>
 
 
@@ -32,33 +35,32 @@ export default {
   },
 
   props:['search_input','name','img',],
-  methods:{
+  methods: {
     //Colorate the keywrod that the user is looking for
-    handle_detecting_search_input : function (){
+    handle_detecting_search_input: function () {
       let name_without_green_marker = this.$props.name
       let target = this.$props.search_input
       let starts_with = '<strong class="text-success">'
 
       let name_after_green_marker = name_without_green_marker.replace(
         String(target),
-        starts_with.concat(String(target),'</strong>' )
+        starts_with.concat(String(target), '</strong>')
       )
 
       this.p_tag_str = name_after_green_marker
     },
 
-    postSearch(val){
-      axios.post('http://localhost:8000/api/search_product' , {
-        'product' : val
-      }).then( (res) => {
-        console.log('res = ' , res.data)
-      })
+    async postSearch(val) {
+      await this.$store.dispatch('search/paginated_search_results', val)
+    },
+
+    fuckjs(){
+      alert('CLICKED')
     }
   },
-
   mounted() {
     this.handle_detecting_search_input()
-  }
+  },
 
 }
 </script>

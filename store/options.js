@@ -112,7 +112,7 @@ const actions = {
           commit('SET_STORAGE', e_obj.children)
           break;
         default:
-          console.log('the folowwing has been pass', e_obj.name)
+          // console.log('the folowwing has been pass', e_obj.name)
       }
     }
 

@@ -52,11 +52,10 @@ export default {
 
     async postSearch(val) {
       await this.$store.dispatch('search/paginated_search_results', val)
+      this.$store.dispatch('search/getSearchKeyWord', val)
     },
 
-    fuckjs(){
-      alert('CLICKED')
-    }
+
   },
   mounted() {
     this.handle_detecting_search_input()

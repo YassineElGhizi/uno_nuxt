@@ -1,9 +1,9 @@
 <template>
   <div class="side-content-wrap rounded-3" style="display: block;">
-    <div class="sidebar-left-secondary position-relative w-100 h-auto"
+    <div class="sidebar-left-secondary position-relative w-100 h-auto my_border_radius"
          style="left:auto;top:auto;z-index: auto;border-radius: 10px;border: 1px solid #dee2e6">
       <p
-        class="text-success text-22  border-bottom-primary-200 m-1 ml-3 my_title"
+        class="text-success text-20  border-bottom-primary-200 m-1 ml-3 my_title"
       >Filtrer : {{ products_count }} produits
       </p>
 
@@ -116,6 +116,9 @@ export default {
 <style scoped>
 .search_btn{
   background-color: #17B960;
+}
+.my_border_radius{
+  border-radius: 4px !important;
 }
 
 </style>

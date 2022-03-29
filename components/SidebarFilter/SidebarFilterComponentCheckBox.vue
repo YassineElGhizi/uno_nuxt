@@ -17,7 +17,7 @@
           v-for="b in body_content"
           :id="b.id"
         >
-          <input type="checkbox" name="options[]" value="186">
+          <input type="checkbox" name="options[]" :value="b.id" v-model="checkedValues">
           <span>{{b.value}}</span>
           <span class="checkmark"></span>
         </label>
@@ -33,14 +33,46 @@ export default {
   props: ['name', 'body_content',],
   data: function (){
     return{
-      clicked : false
+      clicked : false,
+      checkedValues: [],
     }
   },
   methods :{
     toggle_open_class(){
       this.clicked ? this.clicked = true : this.clicked = true
+    },
+    updateFilter(newval){
+      switch (this.$props.name){
+        case 'Type HD' :
+          this.$store.dispatch('search/setFilterTypeHD' ,newval)
+          break
+        case 'Taille d\'ecran':
+          this.$store.dispatch("search/setFilterTaillEcran", newval)
+          break;
+        case 'Longueur en mètres':
+          this.$store.dispatch("search/setFilterSize" , newval)
+          break;
+        case 'RAM In GB':
+          this.$store.dispatch('search/setFilterRam', newval)
+          break;
+        case 'Stockage in GB':
+          this.$store.dispatch('search/setFilterStockage', newval)
+          break;
+        default:
+          alert('WARNING FILTER IS UNKNOWN')
+      }
+
+
     }
   },
+  watch:{
+    deep: true,
+    checkedValues : {
+      handler: function(newval){
+        this.updateFilter(newval)
+    }
+    }
+  }
 }
 </script>
 

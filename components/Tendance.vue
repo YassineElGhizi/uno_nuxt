@@ -1,14 +1,15 @@
 <template>
   <div class="d-flex justify-content-center">
     <strong class="text-16 text-success mr-2">Tendances : </strong>
-    <a
+    <NuxtLink
       class="font-weight-semibold  text-default text-14 t-font-boldest mr-3 black_color"
       v-for="t in tendances"
-      href="#"
+      @click.native="postSearch(t.name)"
       :id="t.id"
+      to="/search-results"
     >
       {{t.name}}
-    </a>
+    </NuxtLink>
   </div>
 </template>
 
@@ -23,7 +24,12 @@ export default {
   methods:{
     update_trends : function (data){
       this.tendances = data
-    }
+    },
+
+    async postSearch(val) {
+      await this.$store.dispatch('search/paginated_search_results', val)
+      this.$store.dispatch('search/getSearchKeyWord', val)
+    },
   },
 
   mounted() {

@@ -7,11 +7,15 @@
     <a>
       <font-awesome-icon icon="filter"/>
       &nbsp;&nbsp;&nbsp
-      <span class="item-name text-18 font-weight-semibold">{{ name }} </span>
+      <span class="item-name text-18 font-weight-semibold">{{ name }}</span>
     </a>
     <div class="submenu">
       <div class="m-2">
-        <select class="custom-select task-manager-list-select mb-2" id="input_Select_category">
+        <select
+          class="custom-select task-manager-list-select mb-2"
+          id="input_Select_category"
+          @change="handleChnage($event)"
+        >
           <option value="">{{ select_space_holder }}</option>
 
           <option
@@ -40,11 +44,21 @@ export default {
   methods :{
     toggle_open_class(){
       this.clicked ? this.clicked = true : this.clicked = true
+    },
+    handleChnage(event){
+      let color_id = parseInt(event.target.value)
+      this.$store.dispatch('search/seFilterColor', color_id)
     }
   },
 }
 </script>
 
 <style scoped>
-
+.custom-select:focus{
+  border-color: #ffffff !important;
+  box-shadow: #17B960 !important;
+}
+.custom-select:focus{
+  box-shadow: 0 0 0 0.2rem rgba(54, 153, 51, 0.25) !important;
+}
 </style>

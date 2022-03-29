@@ -9,7 +9,9 @@ const state = () => ({
   filters:{
     'category' : null,
     'brand' : null,
-    'price' : {'min' : null, max : null},
+    // 'price' : {'min' : null, 'max' : null},
+    'min_price' : null,
+    'max_price' : null,
     'color' : null,
     'type_hd' : [],
     'taille_ecran' : [],
@@ -35,6 +37,9 @@ const getters = {
   //Filter Related
   getFilters(state){
     return state.filters
+  },
+  getSearchKeyWord(state) {
+    return state.search_keyword
   }
 }
 
@@ -59,7 +64,9 @@ const mutations = {
     state.filters = {
       'category' : null,
       'brand' : null,
-      'price' : {'min' : null, max : 'null'},
+      // 'price' : {'min' : null, max : 'null'},
+      'min_price' : null,
+      'max_price' : null,
       'color' : null,
       'type_hd' : [],
       'taille_ecran' : [],
@@ -147,10 +154,18 @@ const actions = {
   },
 
   //Apply Filter
-  async applyFilters(){
-    await this.$axios.post('' , {filters : getters.getFilters()}).then( (res) => {
-      alert(res.data)
-    })
+  async applyFilters({getters}){
+    let search_key_word = getters.getSearchKeyWord
+    if (search_key_word){
+      await this.$axios.post('http://localhost:8000/api/filter_search', {
+        search_key_word : search_key_word,
+        filters : getters.getFilters
+      }).then( (res) => {
+        console.log(res.data)
+      })
+    }else{
+      alert('NO Search keyword found !')
+    }
   }
 }
 

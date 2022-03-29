@@ -56,7 +56,11 @@
 
       </ul>
       <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-success btn-lg btn-block w-75 m-3 search_btn">Search</button>
+        <button
+          type="submit"
+          class="btn btn-success btn-lg btn-block w-75 m-3 search_btn"
+          @click="perforeFilter"
+        >Search</button>
       </div>
     </div>
   </div>
@@ -107,6 +111,11 @@ export default {
     await this.$store.dispatch('categories/getCatsIds'),
     await this.$store.dispatch('options/fetch_options')
   },
+  methods:{
+    async perforeFilter(){
+      await this.$store.dispatch('search/applyFilters')
+    }
+  }
 
 }
 </script>

@@ -9,9 +9,9 @@ const state = () => ({
   filters:{
     'category' : null,
     'brand' : null,
-    // 'price' : {'min' : null, 'max' : null},
     'min_price' : null,
     'max_price' : null,
+    //Options:
     'color' : null,
     'type_hd' : [],
     'taille_ecran' : [],
@@ -62,11 +62,14 @@ const mutations = {
     state.search_count = 0
     state.search_keyword = null
     state.filters = {
+      //Categroys:
       'category' : null,
+      //Brand:
       'brand' : null,
-      // 'price' : {'min' : null, max : 'null'},
+      //Price:
       'min_price' : null,
       'max_price' : null,
+      //Options:
       'color' : null,
       'type_hd' : [],
       'taille_ecran' : [],
@@ -156,10 +159,28 @@ const actions = {
   //Apply Filter
   async applyFilters({getters}){
     let search_key_word = getters.getSearchKeyWord
+    //The Search_key_word_is_a_must
     if (search_key_word){
+
+      //MapReduce Options IDs using Javascript spreed Operator
+      let options_id = []
+      let option_filters = getters.getFilters
+      if (option_filters.color!= null){options_id.push(parseInt(option_filters.color))}
+      if (option_filters.type_hd.length != 0){options_id.push(...option_filters.type_hd)}
+      if (option_filters.taille_ecran.length != 0){options_id.push(...option_filters.taille_ecran)}
+      if (option_filters.size.length != 0){options_id.push(...option_filters.size)}
+      if (option_filters.ram.length != 0){options_id.push(...option_filters.ram)}
+      if (option_filters.stockage.length != 0){options_id.push(...option_filters.stockage)}
+
+
+      //Posting to API
       await this.$axios.post('http://localhost:8000/api/filter_search', {
         search_key_word : search_key_word,
-        filters : getters.getFilters
+        category : option_filters.category,
+        brand : option_filters.brand,
+        min_price : option_filters.min_price,
+        max_price : option_filters.max_price,
+        options : options_id
       }).then( (res) => {
         console.log(res.data)
       })

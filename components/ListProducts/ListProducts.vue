@@ -45,10 +45,42 @@
               :id="p.id"
               :slug="p.slug"
               />
-
             </div>
           </div>
         </div>
+
+
+
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li
+              class="page-item"
+              v-bind:class="[current_index == 1 ? 'disabled' : '']"
+            >
+              <a class="page-link green_color" tabindex="-1" @click="previous_page(current_index)">Precedent</a>
+            </li>
+            <li
+              class="page-item"
+              v-for="index in total"
+            >
+              <a
+                class="page-link green_color"
+                @click="paginate(index)"
+                :id="index"
+                v-bind:style="[index == current_index? {'background-color': '#eee'} : {}]"
+              >
+                {{index}}
+              </a>
+            </li>
+            <li
+              class="page-item"
+              v-bind:class="[current_index == total ? 'disabled' : '']"
+            >
+              <a class="page-link green_color" tabindex="-1" @click="next_page(current_index)">Suivant</a>
+            </li>
+          </ul>
+        </nav>
+
       </div>
     </div>
   </div>
@@ -62,11 +94,34 @@ export default {
   computed:{
     paginated(){
       return this.$store.getters["search/getPureData"]
+    },
+    total(){
+      return this.$store.getters["search/getTotale"]
+    },
+    current_index(){
+      return this.$store.getters["search/get_current_index"]
     }
   },
   watch:{
     paginated(new_data, old_data){
       console.log(`We have new data :  ${new_data} , yay!`)
+    }
+  },
+  methods:{
+    paginate(index){
+      this.$store.dispatch('search/set_current_page', index)
+    },
+    next_page(index){
+      let next_index = index+1
+      if(next_index <= this.total){
+        this.$store.dispatch('search/set_current_page',next_index)
+      }
+    },
+    previous_page(index){
+      let previous_index = index-1
+      if(previous_index >= 1){
+        this.$store.dispatch('search/set_current_page' , previous_index)
+      }
     }
   }
 
@@ -75,3 +130,12 @@ export default {
 </script>
 
 
+<style>
+.green_color:focus{
+  box-shadow : 0 0 0 0.2rem rgb(51 153 79 / 25%);
+}
+
+.page-link:hover{
+  background-color: #eee;
+}
+</style>

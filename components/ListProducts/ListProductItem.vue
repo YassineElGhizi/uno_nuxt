@@ -18,6 +18,13 @@
           {{ desc }}
         </p>
         <ListProductRating/>
+        <div class="container">
+          <div class="row d-flex justify-content-around "  style="background-color: orange; width:400px">
+            <div class="col col-sm-3" style="background-color: green">Store #1</div>
+            <div class="col col-sm-3" style="background-color: green">Store #2</div>
+            <div class="col col-sm-3" style="background-color: green">Store #3</div>
+          </div>
+        </div>
 
       </div>
     </div>

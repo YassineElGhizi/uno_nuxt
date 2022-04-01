@@ -4,6 +4,10 @@ const state = () => ({
   search_results:[],
   paginated_search_results:null,
   pureData:null,
+  totale:0,
+  next_page_url:null,
+  prev_page_url:null,
+  current_index:1,
   search_count:0,
   search_keyword : null,
   filters:{
@@ -40,7 +44,20 @@ const getters = {
   },
   getSearchKeyWord(state) {
     return state.search_keyword
-  }
+  },
+  //Pagination Related
+  getTotale(state){
+    return state.totale
+  },
+  get_current_index(state){
+    return state.current_index
+  },
+  get_next_page_url(state){
+    return state.next_page_url
+  },
+  get_prev_page_url(state){
+    return state.prev_page_url
+  },
 }
 
 const mutations = {
@@ -106,6 +123,19 @@ const mutations = {
   },
   SET_FILTER_STOCKAGE(state, stockage){
     state.filters.stockage = stockage
+  },
+//  Pagination Related
+  SET_TOTALE(state, totale){
+    state.totale = totale
+  },
+  SET_CURRENT_PAGE(state, curent_page){
+    state.current_index = curent_page
+  },
+  SET_NEXT_PAGE_URL(state, next_page_url){
+    state.next_page_url = next_page_url
+  },
+  SET_PREV_PAGE_URL(state, prev_page_url){
+    state.prev_page_url = prev_page_url
   }
 }
 
@@ -121,6 +151,9 @@ const actions = {
       'product' : val
     }).then( (res) => {
       commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
+      commit('SET_TOTALE' , res.data.total)
+      commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
+      commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
     })
   },
   SearchSetDefault({commit}){
@@ -186,6 +219,11 @@ const actions = {
     }else{
       alert('NO Search keyword found !')
     }
+  },
+
+  //  Paginated Related
+  set_current_page({commit}, current_page){
+    commit('SET_CURRENT_PAGE' , current_page)
   }
 }
 

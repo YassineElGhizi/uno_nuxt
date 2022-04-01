@@ -161,8 +161,7 @@ const actions = {
     let search_key_word = getters.getSearchKeyWord
     //The Search_key_word_is_a_must
     if (search_key_word){
-
-      //MapReduce Options IDs using Javascript spreed Operator
+      //MapReduce the Options using Javascript spreed Operator
       let options_id = []
       let option_filters = getters.getFilters
       if (option_filters.color!= null){options_id.push(parseInt(option_filters.color))}

@@ -1,5 +1,3 @@
-import axios from "axios";
-
 const state = () => ({
   search_results:[],
   paginated_search_results:null,
@@ -23,6 +21,7 @@ const state = () => ({
     'ram' : [],
     'stockage' : []
   },
+  sort:null
 })
 
 const getters = {
@@ -58,6 +57,10 @@ const getters = {
   get_prev_page_url(state){
     return state.prev_page_url
   },
+  //Sort Related
+  get_sort_option(state){
+    return state.sort
+  }
 }
 
 const mutations = {
@@ -68,8 +71,9 @@ const mutations = {
     state.search_results=[]
   },
   SET_PAGINATED_SEARCH_RESULTS(state, data){
+    console.log('Hello from setter',data)
     state.pureData = data.data
-    state.search_count = data.data.length
+    state.search_count = data.total
     state.paginated_search_results = data
   },
   SET_DEFAULT(state){
@@ -136,6 +140,9 @@ const mutations = {
   },
   SET_PREV_PAGE_URL(state, prev_page_url){
     state.prev_page_url = prev_page_url
+  },
+  SET_SORT(state, sort){
+    state.sort = sort
   }
 }
 
@@ -146,12 +153,15 @@ const actions = {
   emptyData({commit}){
     commit('SET_EMPTY')
   },
-  async paginated_search_results({commit}, val){
+  //Get Paginated Data for First Time
+  async paginated_search_results({commit,getters}, val){
     await this.$axios.post('http://localhost:8000/api/search_product', {
-      'product' : val
+      'product' : val,
+      'sort' : getters.get_sort_option
     }).then( (res) => {
       commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
-      commit('SET_TOTALE' , res.data.total)
+      let calculated_total = res.data.links.length-2
+      commit('SET_TOTALE' , calculated_total)
       commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
       commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
     })
@@ -190,7 +200,7 @@ const actions = {
   },
 
   //Apply Filter
-  async applyFilters({getters}){
+  async applyFilters({getters, commit}){
     let search_key_word = getters.getSearchKeyWord
     //The Search_key_word_is_a_must
     if (search_key_word){
@@ -214,7 +224,11 @@ const actions = {
         max_price : option_filters.max_price,
         options : options_id
       }).then( (res) => {
-        console.log(res.data)
+        commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
+        let calculated_total = res.data.links.length-2
+        commit('SET_TOTALE' , calculated_total)
+        commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
+        commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
       })
     }else{
       alert('NO Search keyword found !')
@@ -224,7 +238,30 @@ const actions = {
   //  Paginated Related
   set_current_page({commit}, current_page){
     commit('SET_CURRENT_PAGE' , current_page)
-  }
+  },
+
+  //Get Paginated Data based on page value
+  async get_n_page_data({commit, getters}, number){
+    await this.$axios.post(`http://localhost:8000/api/search_product?page=${number}`, {
+      'product' : getters.getSearchKeyWord,
+      'sort' : getters.get_sort_option
+    }).then( (res) => {
+      commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
+      let calculated_total = res.data.links.length-2
+      commit('SET_TOTALE' , calculated_total)
+      commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
+      commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
+    })
+  },
+
+  // Sort Related
+  async change_filter_choice({commit,dispatch,getters} , choice){
+    commit('SET_SORT' , choice)
+    let search_keywork =getters.getSearchKeyWord
+    await dispatch('paginated_search_results', search_keywork)
+  },
+
+
 }
 
 export default {

@@ -10,26 +10,19 @@
        x-placement="bottom-start"
       id="costume_style"
     >
-      <a class="dropdown-item ul-widget__link--font"
-         href="#">
-        <font-awesome-icon
-          icon="arrow-down-short-wide"
-        />
-        prix croissant</a>
-      <a class="dropdown-item ul-widget__link--font"
-         href="#">
-        <font-awesome-icon
-          icon="arrow-down-wide-short"
-        />
+      <a class="dropdown-item ul-widget__link--font my_pointer" @click="myClickHandler('asc')">
+        <font-awesome-icon icon="arrow-down-short-wide"/>
+        prix croissant
+      </a>
+      <a class="dropdown-item ul-widget__link--font my_pointer" @click="myClickHandler('desc')">
+        <font-awesome-icon icon="arrow-down-wide-short"/>
         prix décroissant
       </a>
-      <a class="dropdown-item ul-widget__link--font"
-         href="#">
-        <font-awesome-icon icon="trophy" />
+      <a class="dropdown-item ul-widget__link--font my_pointer" @click="myClickHandler('best')">
+        <font-awesome-icon icon="trophy"/>
         meilleur classement
       </a>
-      <a class="dropdown-item ul-widget__link--font"
-         href="#">
+      <a class="dropdown-item ul-widget__link--font my_pointer" @click="myClickHandler('new')">
         <font-awesome-icon icon="boxes-packing" />
         nouveau
       </a>
@@ -39,7 +32,12 @@
 
 <script>
 export default {
-  name: "ListProductsSortButton"
+  name: "ListProductsSortButton",
+  methods:{
+    myClickHandler : function (choice){
+      this.$store.dispatch('search/change_filter_choice' , choice);
+    }
+  }
 }
 </script>
 
@@ -72,4 +70,7 @@ export default {
   background-color: #17B960;
 }
 
+.my_pointer{
+  cursor: pointer;
+}
 </style>

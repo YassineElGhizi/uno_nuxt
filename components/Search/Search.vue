@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div class="row justify-content-center mb-3">
-      <div class="col col-sm-11">
+<!--    <div class="row justify-content-center mb-3">-->
+    <div :class="toggle_margin">
+<!--      <div class="col col-sm-11">-->
+      <div :class="toggle_size">
         <div class="card border">
           <div class="card-body">
             <div class="row justify-content-center w-100">
@@ -77,6 +79,7 @@
 <script>
 import axios from 'axios'
 export default {
+  props:['size'],
   data() {
     return {
       search_input: '',
@@ -87,9 +90,22 @@ export default {
   computed: {
     search_results() {
       return this.$store.getters['search/getSearchResults']
+    },
+    toggle_size(){
+      if(this.$props.size){
+        return 'col col-sm-12'
+      }else{
+        return 'col col-sm-11'
+      }
+    },
+    toggle_margin(){
+      if(this.$props.size){
+        return 'row justify-content-center'
+      }else{
+        return 'row justify-content-center mb-3'
+      }
     }
   },
-
   watch: {
     search_input: function (value) {
       if (value === '') {
@@ -111,15 +127,12 @@ export default {
         500
       )
     },
-
     empty_products: function () {
       this.$store.dispatch('search/emptyData')
     },
-
     toggle_visibility_fx: function () {
       this.search_input === '' ? this.toggle_visibility = false : this.toggle_visibility = true
     },
-
   }
 }
 </script>

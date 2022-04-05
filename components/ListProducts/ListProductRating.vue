@@ -2,11 +2,11 @@
   <div>
     <div class="rate-icon">
       <font-awesome-icon
-        v-for="x in count"
+        v-for="x in rating+1"
         icon="star"
         class="start_color"
       />
-      <span class="badge badge-square-rate badge-square-opacity-warning">{{  count.toFixed(1)  }}</span>
+      <span class="badge badge-square-rate badge-square-opacity-warning">{{ rating }}</span>
     </div>
   </div>
 </template>
@@ -14,11 +14,7 @@
 <script>
 export default {
   name: "ListProductRating",
-  data : function (){
-    return{
-      count : 4.0
-    }
-  }
+  props: ['rating',],
 }
 </script>
 

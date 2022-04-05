@@ -17,7 +17,7 @@
         <p class="ul-widget2__description">
           {{ desc }}
         </p>
-        <ListProductRating/>
+        <ListProductRating :rating="rating"/>
         <div class="container">
           <div class="row d-flex justify-content-around "  style="background-color: orange; width:400px">
             <div class="col col-sm-3" style="background-color: green">Store #1</div>
@@ -32,8 +32,14 @@
       <p class="text-22 text-success align-top">Best Price</p>
       <p class="ul-widget__number text-default align-top mb-3"> {{ best_price }} DH </p>
       <div class="d-flex justify-content-center">
-        <a type="button" class="btn btn-outline-success float-right"
-           :href="slug">voir plus</a>
+        <NuxtLink
+          type="button"
+          class="btn btn-outline-success float-right"
+          :to="slug"
+          @click.native="clicked(id)"
+        >
+          Variantes de produits
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -42,7 +48,12 @@
 <script>
 export default {
   name: "ListProductItem",
-  props : ['title' ,'desc' , 'best_price' , 'images' ,'slug', ],
+  props : ['title' ,'desc' , 'best_price' , 'images' ,'slug', 'id', 'rating'],
+  methods:{
+    clicked : async function (id){
+      await this.$store.dispatch('productDetails/get_product_details' , id)
+    }
+  }
 }
 </script>
 

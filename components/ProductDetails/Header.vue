@@ -6,9 +6,13 @@
         <li>
           <NuxtLink to="/">Home</NuxtLink>
         </li>
-        <li><NuxtLink :to="'category/'+product_category_parent">{{product_category_parent}}</NuxtLink></li>
-        <li><NuxtLink :to="'category/'+product_category">{{product_category}}</NuxtLink></li>
-        <li>{{product_name}}</li>
+        <li>
+          <NuxtLink :to="'category/'+product_category_parent">{{ product_category_parent }}</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink :to="'category/'+product_category">{{ product_category }}</NuxtLink>
+        </li>
+        <li>{{ product_name }}</li>
       </ul>
     </div>
     <div class="separator-breadcrumb border-top mb-1"></div>
@@ -18,10 +22,12 @@
 <script>
 export default {
   name: "Header",
-  props : ['product_name', 'product_category_parent', 'product_category'],
+  props: ['product_name', 'product_category_parent', 'product_category'],
 }
 </script>
 
 <style scoped>
-
+.col-11{
+  color: black;
+}
 </style>

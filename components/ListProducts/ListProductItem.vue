@@ -50,8 +50,9 @@ export default {
   name: "ListProductItem",
   props : ['title' ,'desc' , 'best_price' , 'images' ,'slug', 'id', 'rating'],
   methods:{
-    clicked : async function (id){
+     clicked : async function (id){
       await this.$store.dispatch('productDetails/get_product_details' , id)
+      await this.$store.dispatch('productDetails/get_related_products_options' , id)
     }
   }
 }

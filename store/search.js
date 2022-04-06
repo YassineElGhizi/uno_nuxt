@@ -71,7 +71,6 @@ const mutations = {
     state.search_results=[]
   },
   SET_PAGINATED_SEARCH_RESULTS(state, data){
-    console.log('Hello from setter',data)
     state.pureData = data.data
     state.search_count = data.total
     state.paginated_search_results = data

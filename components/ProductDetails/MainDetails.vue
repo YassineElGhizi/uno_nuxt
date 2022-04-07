@@ -11,7 +11,19 @@
                   src="https://static5.depositphotos.com/1034256/424/i/600/depositphotos_4246298-stock-photo-looking-at-africa.jpg"
                   alt="">
               </div>
-              <div class="mt-4">Image Slider Place Holder</div>
+              <div class="row justify-content-center">
+                <div class="col-md-2 p-1 m-1"
+                  v-for="x in 11">
+                  <div class="card text-white border o-hidden ">
+                    <img
+                      ref="img_tag"
+                      @mouseenter="toggle_src()"
+                      class="card-img"
+                      src="https://static5.depositphotos.com/1034256/424/i/600/depositphotos_4246298-stock-photo-looking-at-africa.jpg"
+                      alt="">
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="col-sm-8">
               <div class="ul-product-detail__brand-name">
@@ -24,22 +36,6 @@
                     </div>
                     <div class="ul-product-detail__features">
                       <ul class="m-0 p-2">
-                        <li>
-                          <span class="text-mute font-weight-700 text-16">Images :</span>
-                          <div
-                            class="row">
-                            <div
-                              class="col-md-2 p-2 m-2"
-                              v-for="x in 4">
-                              <div class="card text-white border o-hidden">
-                                <img
-                                  class="card-img"
-                                  src="https://static5.depositphotos.com/1034256/424/i/600/depositphotos_4246298-stock-photo-looking-at-africa.jpg"
-                                  alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </li>
                         <li>
                           <div class="mb-3">
                             <span
@@ -165,6 +161,9 @@ export default {
         "product_id": product_id
       }
       this.$store.dispatch("productDetails/filter_prouducts_by_chosen_option" ,paylaod)
+    },
+    toggle_src: function (){
+      console.log(this.$refs.img_tag[0].attributes[1])
     }
   }
 }

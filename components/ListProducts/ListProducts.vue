@@ -45,6 +45,7 @@
               :id="p.id"
               :slug="p.slug"
               :rating="p.product_details.rating_value"
+              :variation="p.children_count"
               />
             </div>
           </div>

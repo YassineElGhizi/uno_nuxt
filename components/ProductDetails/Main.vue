@@ -11,15 +11,15 @@
             :product_category="product.category.name"
           />
 
-          <!-- content goes here -->
-
           <ProductDetailsMainDetails
+            :product_id="product.id"
             :product_name="product.name"
             :brand_name="product.brand.name"
             :short_description="product.product_details.short_description"
             :rating="product.product_details.rating_value"
             :best_price="product.best_price"
             :options="options"
+            :product_link="product.store.link"
           />
 
           <div class="col-11">
@@ -50,339 +50,15 @@
                             </div>
                           </div>
                         </div>
-                        <div class="list-item col">
-                          <img class="d-flex justify-content-center w-100" alt="" src="">
-                          <div class="flex-grow-1 d-bock">
-                            <div
-                              class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center">
-                              <a class="w-40 w-sm-100" href="">
-                                <div class="item-title">
-                                  Portable Speaker with HD Sound
-                                </div>
-                              </a>
-                              <p class="m-0 text-muted text-small w-15 w-sm-100">
-                                Gadget
-                              </p>
-                              <p class="m-0 text-muted text-small w-15 w-sm-100">
-                                $25.00
-                                <del class="text-secondary">$43.00</del>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="list-item col">
-                          <img class="d-flex justify-content-center w-100" alt="" src="">
-                          <div class="flex-grow-1 d-bock">
-                            <div
-                              class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center">
-                              <a class="w-40 w-sm-100" href="">
-                                <div class="item-title">
-                                  Wireless Bluetooth V4.0 Portable Speaker with HD Sound
-                                  and Bass
-                                </div>
-                              </a>
-                              <p class="m-0 text-muted text-small w-15 w-sm-100">
-                                Gadget
-                              </p>
-                              <p class="m-0 text-muted text-small w-15 w-sm-100">
-                                $32.00
-                                <del class="text-secondary">$54.00</del>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </section>
                   </div>
                 </div>
-                <div class="col col-lg-9 col-md-9 col-sm-12">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <div class="ul-widget__head">
-                        <div class="ul-widget__head-label">
-                          <h3 class="ul-widget__head-title">
-                            other stores
-                          </h3>
-                        </div>
-                        <div class="ul-widget__head-toolbar">
-                          <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold ul-widget-nav-tabs-line" role="tablist">
-                            <li class="nav-item">
-                              <a class="nav-link active show" data-toggle="tab" href="#__g-widget4-tab1-content"
-                                 role="tab" aria-selected="true">
-                                official stores
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" data-toggle="tab" href="#__g-widget4-tab2-content" role="tab"
-                                 aria-selected="false">
-                                All stores
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="ul-widget__body">
-                        <div class="tab-content">
-                          <div class="tab-pane active show" id="__g-widget4-tab1-content">
-                            <div class="ul-widget1">
 
-                              <div class="ul-widget4__item  ul-widget4__users">
-                                <div class="ul-widget4__img">
-                                  <img src="" id="userDropdown" alt="" data-toggle="dropdown" aria-haspopup="true"
-                                       aria-expanded="false"/>
-                                </div>
-                                <div class="ul-widget2__info ul-widget4__users-info">
-                                  <a href="#" class="ul-widget2__title">
-                                    $Product_store->title
-                                  </a>
-                                  <span href="#" class="ul-widget2__username">
-                                                        Visual Designer,Google Inc
-                                                    </span>
-                                </div>
-                                <div class="ul-widget4__actions">
-                                  <div class="row justify-content-center">
-                                    <span
-                                      class="ul-widget__number text-success align-top mb-2">$Product_store->price</span>
-                                    <button type="button" class="btn btn-outline-success btn-lg m-1"
-                                            onclick="$Product_store_id">
-                                      Go to Shop
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
+                <ProductDetailsContainerListProduct
+                  :list_products="list_products"
+                />
 
-                              <div class="ul-widget4__item  ul-widget4__users">
-                                <div class="ul-widget4__img">
-                                  <img src="http://127.0.0.1:9898/assets/images/stores/Jumia_logo.png" id="userDropdown"
-                                       alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-                                </div>
-                                <div class="ul-widget2__info ul-widget4__users-info">
-                                  <a href="#" class="ul-widget2__title">
-                                    Anna Strong
-                                  </a>
-                                  <span href="#" class="ul-widget2__username">
-                                                        Visual Designer,Google Inc
-                                                    </span>
-                                </div>
-                                <div class="ul-widget4__actions">
-                                  <div class="row justify-content-center">
-                                    <span class="ul-widget__number text-success align-top mb-2">89.99 DH</span>
-                                    <button type="button" class="btn btn-outline-success btn-lg m-1">
-                                      Go to Shop
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="ul-widget4__item  ul-widget4__users">
-                                <div class="ul-widget4__img">
-                                  <img src="http://127.0.0.1:9898/assets/images/stores/Jumia_logo.png" id="userDropdown"
-                                       alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-                                </div>
-                                <div class="ul-widget2__info ul-widget4__users-info">
-                                  <a href="#" class="ul-widget2__title">
-                                    Anna Strong
-                                  </a>
-                                  <span href="#" class="ul-widget2__username">
-                                                        Visual Designer,Google Inc
-                                                    </span>
-                                </div>
-                                <div class="ul-widget4__actions">
-                                  <div class="row justify-content-center">
-                                    <span class="ul-widget__number text-success align-top mb-2">89.99 DH</span>
-                                    <button type="button" class="btn btn-outline-success btn-lg m-1">
-                                      Go to Shop
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="ul-widget4__item ul-widget4__users">
-                                <div class="ul-widget4__img">
-                                  <img src="http://127.0.0.1:9898/assets/images/stores/Jumia_logo.png" id="userDropdown"
-                                       alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-                                </div>
-                                <div class="ul-widget2__info ul-widget4__users-info">
-                                  <a href="#" class="ul-widget2__title">
-                                    Anna Strong
-                                  </a>
-                                  <span href="#" class="ul-widget2__username">
-                                                        Visual Designer,Google Inc
-                                                    </span>
-                                </div>
-                                <div class="ul-widget4__actions">
-                                  <div class="row justify-content-center">
-                                    <span class="ul-widget__number text-success align-top mb-2">89.99 DH</span>
-                                    <button type="button" class="btn btn-outline-success btn-lg m-1">
-                                      Go to Shop
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="ul-widget4__item ul-widget4__users">
-                                <div class="ul-widget4__img">
-                                  <img src="http://127.0.0.1:9898/assets/images/stores/Jumia_logo.png" id="userDropdown"
-                                       alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-                                </div>
-                                <div class="ul-widget2__info ul-widget4__users-info">
-                                  <a href="#" class="ul-widget2__title">
-                                    Anna Strong
-                                  </a>
-                                  <span href="#" class="ul-widget2__username">
-                                                        Visual Designer,Google Inc
-                                                    </span>
-                                </div>
-                                <div class="ul-widget4__actions">
-                                  <div class="row justify-content-center">
-                                    <span class="ul-widget__number text-success align-top mb-2">89.99 DH</span>
-                                    <button type="button" class="btn btn-outline-success btn-lg m-1">
-                                      Go to Shop
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="ul-widget4__item ul-widget4__users">
-                                <div class="ul-widget4__img">
-                                  <img src="http://127.0.0.1:9898/assets/images/stores/Jumia_logo.png" id="userDropdown"
-                                       alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-                                </div>
-                                <div class="ul-widget2__info ul-widget4__users-info">
-                                  <a href="#" class="ul-widget2__title">
-                                    Anna Strong
-                                  </a>
-                                  <span href="#" class="ul-widget2__username">
-                                                        Visual Designer,Google Inc
-                                                    </span>
-                                </div>
-                                <div class="ul-widget4__actions">
-                                  <div class="row justify-content-center">
-                                    <span class="ul-widget__number text-success align-top mb-2">89.99 DH</span>
-                                    <button type="button" class="btn btn-outline-success btn-lg m-1">
-                                      Go to Shop
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="ul-widget4__item ul-widget4__users">
-                                <div class="ul-widget4__img">
-                                  <img src="http://127.0.0.1:9898/assets/images/stores/Jumia_logo.png" id="userDropdown"
-                                       alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-                                </div>
-                                <div class="ul-widget2__info ul-widget4__users-info">
-                                  <a href="#" class="ul-widget2__title">
-                                    Anna Strong
-                                  </a>
-                                  <span href="#" class="ul-widget2__username">
-                                                        Visual Designer,Google Inc
-                                                    </span>
-                                </div>
-                                <div class="ul-widget4__actions">
-                                  <div class="row justify-content-center">
-                                    <span class="ul-widget__number text-success align-top mb-2">89.99 DH</span>
-                                    <button type="button" class="btn btn-outline-success btn-lg m-1">
-                                      Go to Shop
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="tab-pane" id="__g-widget4-tab2-content">
-                            <div class="ul-widget1">
-                              <div class="ul-widget4__item  ul-widget4__users">
-                                <div class="ul-widget4__img">
-                                  <img src="http://127.0.0.1:9898/assets/images/stores/Jumia_logo.png" id="userDropdown"
-                                       alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-                                </div>
-                                <div class="ul-widget2__info ul-widget4__users-info">
-                                  <a href="#" class="ul-widget2__title">
-                                    Anna Strong
-                                  </a>
-                                  <span href="#" class="ul-widget2__username">
-                                                        Visual Designer,Google Inc
-                                                    </span>
-                                </div>
-                                <div class="ul-widget4__actions">
-                                  <div class="row justify-content-center">
-                                    <span class="ul-widget__number text-success align-top mb-2">89.99 DH</span>
-                                    <button type="button" class="btn btn-outline-success btn-lg m-1">
-                                      Go to Shop
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="ul-widget4__item ul-widget4__users">
-                                <div class="ul-widget4__img">
-                                  <img src="http://127.0.0.1:9898/assets/images/stores/Jumia_logo.png" id="userDropdown"
-                                       alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-                                </div>
-                                <div class="ul-widget2__info ul-widget4__users-info">
-                                  <a href="#" class="ul-widget2__title">
-                                    Anna Strong
-                                  </a>
-                                  <span href="#" class="ul-widget2__username">
-                                                        Visual Designer,Google Inc
-                                                    </span>
-                                </div>
-                                <div class="ul-widget4__actions">
-                                  <div class="row justify-content-center">
-                                    <span class="ul-widget__number text-success align-top mb-2">89.99 DH</span>
-                                    <button type="button" class="btn btn-outline-success btn-lg m-1">
-                                      Go to Shop
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="ul-widget4__item ul-widget4__users">
-                                <div class="ul-widget4__img">
-                                  <img src="http://127.0.0.1:9898/assets/images/stores/Jumia_logo.png" id="userDropdown"
-                                       alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-                                </div>
-                                <div class="ul-widget2__info ul-widget4__users-info">
-                                  <a href="#" class="ul-widget2__title">
-                                    Anna Strong
-                                  </a>
-                                  <span href="#" class="ul-widget2__username">
-                                                        Visual Designer,Google Inc
-                                                    </span>
-                                </div>
-                                <div class="ul-widget4__actions">
-                                  <div class="row justify-content-center">
-                                    <span class="ul-widget__number text-success align-top mb-2">89.99 DH</span>
-                                    <button type="button" class="btn btn-outline-success btn-lg m-1">
-                                      Go to Shop
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="ul-widget4__item ul-widget4__users">
-                                <div class="ul-widget4__img">
-                                  <img src="http://127.0.0.1:9898/assets/images/stores/Jumia_logo.png" id="userDropdown"
-                                       alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-                                </div>
-                                <div class="ul-widget2__info ul-widget4__users-info">
-                                  <a href="#" class="ul-widget2__title">
-                                    Anna Strong
-                                  </a>
-                                  <span href="#" class="ul-widget2__username">
-                                                        Visual Designer,Google Inc
-                                                    </span>
-                                </div>
-                                <div class="ul-widget4__actions">
-                                  <div class="row justify-content-center">
-                                    <span class="ul-widget__number text-success align-top mb-2">89.99 DH</span>
-                                    <button type="button" class="btn btn-outline-success btn-lg m-1">
-                                      Go to Shop
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </section>
           </div>
@@ -493,6 +169,9 @@ export default {
     },
     options: function (){
       return this.$store.getters["productDetails/get_FilterOptions"]
+    },
+    list_products: function (){
+      return this.$store.getters["productDetails/get_list_products"]
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="col-11">
-    <div class="breadcrumb mb-2">
+    <div class="breadcrumb mb-1">
       <h1>Détails du produit</h1>
       <ul>
         <li>

@@ -1,7 +1,7 @@
 const state = () => ({
   search_results:[],
   paginated_search_results:null,
-  pureData:null,
+  pureData:[],
   totale:0,
   next_page_url:null,
   prev_page_url:null,
@@ -127,6 +127,7 @@ const mutations = {
   SET_FILTER_STOCKAGE(state, stockage){
     state.filters.stockage = stockage
   },
+
 //  Pagination Related
   SET_TOTALE(state, totale){
     state.totale = totale
@@ -159,7 +160,7 @@ const actions = {
       'sort' : getters.get_sort_option
     }).then( (res) => {
       commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
-      let calculated_total = res.data.links.length-2
+      let calculated_total = res.data.links.length-2 //Passed
       commit('SET_TOTALE' , calculated_total)
       commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
       commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
@@ -201,7 +202,6 @@ const actions = {
   //Apply Filter
   async applyFilters({getters, commit}){
     let search_key_word = getters.getSearchKeyWord
-    //The Search_key_word_is_a_must
     if (search_key_word){
       //MapReduce the Options using Javascript spreed Operator
       let options_id = []
@@ -213,7 +213,6 @@ const actions = {
       if (option_filters.ram.length != 0){options_id.push(...option_filters.ram)}
       if (option_filters.stockage.length != 0){options_id.push(...option_filters.stockage)}
 
-
       //Posting to API
       await this.$axios.post('http://localhost:8000/api/filter_search', {
         search_key_word : search_key_word,
@@ -224,7 +223,7 @@ const actions = {
         options : options_id
       }).then( (res) => {
         commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
-        let calculated_total = res.data.links.length-2
+        let calculated_total = res.data.links.length-2 //Passed
         commit('SET_TOTALE' , calculated_total)
         commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
         commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
@@ -246,7 +245,7 @@ const actions = {
       'sort' : getters.get_sort_option
     }).then( (res) => {
       commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
-      let calculated_total = res.data.links.length-2
+      let calculated_total = res.data.links.length-2 //Passed
       commit('SET_TOTALE' , calculated_total)
       commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
       commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
@@ -259,8 +258,6 @@ const actions = {
     let search_keywork =getters.getSearchKeyWord
     await dispatch('paginated_search_results', search_keywork)
   },
-
-
 }
 
 export default {

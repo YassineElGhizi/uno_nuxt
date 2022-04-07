@@ -15,7 +15,8 @@
           {{ title }}
         </h5>
         <p class="ul-widget2__description">
-          {{ desc }}
+<!--          {{ desc }}-->
+          Variations de produits : {{variation +1}}
         </p>
         <ListProductRating :rating="rating"/>
         <div class="container">
@@ -48,11 +49,12 @@
 <script>
 export default {
   name: "ListProductItem",
-  props : ['title' ,'desc' , 'best_price' , 'images' ,'slug', 'id', 'rating'],
+  props : ['title' ,'desc' , 'best_price' , 'images' ,'slug', 'id', 'rating' , 'variation'],
   methods:{
      clicked : async function (id){
       await this.$store.dispatch('productDetails/get_product_details' , id)
       await this.$store.dispatch('productDetails/get_related_products_options' , id)
+      await this.$store.dispatch('productDetails/get_products_children' , id)
     }
   }
 }

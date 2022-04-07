@@ -29,7 +29,9 @@ const state = () => ({
     }
   },
 
-  Filteroptions:null
+  Filteroptions:[],
+  listProducts:[],
+  chosen_options:null,
 })
 
 const getters = {
@@ -38,6 +40,12 @@ const getters = {
   },
   get_FilterOptions(state){
     return state.Filteroptions
+  },
+  get_list_products(state){
+    return state.listProducts
+  },
+  get_Chosen_options(state){
+    return state.chosen_options
   }
 }
 
@@ -46,7 +54,13 @@ const mutations = {
     state.product = product
   },
   SET_FILTER_OPTIONS(state, options){
-    state.Filteroptions = options;
+    state.Filteroptions = options
+  },
+  SET_LIST_PRODUCTS(state, list_products){
+    state.listProducts = list_products
+  },
+  SET_CHOSEN_OPTIONS(state, option){
+    state.chosen_options = option
   }
 }
 
@@ -58,7 +72,6 @@ const actions = {
         commit('SET_PRODUCT' , res.data)
       })
     },
-
     async get_related_products_options({getters, commit} , id){
       this.$axios.post('http://localhost:8000/api/product_related_options' , {
         id: id
@@ -66,6 +79,30 @@ const actions = {
         commit('SET_FILTER_OPTIONS' , res.data)
       })
     },
+    async get_products_children({getters, commit} , id){
+      this.$axios.post('http://localhost:8000/api/product_children' , {
+        id: id,
+      }).then( (res) => {
+        commit('SET_LIST_PRODUCTS' , res.data)
+      })
+    },
+    async filter_prouducts_by_chosen_option({commit} , payload){
+      this.$axios.post('http://localhost:8000/api/filter_prouducts_by_chosen_option' , {
+        option_id: payload.option_id,
+        product_id: payload.product_id
+      }).then( (res) => {
+        commit('SET_LIST_PRODUCTS' , res.data)
+        console.log(res.data)
+      })
+    },
+  //Statistics Realted
+  async increaseProductClickCount({commit} , id){
+    this.$axios.post('http://localhost:8000/api/increase_product_click_count' , {
+      id: id,
+    }).then( (res) => {
+      console.log('RES =>' , res.data)
+    })
+  },
 
 }
 

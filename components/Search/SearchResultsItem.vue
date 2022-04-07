@@ -49,12 +49,10 @@ export default {
 
       this.p_tag_str = name_after_green_marker
     },
-
     async postSearch(val) {
       await this.$store.dispatch('search/paginated_search_results', val)
       this.$store.dispatch('search/getSearchKeyWord', val)
     },
-
 
   },
   mounted() {

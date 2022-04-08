@@ -69,7 +69,13 @@
             </div>
             <div class="separator-breadcrumb border-top mb-0"></div>
           </div>
-          <productDescription/>
+          <productDescription
+            :short_description="product.product_details.short_description"
+            :description="product.product_details.description"
+            :rating_value="product.product_details.rating_value"
+            :brand_description="product.brand.description"
+            :brand_name="product.brand.name"
+          />
 
           <div class="col-11">
             <div class="card">
@@ -85,70 +91,9 @@
             </div>
             <div class="separator-breadcrumb border-top mb-0"></div>
           </div>
-          <div class="col-11">
-            <section class="ul-product-detail__box">
-              <div class="row">
-                <div class="col-lg-3 col-md-3 mt-4 text-center">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="ul-product-detail__border-box">
-                        <div class="ul-product-detail--icon mb-2">
-                          <i class="i-Car text-success text-25 font-weight-500 "></i>
-                        </div>
-                        <h5 class="heading">Quick Delivery</h5>
-                        <p class="text-muted text-12">Lorem Ipsum is simply dummy text of the printing and typesetting
-                          industry.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-3 mt-4 text-center">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="ul-product-detail__border-box">
-                        <div class="ul-product-detail--icon mb-2">
-                          <i class="i-Reload text-danger text-25 font-weight-500 "></i>
-                        </div>
-                        <h5 class="heading">Back In 30 Days</h5>
-                        <p class="text-muted text-12">Lorem Ipsum is simply dummy text of the printing and typesetting
-                          industry.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="col-lg-3 col-md-3 mt-4 text-center">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="ul-product-detail__border-box">
-                        <div class="ul-product-detail--icon mb-2">
-                          <i class="i-Headset text-info text-25 font-weight-500"></i>
-                        </div>
-                        <h5 class="heading">Support 24/7</h5>
-                        <p class="text-muted text-12">Lorem Ipsum is simply dummy text of the printing and typesetting
-                          industry.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <ProductDetailsSimilarProduct/>
 
-                <div class="col-lg-3 col-md-3 mt-4 text-center">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="ul-product-detail__border-box">
-                        <div class="ul-product-detail--icon mb-2">
-                          <i class="i-Money-Bag text-warning text-25 font-weight-500"></i>
-                        </div>
-                        <h5 class="heading">High Secure Payment</h5>
-                        <p class="text-muted text-12">Lorem Ipsum is simply dummy text of the printing and typesetting
-                          industry.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
         </div>
 
         <Footer/>

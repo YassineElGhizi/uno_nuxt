@@ -39,7 +39,6 @@ export default {
   props : ['product'],
   methods:{
     goTo: function (link , id_product){
-      alert(id_product)
       this.$store.dispatch("productDetails/increaseProductClickCount" , id_product)
       window.open(link, '_blank')
     }

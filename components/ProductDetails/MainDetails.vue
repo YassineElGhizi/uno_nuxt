@@ -152,7 +152,8 @@ export default {
   name: "MainDetails",
   props: ['product_name', 'brand_name', 'short_description', 'rating', 'best_price', 'options', 'product_link', 'product_id'],
   methods: {
-    goTo: function (link) {
+    goTo: function (link , product_id) {
+      this.$store.dispatch("productDetails/increaseProductClickCount" , product_id)
       window.open(link, '_blank')
     },
     chosenFilter: function (option_id, product_id){

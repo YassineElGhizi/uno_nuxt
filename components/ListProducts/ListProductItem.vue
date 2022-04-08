@@ -55,6 +55,8 @@ export default {
       await this.$store.dispatch('productDetails/get_product_details' , id)
       await this.$store.dispatch('productDetails/get_related_products_options' , id)
       await this.$store.dispatch('productDetails/get_products_children' , id)
+      await this.$store.dispatch('productDetails/get_similar_products' , id)
+
     }
   }
 }

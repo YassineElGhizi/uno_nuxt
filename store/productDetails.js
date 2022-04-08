@@ -1,4 +1,5 @@
 const state = () => ({
+  //PS: THIS PRODUCT IS THE PARENT BY DEFAULT
   product:{
     id:null,
     name:null,
@@ -21,10 +22,12 @@ const state = () => ({
     brand:{
       id:null,
       name:null,
+      description:null
     },
     product_details:{
       id:null,
       short_description:null,
+      description:null,
       rating_value:null
     }
   },
@@ -32,6 +35,7 @@ const state = () => ({
   Filteroptions:[],
   listProducts:[],
   chosen_options:null,
+  similar_products:[]
 })
 
 const getters = {
@@ -44,8 +48,8 @@ const getters = {
   get_list_products(state){
     return state.listProducts
   },
-  get_Chosen_options(state){
-    return state.chosen_options
+  similar_products(state){
+    return state.similar_products
   }
 }
 
@@ -59,8 +63,8 @@ const mutations = {
   SET_LIST_PRODUCTS(state, list_products){
     state.listProducts = list_products
   },
-  SET_CHOSEN_OPTIONS(state, option){
-    state.chosen_options = option
+  SET_SIMILAR_PRODUCTS(state, similar_prods){
+    state.similar_products = similar_prods
   }
 }
 
@@ -101,6 +105,15 @@ const actions = {
       id: id,
     }).then( (res) => {
       console.log('RES =>' , res.data)
+    })
+  },
+
+  //Similar Products
+  async get_similar_products({commit, getters} ,id){
+    this.$axios.post('http://localhost:8000/api/similar_products' , {
+      "parent_id":id
+    }).then( (res) => {
+      commit('SET_SIMILAR_PRODUCTS' , res.data)
     })
   },
 

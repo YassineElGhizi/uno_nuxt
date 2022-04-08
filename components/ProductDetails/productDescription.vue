@@ -11,8 +11,6 @@
                      role="tab" aria-controls="nav-home" aria-selected="true">Description</a>
                   <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
                      role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</a>
-                  <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
-                     role="tab" aria-controls="nav-contact" aria-selected="false">Customize Tab</a>
                   <a class="nav-item nav-link" id="nav-brand-tab" data-toggle="tab" href="#nav-brand" role="tab"
                      aria-controls="nav-contact" aria-selected="false">About Brand</a>
                 </div>
@@ -25,63 +23,12 @@
                       <img src="http://127.0.0.1:9898/assets/images/mac_book.jpg" alt="">
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-12">
-                      <h5 class="text-uppercase font-weight-700 text-muted mt-4 mb-2"> Lorem Ipsum is
-                        simply dummy text of the printing</h5>
-                      <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                        unknown printer took a galley of type and scrambled it to make a type specimen
-                        book. It has
-                        survived not only five centuries, but also the leap into electronic typesetting,
-                        remaining essentially unchanged.
-                      </p>
+                      <h5 class="text-uppercase font-weight-700 text-muted mt-4 mb-2">
+                        {{ short_description}}
+                      </h5>
+                      <p v-html="description">
 
-                      <div class="ul-product-detail__nested-card">
-                        <div class="row text-center">
-                          <div class="col-lg-4 col-sm-12 mb-2">
-                            <div class="card">
-                              <div class="card-body">
-                                <div class="ul-product-detail__border-box">
-                                  <div class="ul-product-detail--icon mb-2">
-                                    <i class="i-Car text-success text-25 font-weight-500 "></i>
-                                  </div>
-                                  <h5 class="heading">Quick Delivery</h5>
-                                  <p class="text-muted text-12">Lorem Ipsum is simply dummy
-                                    text of the printing and typesetting industry.</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4 col-sm-12 mb-2">
-                            <div class="card">
-                              <div class="card-body">
-                                <div class="ul-product-detail__border-box">
-                                  <div class="ul-product-detail--icon mb-2">
-                                    <i class="i-Car text-primary text-25 font-weight-500 "></i>
-                                  </div>
-                                  <h5 class="heading">Quick Delivery</h5>
-                                  <p class="text-muted text-12">Lorem Ipsum is simply dummy
-                                    text of the printing and typesetting industry.</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4 col-sm-12 mb-2">
-                            <div class="card">
-                              <div class="card-body">
-                                <div class="ul-product-detail__border-box">
-                                  <div class="ul-product-detail--icon mb-2">
-                                    <i class="i-Car text-danger text-25 font-weight-500 "></i>
-                                  </div>
-                                  <h5 class="heading">Quick Delivery</h5>
-                                  <p class="text-muted text-12">Lorem Ipsum is simply dummy
-                                    text of the printing and typesetting industry.</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -92,12 +39,9 @@
                         <h3 class="heading text-22 text-success">Total Rating</h3>
                         <div class="ul-product-detail__rating">
                           <div class="rate-icon">
-                            <i class="fas fa-star" style="color: rgb(255 230 7);font-size: 16px;"></i>
-                            <i class="fas fa-star" style="color: rgb(255 230 7);font-size: 16px;"></i>
-                            <i class="fas fa-star" style="color: rgb(255 230 7);font-size: 16px;"></i>
-                            <i class="fas fa-star" style="color: rgb(255 230 7);font-size: 16px;"></i>
-                            <i class="far fa-star" style="color: rgb(255 230 7);font-size: 16px;"></i>
-                            <span class="badge badge-square-rate badge-square-opacity-warning">$Product->Product_details->rating_value</span>
+
+                            <ListProductRating :rating="rating_value"/>
+
                           </div>
                         </div>
                       </div>
@@ -123,96 +67,18 @@
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                  <div class="ul-product-detail__nested-card mt-2">
-                    <div class="row text-center">
-                      <div class="col-lg-4 col-sm-12 mb-2">
-                        <div class="card">
-                          <div class="card-body">
-                            <div class="ul-product-detail__border-box">
-                              <div class="ul-product-detail--icon mb-2">
-                                <i class="i-Car text-success text-25 font-weight-500 "></i>
-                              </div>
-                              <h5 class="heading">Quick Delivery</h5>
-                              <p class="text-muted text-12">Lorem Ipsum is simply dummy text of
-                                the printing and typesetting industry.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-12 mb-2">
-                        <div class="card">
-                          <div class="card-body">
-                            <div class="ul-product-detail__border-box">
-                              <div class="ul-product-detail--icon mb-2">
-                                <i class="i-Car text-primary text-25 font-weight-500 "></i>
-                              </div>
-                              <h5 class="heading">Quick Delivery</h5>
-                              <p class="text-muted text-12">Lorem Ipsum is simply dummy text of
-                                the printing and typesetting industry.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-12 mb-2">
-                        <div class="card">
-                          <div class="card-body">
-                            <div class="ul-product-detail__border-box">
-                              <div class="ul-product-detail--icon mb-2">
-                                <i class="i-Car text-danger text-25 font-weight-500 "></i>
-                              </div>
-                              <h5 class="heading">Quick Delivery</h5>
-                              <p class="text-muted text-12">Lorem Ipsum is simply dummy text of
-                                the printing and typesetting industry.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
                 <div class="tab-pane fade" id="nav-brand" role="tabpanel" aria-labelledby="nav-contact-tab">
                   <div class="row">
-                    <div class="col-lg-2">
+                    <div class="col-sm-2">
                       <img src="http://127.0.0.1:9898/assets/images/mac_book.jpg" alt="">
                     </div>
-                    <div class="col-lg-6">
-                      <span class="badge badge-pill badge-danger p-2 m-1">Apple</span>
-                      <h6 class="heading mt-2">Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry.</h6>
-                      <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer</p>
+                    <div class="col-sm-10">
+                      <span class="badge badge-pill badge-danger p-2 m-1">{{ brand_name }}</span>
+                      <h6 class="heading mt-2">{{brand_description}}</h6>
+                      <p class="text-muted"></p>
                     </div>
-                    <div class="col-lg-4">
-                      <div class="ul-product-detail__features mt-3">
 
-                        <ul class="m-0 p-0">
-                          <li>
-                            <i class="i-Right1 text-primary text-15 align-middle font-weight-700">
-                            </i>
-                            <span class="align-middle">This Refurbished product is tested to work
-                                                            and look like new with minimal to no signs of wear &amp; tear</span>
-                          </li>
-                          <li>
-                            <i class="i-Right1 text-primary text-15 align-middle font-weight-700">
-                            </i>
-                            <span class="align-middle">2.6GHz Intel Core i5 4th Gen processor</span>
-                          </li>
-                          <li>
-                            <i class="i-Right1 text-primary text-15 align-middle font-weight-700">
-                            </i>
-                            <span class="align-middle">8GB DDR3 RAM</span>
-                          </li>
-                          <li>
-                            <i class="i-Right1 text-primary text-15 align-middle font-weight-700">
-                            </i>
-                            <span class="align-middle">13.3-inch screen, Intel Iris 5100 1.5GB
-                                                            Graphics</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -227,6 +93,7 @@
 <script>
 export default {
   name: "productDescription",
+  props: ['short_description', 'description', 'rating_value', 'brand_description' , 'brand_name'],
 }
 </script>
 

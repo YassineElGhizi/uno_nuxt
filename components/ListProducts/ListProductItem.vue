@@ -2,7 +2,7 @@
   <div class="ul-widget4__item  ul-widget4__users">
     <div class="ul-widget4__img">
       <img
-        src=""
+        src="https://ae.pricenacdn.com/img?d=ax182&src=https%3A%2F%2Fwww.godukkan.com%2Fimage%2Fcache%2Fsampledata%2Fapple-iphone-12-pro-with-facetime-256gb-5g-pacific-blue-llaiphone-12-pro-lla-13454-1500x1500.jpg"
         id="userDropdown" alt=""
         data-toggle="dropdown"
         aria-haspopup="true"
@@ -15,18 +15,11 @@
           {{ title }}
         </h5>
         <p class="ul-widget2__description">
-<!--          {{ desc }}-->
+          <!--          {{ desc }}-->
           Variations de produits : {{variation +1}}
         </p>
         <ListProductRating :rating="rating"/>
-        <div class="container">
-          <div class="row d-flex justify-content-around "  style="background-color: orange; width:400px">
-            <div class="col col-sm-3" style="background-color: green">Store #1</div>
-            <div class="col col-sm-3" style="background-color: green">Store #2</div>
-            <div class="col col-sm-3" style="background-color: green">Store #3</div>
-          </div>
-        </div>
-
+        <ListProductsProductStore :id="id"/>
       </div>
     </div>
     <div class="ul-widget4__actions justify-content-center">
@@ -51,12 +44,11 @@ export default {
   name: "ListProductItem",
   props : ['title' ,'desc' , 'best_price' , 'images' ,'slug', 'id', 'rating' , 'variation'],
   methods:{
-     clicked : async function (id){
+    clicked : async function (id){
       await this.$store.dispatch('productDetails/get_product_details' , id)
       await this.$store.dispatch('productDetails/get_related_products_options' , id)
       await this.$store.dispatch('productDetails/get_products_children' , id)
       await this.$store.dispatch('productDetails/get_similar_products' , id)
-
     }
   }
 }

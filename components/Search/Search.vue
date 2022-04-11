@@ -37,6 +37,7 @@
                           <SearchResultsItem
                             v-for="sr in search_results"
                             :id="sr.id"
+                            :key="sr.id"
                             :name="sr.name"
                             :img="sr.images"
                             :search_input="search_input"
@@ -145,4 +146,9 @@ export default {
   font-weight: bold;
   border-color: #17b960;
 }
+
+img{
+  object-fit: cover;
+}
+
 </style>

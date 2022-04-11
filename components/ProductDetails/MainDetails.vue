@@ -8,18 +8,18 @@
               <div class="ul-product-detail__image">
                 <img
                   class="myCustomImage"
-                  src="https://static5.depositphotos.com/1034256/424/i/600/depositphotos_4246298-stock-photo-looking-at-africa.jpg"
+                  src="https://ae.pricenacdn.com/img?d=ax182&src=https%3A%2F%2Ft.infibeam.com%2Fimg%2Fothe%2F0441617%2Fa7%2Fcf%2Fiphone13prosierrabluepdpimageposition1aen.jpg.7c8d93a7cf.999x800x800.jpg"
                   alt="">
               </div>
               <div class="row justify-content-center">
                 <div class="col-md-2 p-1 m-1"
-                  v-for="x in 11">
-                  <div class="card text-white border o-hidden ">
+                  v-for="x in 9">
+                  <div class="card text-white border o-hidden change_border_color_on_hover">
                     <img
                       ref="img_tag"
                       @mouseenter="toggle_src()"
-                      class="card-img"
-                      src="https://static5.depositphotos.com/1034256/424/i/600/depositphotos_4246298-stock-photo-looking-at-africa.jpg"
+                      class="card-img my_curssor"
+                      src="https://ae.pricenacdn.com/img?d=ax182&src=https%3A%2F%2Ft.infibeam.com%2Fimg%2Fothe%2F0441617%2Fa7%2Fcf%2Fiphone13prosierrabluepdpimageposition1aen.jpg.7c8d93a7cf.999x800x800.jpg"
                       alt="">
                   </div>
                 </div>
@@ -174,10 +174,6 @@ export default {
 .card-img {
   height: 3.4vw;
 }
-.myCustombtn:hover {
-  /*color: white !important;*/
-}
-
 .btn-secondary:focus, .btn-outline-secondary:focus{
   box-shadow: none !important;
 }
@@ -195,6 +191,15 @@ export default {
 .btn-secondary:hover, .btn-outline-secondary:hover{
   box-shadow: none;
   border-color: black;
+}
+.my_curssor{
+  cursor: pointer;
+}
+img{
+  object-fit: cover;
+}
+.change_border_color_on_hover:hover{
+  border-color: #17B960 !important;
 }
 
 </style>

@@ -14,15 +14,27 @@
       <div class="p-0 m-3">
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="firstName1">Min</label>
+            <label >Min</label>
             <input type="text" class="form-control form-control-rounded" id="input-min_Prix"
                    name="min_price" placeholder="min Prix">
           </div>
           <div class="col-md-6 mb-3">
-            <label for="firstName1">Max</label>
+            <label >Max</label>
             <input type="text" class="form-control form-control-rounded" id="input-max_Prix"
                    name="max_price" placeholder="max Prix">
           </div>
+          <div class="col-sm-12">
+<!--            <vue-slider-->
+<!--              v-model="value"-->
+<!--              :min="0"-->
+<!--              :max="100"-->
+<!--              :interval="5"-->
+<!--              :enable-cross="false"-->
+<!--              :tooltip-formatter="priceformatter"-->
+<!--            />-->
+          </div>
+
+
         </div>
       </div>
     </div>
@@ -30,11 +42,16 @@
 </template>
 
 <script>
+// import VueSlider from 'vue-slider-component'
+// import 'vue-slider-component/theme/antd.css'
 export default {
-  name: "SidebarFilterPriceComponent.vue",
+    name: "SidebarFilterPriceComponent.vue",
+  // components:{VueSlider,},
   data: function (){
     return{
-      clicked : false
+      clicked : false,
+      // value:[0, 100000],
+      // priceformatter: "{value} DH",
     }
   },
   methods :{
@@ -53,7 +70,6 @@ export default {
 [type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus
 {
   --tw-ring-color: #17B960;
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   border-color: #17B960;
 }
 

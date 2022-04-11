@@ -6,6 +6,7 @@
       v-for="t in tendances"
       @click.native="postSearch(t.name)"
       :id="t.id"
+      v-bind:key="t.id"
       to="/search-results"
     >
       {{t.name}}

@@ -1,6 +1,6 @@
 <template>
   <div class="col-11">
-    <div class="breadcrumb mb-1">
+    <div class="breadcrumb">
       <h1>Détails du produit</h1>
       <ul>
         <li>
@@ -15,7 +15,7 @@
         <li>{{ product_name }}</li>
       </ul>
     </div>
-    <div class="separator-breadcrumb border-top mb-1"></div>
+    <div class="separator-breadcrumb border-top"></div>
   </div>
 </template>
 

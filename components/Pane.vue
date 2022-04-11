@@ -10,9 +10,11 @@
             <div class="col-9 pr-0">
               <div class="row">
                 <SubCategory
-                  v-for="x in Object.keys(cat).length"
+                  v-for="(x, i) in Object.keys(cat).length"
                   :title="Object.keys(cat)[x-1]"
-                  :body="cat">
+                  :body="cat"
+                  :key="i"
+                >
                 </SubCategory>
 
               </div>

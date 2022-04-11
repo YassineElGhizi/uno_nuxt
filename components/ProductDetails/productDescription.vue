@@ -8,27 +8,31 @@
               <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                   <a class="nav-item nav-link active show" id="nav-home-tab" data-toggle="tab" href="#nav-home"
-                     role="tab" aria-controls="nav-home" aria-selected="true">Description</a>
+                     role="tab" aria-controls="nav-home" aria-selected="true">
+                    Description
+                  </a>
                   <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
-                     role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</a>
+                     role="tab" aria-controls="nav-profile" aria-selected="false">
+                    Reviews
+                  </a>
                   <a class="nav-item nav-link" id="nav-brand-tab" data-toggle="tab" href="#nav-brand" role="tab"
-                     aria-controls="nav-contact" aria-selected="false">About Brand</a>
+                     aria-controls="nav-contact" aria-selected="false">
+                    About Brand
+                  </a>
                 </div>
               </nav>
               <div class="tab-content ul-tab__content p-5" id="nav-tabContent">
                 <div class="tab-pane fade active show" id="nav-home" role="tabpanel"
                      aria-labelledby="nav-home-tab">
                   <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="col-sm-12">
                       <img src="http://127.0.0.1:9898/assets/images/mac_book.jpg" alt="">
                     </div>
-                    <div class="col-lg-8 col-md-8 col-sm-12">
+                    <div class="col-sm-12">
                       <h5 class="text-uppercase font-weight-700 text-muted mt-4 mb-2">
-                        {{ short_description}}
+                         {{ short_description}}
                       </h5>
-                      <p v-html="description">
-
-                      </p>
+                      <p v-html="description"></p>
                     </div>
                   </div>
                 </div>
@@ -75,7 +79,7 @@
                     </div>
                     <div class="col-sm-10">
                       <span class="badge badge-pill badge-danger p-2 m-1">{{ brand_name }}</span>
-                      <h6 class="heading mt-2">{{brand_description}}</h6>
+                      <h6 class="heading mt-2" >{{brand_description}}</h6>
                       <p class="text-muted"></p>
                     </div>
 

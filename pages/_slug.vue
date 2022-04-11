@@ -4,7 +4,8 @@
 
 <script>
 export default {
-  name: "_slug"
+  // name: "_slug"
+  name: "ReelNameToFixError"
 }
 </script>
 

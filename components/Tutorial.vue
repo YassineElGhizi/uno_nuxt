@@ -46,7 +46,9 @@
                       <Pane
                         v-for="y in Object.keys(categories.parents)"
                         :cat="categories.nested_json[categories.parents[y].name]"
-                        :id_count=" parseInt(y)" >
+                        :id_count=" parseInt(y)"
+                        v-bind:key="y"
+                      >
                       </Pane>
 
                   </div>
@@ -69,6 +71,7 @@
                         :pro_title="p.name"
                         :prod_best_price="p.best_price"
                         :img_url="p.images"
+                        v-bind:key="p.id"
                       ></CardItem>
 
                     </div>

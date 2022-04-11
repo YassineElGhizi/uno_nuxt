@@ -4,10 +4,11 @@
       <div class="row">
 
         <ProductDetailsSimilarProductItem
-          v-for="sp in similar_products"
+          v-for="(sp,i) in similar_products"
           :name="sp.name"
           :image="sp.image"
           :short_description="sp.short_description"
+          :key="i"
         />
 
       </div>

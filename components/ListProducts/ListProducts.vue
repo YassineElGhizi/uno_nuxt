@@ -46,6 +46,7 @@
               :slug="p.slug"
               :rating="p.product_details.rating_value"
               :variation="p.children_count"
+              v-bind:key="p.id"
               />
             </div>
           </div>

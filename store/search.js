@@ -127,6 +127,11 @@ const mutations = {
   SET_FILTER_STOCKAGE(state, stockage){
     state.filters.stockage = stockage
   },
+  SET_PRICE(state, price){
+    state.filters.min_price = price.min_price
+    state.filters.max_price = price.max_price
+  },
+
 
 //  Pagination Related
   SET_TOTALE(state, totale){
@@ -197,6 +202,9 @@ const actions = {
   },
   setFilterStockage({commit}, stoackage){
     commit('SET_FILTER_STOCKAGE' , stoackage)
+  },
+  setFilterPrice({commit}, price){
+    commit('SET_PRICE' , price)
   },
 
   //Apply Filter

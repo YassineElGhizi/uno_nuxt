@@ -78,19 +78,17 @@
             :brand_name="product.brand.name"
           />
 
-          <div class="col-11">
-            <div class="card">
-              <div class="card-body">
-                <div class="card-title"> Price Tracking</div>
-                <div id="Price-tracking-chart"></div>
-              </div>
-            </div>
-          </div>
+          <ProductDetailsPriceHistory
+            :id_product="product.id"
+            :product_name="product.name"
+            :best_price_histort="best_price_histort"
+            :average_price_histort="average_price_histort"
+          />
+
           <div class="col-10 m-4 mb-0">
             <div class="breadcrumb">
               <h1>Similare Product</h1>
             </div>
-            <div class="separator-breadcrumb border-top mb-0"></div>
           </div>
 
           <ProductDetailsSimilarProduct/>
@@ -118,18 +116,21 @@ export default {
     },
     list_products: function (){
       return this.$store.getters["productDetails/get_list_products"]
-    }
+    },
+    best_price_histort: function (){
+      return this.$store.getters["priceHistory/get_best_price_history"]
+    },
+    average_price_histort: function (){
+      return this.$store.getters["priceHistory/get_average_price_history"]
+    },
   }
 }
 </script>
-
 <style scoped>
 .my_grey_background {
   background-color: #F0F2F5;
 }
-
 img{
   object-fit: cover;
 }
-
 </style>

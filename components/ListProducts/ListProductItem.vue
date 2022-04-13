@@ -49,6 +49,7 @@ export default {
       await this.$store.dispatch('productDetails/get_related_products_options' , id)
       await this.$store.dispatch('productDetails/get_products_children' , id)
       await this.$store.dispatch('productDetails/get_similar_products' , id)
+      await this.$store.dispatch('priceHistory/get_price_history' , id)
     }
   }
 }

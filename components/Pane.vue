@@ -37,5 +37,6 @@ export default {
 <style scoped>
 img{
   height: 26rem;
+  object-fit: cover;
 }
 </style>

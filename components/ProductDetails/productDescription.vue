@@ -26,9 +26,6 @@
                      aria-labelledby="nav-home-tab">
                   <div class="row">
                     <div class="col-sm-12">
-                      <img src="http://127.0.0.1:9898/assets/images/mac_book.jpg" alt="">
-                    </div>
-                    <div class="col-sm-12">
                       <h5 class="text-uppercase font-weight-700 text-muted mt-4 mb-2">
                          {{ short_description}}
                       </h5>

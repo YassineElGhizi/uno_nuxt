@@ -1,3 +1,5 @@
+import category from "@/components/Category/Category";
+
 const state = () => ({
   search_results:[],
   paginated_search_results:null,
@@ -179,8 +181,8 @@ const actions = {
   },
 
   //FILTER RELATED
-  setFilterBrand({commit}, color){
-    commit('SET_FILTER_BRAND' , color)
+  setFilterBrand({commit}, brand){
+    commit('SET_FILTER_BRAND' , brand)
   },
   setFilterCategory({commit}, category){
     commit('SET_FILTER_CATEGORY', category)
@@ -240,6 +242,22 @@ const actions = {
       alert('NO Search keyword found !')
     }
   },
+
+  async applyCategortFilter({getters, commit}){
+      //Posting to API
+      await this.$axios.post('http://localhost:8000/api/filter_category_only_search', {
+        category : getters.getFilters.category,
+      }).then( (res) => {
+        console.log('category =>' , category)
+        console.log('lol =>' , res.data)
+        commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
+        let calculated_total = res.data.links.length-2 //Passed
+        commit('SET_TOTALE' , calculated_total)
+        commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
+        commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
+      })
+    },
+
 
   //  Paginated Related
   set_current_page({commit}, current_page){

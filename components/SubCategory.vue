@@ -15,7 +15,11 @@
 
     <ul class="links">
       <li v-for="b in body[`${title}`]">
-        <a href="#">{{b}}</a>
+        <NuxtLink
+          to="/search-results"
+          @click.native="postSearch(b.id)">
+          {{b.name}}
+        </NuxtLink>
       </li>
     </ul>
   </div>
@@ -23,6 +27,15 @@
 
 <script>
 export default {
-  props:['title', 'body',]
+  props:['title', 'body',],
+  methods:{
+    async postSearch(id_brand) {
+      this.$store.dispatch('search/setFilterCategory' , parseInt(id_brand)).then(
+        () => {
+          this.$store.dispatch('search/applyCategortFilter')
+        }
+      )
+    },
+  },
 }
 </script>

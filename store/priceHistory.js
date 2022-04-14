@@ -1,6 +1,6 @@
 const state = () => ({
-  best_price_history:null,
-  average_price_history:null,
+  best_price_history:[{},],
+  average_price_history:[{},],
 })
 
 const getters = {
@@ -17,7 +17,7 @@ const mutations = {
     state.best_price_history = best_price_history
   },
   SET_AVERAGE_PRICE_HISTORY(state,average_price_history) {
-    state.best_price_history = average_price_history
+    state.average_price_history = average_price_history
   },
 }
 

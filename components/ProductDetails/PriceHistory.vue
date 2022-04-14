@@ -4,7 +4,11 @@
       <div class="card-body">
         <div class="card-title">Traçage de prix</div>
         <div id="Price-tracking-chart">
-          <highchart :options="chartOptions"  />
+
+          <highchart
+            :options="chartOptions"
+          />
+
         </div>
       </div>
     </div>
@@ -14,14 +18,17 @@
 <script>
 export default {
   name: "PriceHistory",
-  props : ['id_product', 'product_name','best_price_histort','average_price_histort'],
+  props : ['id_product', 'product_name','best_price_history','average_price_history'],
   watch:{
     product_name : function (){
       this.chartOptions.title.text = this.$props.product_name
     },
-    // best_price_histort: function (){
-    //   this.chartOptions.series[0].data
-    // }
+    best_price_history: function (){
+      this.chartOptions.series[0].data = this.$props.best_price_history
+    },
+    average_price_history : function (){
+      this.chartOptions.series[1].data = this.$props.average_price_history
+    }
   },
   data: function (){
     return{
@@ -78,24 +85,15 @@ export default {
               }
             }
           }},
-        legend: {
-          layout: 'vertical',
-          align: 'right',
-          verticalAlign: 'middle'
-        },
+        // legend: {
+        //   layout: 'vertical',
+        //   align: 'right',
+        //   verticalAlign: 'middle'
+        // },
         series: [
           {
             name:"Meilleur Prix de produit",
-            data: [
-              {x: 0, y:9590},
-              {x: 1, y:9890},
-              {x: 3, y:8990},
-              {x: 4, y:9590},
-              {x: 5, y:9590},
-              {x: 8, y:9690},
-              {x: 9, y:9490},
-              {x: 10, y:9590}
-            ],
+            data: this.$props.best_price_history,
             color: '#17B960',
             lineWidth:4,
             marker:{
@@ -104,16 +102,7 @@ export default {
           },
           {
             name:"Prix moyenne de produit",
-            data: [
-              {x: 0, y:10000},
-              {x: 1, y:10500},
-              {x: 3, y:9700},
-              {x: 4, y:9700},
-              {x: 5, y:9900},
-              {x: 8, y:10000},
-              {x: 9, y:10500},
-              {x: 10, y:10700}
-            ],
+            data: this.$props.average_price_history,
             color: '#C733A6',
             lineWidth:4,
             marker:{

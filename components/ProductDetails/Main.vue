@@ -81,8 +81,8 @@
           <ProductDetailsPriceHistory
             :id_product="product.id"
             :product_name="product.name"
-            :best_price_histort="best_price_histort"
-            :average_price_histort="average_price_histort"
+            :best_price_history="best_price_histort"
+            :average_price_history="average_price_histort"
           />
 
           <div class="col-10 m-4 mb-0">

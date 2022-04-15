@@ -10,11 +10,7 @@
       v-on:mouseleave="toggleClass()"
       ref="a_cat"
     >
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
+
         {{cat.name}}
     </a>
   </div>

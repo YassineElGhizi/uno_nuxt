@@ -2,9 +2,9 @@
   <div class="border sticky-top" style="background-color: white">
     <div class="d-flex justify-content-around centre_my-nav">
         <div class="pt-2 pb-3">
-          <a href="#">
+          <NuxtLink to="/">
             <img src="/logo_supero.jpg" alt="" width='180'>
-          </a>
+          </NuxtLink>
         </div>
         <div class="pt-4">
           <a href="#" class="text-18 typo_link text-success t-font-boldest black_color"

@@ -2,6 +2,9 @@
     <div>
       <div class="row align-items-start">
         <div class="col col-sm-3 text-small mt-2">Disponible en:</div>
+
+        <Loading v-if="stores.length === 0"/>
+
         <div
           class="col col-sm-3"
           v-for="s in stores">

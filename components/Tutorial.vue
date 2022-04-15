@@ -116,6 +116,7 @@ export default {
 
   mounted() {
     this.$store.dispatch('search/SearchSetDefault')
+    this.$store.dispatch('search/emptyData')
   }
 
 }

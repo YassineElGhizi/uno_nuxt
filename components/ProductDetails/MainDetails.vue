@@ -28,11 +28,13 @@
             <div class="col-sm-8">
               <div class="ul-product-detail__brand-name">
                 <div class="row">
-                  <div class="col col-sm-7">
-                    <h5 class="heading text-24">{{ product_name }}</h5>
+                  <div class="col col-sm-7" v-if="product_name">
+                    <h5 class="heading text-24" >{{ product_name }}</h5>
                     <span class="text-14">{{ short_description }}</span>
                     <div class="ul-product-detail__rating mt-2">
+
                       <ListProductRating :rating="rating"/>
+
                     </div>
                     <div class="ul-product-detail__features">
                       <ul class="m-0 p-2">
@@ -84,6 +86,7 @@
                       </ul>
                     </div>
                   </div>
+                  <div class="col col-sm-7" v-else ><Loading/></div>
                   <div class="col col-sm-5">
                     <div class="row mb-5">
                       <div class="col-6">
@@ -120,7 +123,8 @@
                       <div class="col col-lg-9 col-md-9 col-sm-12">
                         <div class="ul-widget4__actions">
                           <p class="text-18 text-success text-600 align-top">Meilleur Prix</p>
-                          <p class="text-default text-28 text-800 align-top">{{ best_price }} DH </p>
+                          <p class="text-default text-28 text-800 align-top" v-if="best_price">{{ best_price }} DH </p>
+                          <p v-else ><Loading/></p>
                           <div class="ul-widget4__img mb-4">
                             <img class="w-100" src="" id="userDropdown" alt="" data-toggle="dropdown"
                                  aria-haspopup="true" aria-expanded="false">

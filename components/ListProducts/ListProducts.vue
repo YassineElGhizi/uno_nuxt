@@ -36,17 +36,19 @@
           <div class="tab-pane active show" id="tab_list_view">
             <div class="ul-widget1">
 
+              <Loading v-if="total === 0" />
+
               <LazyListProductItem
-              v-for="p in paginated"
-              :title = "p.name"
-              :desc = "p.title"
-              :best_price = "p.best_price"
-              :images = "p.images"
-              :id="p.id"
-              :slug="p.slug"
-              :rating="p.product_details.rating_value"
-              :variation="p.children_count"
-              v-bind:key="p.id"
+                v-for="p in paginated"
+                :title = "p.name"
+                :desc = "p.title"
+                :best_price = "p.best_price"
+                :images = "p.images"
+                :id="p.id"
+                :slug="p.slug"
+                :rating="p.product_details.rating_value"
+                :variation="p.children_count"
+                v-bind:key="p.id"
               />
             </div>
           </div>

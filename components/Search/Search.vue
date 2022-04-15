@@ -10,9 +10,9 @@
               <div class="col col-lg-2 col-md-2 p-0">
 
                 <div class="d-flex justify-content-center">
-                  <a href="http://127.0.0.1:8000">
+                  <NuxtLink to="/">
                     <img src="/logo_supero.jpg" alt="" width='180'>
-                  </a>
+                  </NuxtLink>
                 </div>
               </div>
 

@@ -71,6 +71,7 @@ const mutations = {
   },
   SET_EMPTY(state){
     state.search_results=[]
+    state.totale = 0
   },
   SET_PAGINATED_SEARCH_RESULTS(state, data){
     state.pureData = data.data
@@ -212,26 +213,35 @@ const actions = {
   //Apply Filter
   async applyFilters({getters, commit}){
     let search_key_word = getters.getSearchKeyWord
-    if (search_key_word){
-      //MapReduce the Options using Javascript spreed Operator
-      let options_id = []
-      let option_filters = getters.getFilters
-      if (option_filters.color!= null){options_id.push(parseInt(option_filters.color))}
-      if (option_filters.type_hd.length != 0){options_id.push(...option_filters.type_hd)}
-      if (option_filters.taille_ecran.length != 0){options_id.push(...option_filters.taille_ecran)}
-      if (option_filters.size.length != 0){options_id.push(...option_filters.size)}
-      if (option_filters.ram.length != 0){options_id.push(...option_filters.ram)}
-      if (option_filters.stockage.length != 0){options_id.push(...option_filters.stockage)}
+    //MapReduce the Options using Javascript spreed Operator
+    let options_id = []
+    let option_filters = getters.getFilters
+    if (option_filters.color!= null){options_id.push(parseInt(option_filters.color))}
+    if (option_filters.type_hd.length != 0){options_id.push(...option_filters.type_hd)}
+    if (option_filters.taille_ecran.length != 0){options_id.push(...option_filters.taille_ecran)}
+    if (option_filters.size.length != 0){options_id.push(...option_filters.size)}
+    if (option_filters.ram.length != 0){options_id.push(...option_filters.ram)}
+    if (option_filters.stockage.length != 0){options_id.push(...option_filters.stockage)}
 
-      //Posting to API
-      await this.$axios.post('http://localhost:8000/api/filter_search', {
-        search_key_word : search_key_word,
-        category : option_filters.category,
-        brand : option_filters.brand,
-        min_price : option_filters.min_price,
-        max_price : option_filters.max_price,
-        options : options_id
-      }).then( (res) => {
+    let pyloadData = {
+      search_key_word : search_key_word,
+      category : option_filters.category,
+      brand : option_filters.brand,
+      min_price : option_filters.min_price,
+      max_price : option_filters.max_price,
+      options : options_id
+    }
+
+    if (pyloadData.search_key_word){
+      await this.$axios.post('http://localhost:8000/api/filter_search', pyloadData ).then( (res) => {
+        commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
+        let calculated_total = res.data.links.length-2 //Passed
+        commit('SET_TOTALE' , calculated_total)
+        commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
+        commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
+      })
+    }else if(pyloadData.category){
+      await this.$axios.post('http://localhost:8000/api/filter_search_category_based', pyloadData ).then( (res) => {
         commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
         let calculated_total = res.data.links.length-2 //Passed
         commit('SET_TOTALE' , calculated_total)
@@ -239,17 +249,14 @@ const actions = {
         commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
       })
     }else{
-      alert('NO Search keyword found !')
+      alert('NO Search keyword No Category Found !')
     }
   },
 
   async applyCategortFilter({getters, commit}){
-      //Posting to API
       await this.$axios.post('http://localhost:8000/api/filter_category_only_search', {
         category : getters.getFilters.category,
       }).then( (res) => {
-        console.log('category =>' , category)
-        console.log('lol =>' , res.data)
         commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
         let calculated_total = res.data.links.length-2 //Passed
         commit('SET_TOTALE' , calculated_total)

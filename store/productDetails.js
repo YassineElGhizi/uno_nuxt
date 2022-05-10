@@ -91,7 +91,7 @@ const actions = {
       }
       pyload.id = id
 
-      this.$axios.post('http://localhost:8000/api/product_details' , pyload).then( (res) => {
+      this.$axios.post(this.$axios.defaults.baseURL + '/product_details' , pyload).then( (res) => {
         commit('SET_PRODUCT' , res.data)
       })
     },
@@ -104,7 +104,7 @@ const actions = {
       }
       pyload.id = id
 
-      this.$axios.post('http://localhost:8000/api/product_related_options' , pyload).then( (res) => {
+      this.$axios.post(this.$axios.defaults.baseURL + '/product_related_options' , pyload).then( (res) => {
         commit('SET_FILTER_OPTIONS' , res.data)
       })
     },
@@ -117,20 +117,20 @@ const actions = {
       }
       pyload.id = id
 
-      this.$axios.post('http://localhost:8000/api/product_children' , pyload).then( (res) => {
+      this.$axios.post(this.$axios.defaults.baseURL + '/product_children' , pyload).then( (res) => {
         commit('SET_LIST_PRODUCTS' , res.data)
       })
     },
 
     async filter_prouducts_by_chosen_option({commit} , payload){
-      this.$axios.post('http://localhost:8000/api/filter_prouducts_by_chosen_option' , payload).then( (res) => {
+      this.$axios.post(this.$axios.defaults.baseURL + '/filter_prouducts_by_chosen_option' , payload).then( (res) => {
         commit('SET_LIST_PRODUCTS' , res.data)
       })
     },
 
   //Statistics Related
   async increaseProductClickCount({commit} , id){
-    this.$axios.post('http://localhost:8000/api/increase_product_click_count' , {
+    this.$axios.post(this.$axios.defaults.baseURL + '/increase_product_click_count' , {
       id: id,
     }).then( (res) => {
       console.log('RES =>' , res.data)
@@ -147,7 +147,7 @@ const actions = {
     }
     pyload.id = id
 
-    this.$axios.post('http://localhost:8000/api/similar_products' , pyload).then( (res) => {
+    this.$axios.post(this.$axios.defaults.baseURL + '/similar_products' , pyload).then( (res) => {
       commit('SET_SIMILAR_PRODUCTS' , res.data)
     })
   },

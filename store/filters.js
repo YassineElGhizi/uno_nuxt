@@ -25,14 +25,14 @@ const mutations = {
 
 const actions = {
   async fetch_filters({commit}){
-    await this.$axios.get('http://localhost:8000/api/options').then( (res) => {
+    await this.$axios.get(this.$axios.defaults.baseURL + '/options').then( (res) => {
       commit('SET_FILTERS', res.data
       )}
     )
   },
 
   async fetch_brands({commit}){
-    await this.$axios.get('http://localhost:8000/api/brands').then( (res) => {
+    await this.$axios.get(this.$axios.defaults.baseURL + '/brands').then( (res) => {
       commit('SET_BRANDS', res.data
       )}
     )

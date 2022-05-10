@@ -63,7 +63,7 @@
                   </span>
                 </button>
               </div>
-              <div class="col-lg-8 pl-5 mt-3">
+              <div class="col-lg-9 pl-5 mt-3">
 
                 <Tendance/>
 
@@ -112,9 +112,11 @@ export default {
       if (value === '') {
         this.empty_products()
         this.toggle_visibility_fx()
+        this.$store.dispatch('search/getSearchKeyWord' , value)
       } else {
         this.handleChnage(value)
         this.toggle_visibility_fx()
+        this.$store.dispatch('search/getSearchKeyWord' , value)
       }
     }
   },
@@ -122,7 +124,7 @@ export default {
   methods: {
     handleChnage: function (txt) {
       setTimeout(
-        axios.post('http://localhost:8000/api/search', {search_input: txt}).then((res) => {
+        axios.post(this.$axios.defaults.baseURL + '/search', {search_input: txt}).then((res) => {
           this.$store.dispatch('search/getData', res.data)
         }),
         500

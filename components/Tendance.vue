@@ -2,7 +2,7 @@
   <div class="d-flex justify-content-center">
     <strong class="text-16 text-success mr-2">Tendances : </strong>
     <NuxtLink
-      class="font-weight-semibold  text-default text-14 t-font-boldest mr-3 black_color"
+      class="font-weight-semibold  text-default text-14  mr-3 black_color"
       v-for="t in tendances"
       @click.native="postSearch(t.name)"
       :id="t.id"
@@ -26,15 +26,13 @@ export default {
     update_trends : function (data){
       this.tendances = data
     },
-
     async postSearch(val) {
-      await this.$store.dispatch('search/paginated_search_results', val)
       this.$store.dispatch('search/getSearchKeyWord', val)
+      await this.$store.dispatch('search/paginated_search_results', val)
     },
   },
-
   mounted() {
-    axios.get('http://localhost:8000/api/trends').then( (res) => {
+    axios.get(this.$axios.defaults.baseURL + '/trends').then( (res) => {
       this.update_trends(res.data)
     })
   }

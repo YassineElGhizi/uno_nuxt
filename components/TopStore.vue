@@ -26,7 +26,7 @@
                   class="col"
                   v-for="s in eco_stores"
                 >
-                  <div class="card o-hidden border mb-4 d-flex flex-column containerFixedSize">
+                  <div class="card o-hidden border mb-4 d-flex flex-column containerFixedSize fix_max_width">
                     <img :src=s.logo alt="" class="fixedSize">
                     <a class="" href="#" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>
                     <div class="flex-grow-1 d-bock">
@@ -81,6 +81,10 @@ export default {
 
 .containerFixedSize{
   width: fit-content;
+}
+
+.fix_max_width{
+  max-width: 116px;
 }
 
 </style>

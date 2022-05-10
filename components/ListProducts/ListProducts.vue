@@ -7,6 +7,10 @@
             <h3 class="ul-widget__head-title mytitle">
               Liste des produits
             </h3>
+            <p>
+              Tags:
+              <span class="badge badge-success">Light</span>
+            </p>
           </div>
           <div>
             <div class="d-none d-sm-inline-block">

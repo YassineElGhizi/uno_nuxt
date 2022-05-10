@@ -25,9 +25,7 @@
 
 
 <script>
-import axios from "axios";
 export default {
-
   data(){
     return{
       p_tag_str: '',
@@ -50,8 +48,10 @@ export default {
       this.p_tag_str = name_after_green_marker
     },
     async postSearch(val) {
-      await this.$store.dispatch('search/paginated_search_results', val)
-      this.$store.dispatch('search/getSearchKeyWord', val)
+      //Removing html keeping text only
+      let striped_val = val.replace(/<\/?[^>]+(>|$)/g, "")
+      this.$store.dispatch('search/getSearchKeyWord', striped_val)
+      await this.$store.dispatch('search/paginated_search_results')
     },
 
   },

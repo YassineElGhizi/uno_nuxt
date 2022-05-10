@@ -2,7 +2,7 @@
   <div>
     <div class="app-admin-wrap layout-sidebar-large clearfix mybackground">
 
-    <NavbarUpperNav/>
+<!--    <NavbarUpperNav/>-->
     <Navbar/>
 
       <div class="main-content-wrap d-flex flex-column flex-grow-1 ">
@@ -15,7 +15,7 @@
                     <div class="card-body p-3 ">
                       <div class="card-title" style="margin-bottom:0.6rem">
                         <font-awesome-icon icon="list" class="text-success font-weight-600 mr-3" />
-                        <span class="text-22 font-weight-800" style="color: black">Catégories</span>
+                        <span class="text-18 font-weight-600" style="color: black">Catégories</span>
                       </div>
 
                       <CategoryContainer/>
@@ -109,7 +109,7 @@ export default {
   async fetch() {
     await this.$store.dispatch('categories/getData')
 
-    await axios.get('http://localhost:8000/api/product_popular').then( (res) => {
+    await axios.get(this.$axios.defaults.baseURL + '/product_popular').then( (res) => {
       this.$store.dispatch('products/getData',res.data)
     })
   },

@@ -29,11 +29,10 @@ export default {
     }
   },
   mounted() {
-        axios.post('http://localhost:8000/api/search_product_store', {
+        axios.post(this.$axios.defaults.baseURL + '/search_product_store', {
           id:this.id
         }).then(
       (res) => {
-        console.log('css' , res.data)
         this.stores = res.data
       }
     )

@@ -47,7 +47,7 @@ const actions = {
 
     console.log('pyload stats =>' , pyload)
 
-    await this.$axios.post('http://localhost:8000/api/price_tracking' , pyload).then( (res) => {
+    await this.$axios.post(this.$axios.defaults.baseURL + '/price_tracking' , pyload).then( (res) => {
       commit('SET_BEST_PRICE_HISTORY' , res.data.best_price_history)
       commit('SET_AVERAGE_PRICE_HISTORY' , res.data.average_price_history)
     })

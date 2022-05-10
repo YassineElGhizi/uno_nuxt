@@ -7,7 +7,7 @@
         <img class="card-img" src="/images/img1.png" alt="Card image">
         <div class="card-image-overlay">
           <div class="row">
-            <div class="col-9 pr-0">
+            <div class="col-12 pr-0">
               <div class="row">
                 <SubCategory
                   v-for="(x, i) in Object.keys(cat).length"

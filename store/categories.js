@@ -26,13 +26,13 @@ const mutations = {
 
 const actions = {
   async getData({commit}){
-    await this.$axios.get('http://localhost:8000/api/categories').then( (res) => {
+    await this.$axios.get(this.$axios.defaults.baseURL + '/categories').then( (res) => {
       commit('SET_PARENTS', res.data)
     })
   },
 
   async getCatsIds({commit}){
-    await this.$axios.get('http://localhost:8000/api/categories_ids').then((res) => {
+    await this.$axios.get(this.$axios.defaults.baseURL + '/categories_ids').then((res) => {
       commit('SET_CATS_IDS' , res.data)
     })
   }

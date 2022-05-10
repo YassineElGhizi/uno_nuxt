@@ -1,11 +1,10 @@
 <template>
-  <ProductDetailsMain/>
+  <OurStoresMain/>
 </template>
 
 <script>
 export default {
-  // name: "_slug"
-  name: "ReelNameToFixNamingEroor"
+  name: "stores"
 }
 </script>
 

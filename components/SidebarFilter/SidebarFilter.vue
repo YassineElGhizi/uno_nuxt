@@ -58,7 +58,7 @@
         <button
           type="submit"
           class="btn btn-success btn-lg btn-block w-75 m-3 search_btn"
-          @click="perforeFilter"
+          @click="perforemFilter"
         >Search</button>
       </div>
     </div>
@@ -111,8 +111,8 @@ export default {
     await this.$store.dispatch('options/fetch_options')
   },
   methods:{
-    async perforeFilter(){
-      await this.$store.dispatch('search/applyFilters')
+    async perforemFilter(){
+      await this.$store.dispatch('search/paginated_search_results')
     }
   }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-4 p-3 pt-0">
+  <div class="col-md-2 p-3 pt-0">
     <p class="
       text-success
       font-weight-semibold
@@ -30,9 +30,11 @@ export default {
   props:['title', 'body',],
   methods:{
     async postSearch(id_brand) {
+      //Update the filter
       this.$store.dispatch('search/setFilterCategory' , parseInt(id_brand)).then(
         () => {
-          this.$store.dispatch('search/applyCategortFilter')
+          //then submit a search
+          this.$store.dispatch('search/paginated_search_results' , '')
         }
       )
     },

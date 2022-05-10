@@ -16,7 +16,7 @@ const mutations = {
 
 const actions = {
   async getEco_stores({commit}){
-    await this.$axios.get('http://localhost:8000/api/stores_by_name').then( (res) => {
+    await this.$axios.get(this.$axios.defaults.baseURL + '/stores_by_name').then( (res) => {
       commit('SET_ECO_STORES', res.data
     )}
     )

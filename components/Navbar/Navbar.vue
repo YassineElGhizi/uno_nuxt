@@ -7,25 +7,25 @@
           </NuxtLink>
         </div>
         <div class="pt-4">
-          <a href="#" class="text-18 typo_link text-success t-font-boldest black_color"
+          <a href="#" class="text-18 typo_link text-success black_color"
              style="color: black !important;">
             Magasins
           </a>
         </div>
         <div class="pt-4">
-          <a href="#" class="text-18 typo_link text-success t-font-boldest black_color"
+          <a href="#" class="text-18 typo_link text-success black_color"
              style="color: black !important;">
             Marques
           </a>
         </div>
         <div class="pt-4">
-          <a href="#" class="text-18 typo_link text-success t-font-boldest black_color"
+          <a href="#" class="text-18 typo_link text-success black_color"
              style="color: black !important;">
             A Propos de Nous
           </a>
         </div>
         <div class="pt-4">
-          <a href="#" class="text-18 typo_link text-success t-font-boldest black_color"
+          <a href="#" class="text-18 typo_link text-success black_color"
              style="color: black !important;">
             Contacter Nous
           </a>

@@ -1,5 +1,3 @@
-import category from "@/components/Category/Category";
-
 const state = () => ({
   search_results:[],
   paginated_search_results:null,
@@ -85,11 +83,8 @@ const mutations = {
     state.search_count = 0
     state.search_keyword = null
     state.filters = {
-      //Categroys:
       'category' : null,
-      //Brand:
       'brand' : null,
-      //Price:
       'min_price' : null,
       'max_price' : null,
       //Options:
@@ -161,19 +156,6 @@ const actions = {
   emptyData({commit}){
     commit('SET_EMPTY')
   },
-  //Get Paginated Data for First Time
-  async paginated_search_results({commit,getters}, val){
-    await this.$axios.post('http://localhost:8000/api/search_product', {
-      'product' : val,
-      'sort' : getters.get_sort_option
-    }).then( (res) => {
-      commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
-      let calculated_total = res.data.links.length-2 //Passed
-      commit('SET_TOTALE' , calculated_total)
-      commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
-      commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
-    })
-  },
   SearchSetDefault({commit}){
     commit('SET_DEFAULT')
   },
@@ -210,8 +192,10 @@ const actions = {
     commit('SET_PRICE' , price)
   },
 
-  //Apply Filter
-  async applyFilters({getters, commit}){
+
+
+  async paginated_search_results({commit,getters}){
+
     let search_key_word = getters.getSearchKeyWord
     //MapReduce the Options using Javascript spreed Operator
     let options_id = []
@@ -232,39 +216,15 @@ const actions = {
       options : options_id
     }
 
-    if (pyloadData.search_key_word){
-      await this.$axios.post('http://localhost:8000/api/filter_search', pyloadData ).then( (res) => {
-        commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
-        let calculated_total = res.data.links.length-2 //Passed
-        commit('SET_TOTALE' , calculated_total)
-        commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
-        commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
-      })
-    }else if(pyloadData.category){
-      await this.$axios.post('http://localhost:8000/api/filter_search_category_based', pyloadData ).then( (res) => {
-        commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
-        let calculated_total = res.data.links.length-2 //Passed
-        commit('SET_TOTALE' , calculated_total)
-        commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
-        commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
-      })
-    }else{
-      alert('NO Search keyword No Category Found !')
-    }
+    console.log('POSTING TO /search_product' , pyloadData)
+    await this.$axios.post(this.$axios.defaults.baseURL + '/search_product', pyloadData).then( (res) => {
+      commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
+      let calculated_total = res.data.links.length-2 //Passed
+      commit('SET_TOTALE' , calculated_total)
+      commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
+      commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
+    })
   },
-
-  async applyCategortFilter({getters, commit}){
-      await this.$axios.post('http://localhost:8000/api/filter_category_only_search', {
-        category : getters.getFilters.category,
-      }).then( (res) => {
-        commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
-        let calculated_total = res.data.links.length-2 //Passed
-        commit('SET_TOTALE' , calculated_total)
-        commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
-        commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
-      })
-    },
-
 
   //  Paginated Related
   set_current_page({commit}, current_page){
@@ -273,10 +233,27 @@ const actions = {
 
   //Get Paginated Data based on page value
   async get_n_page_data({commit, getters}, number){
-    await this.$axios.post(`http://localhost:8000/api/search_product?page=${number}`, {
-      'product' : getters.getSearchKeyWord,
-      'sort' : getters.get_sort_option
-    }).then( (res) => {
+    let search_key_word = getters.getSearchKeyWord
+    //MapReduce the Options using Javascript spreed Operator
+    let options_id = []
+    let option_filters = getters.getFilters
+    if (option_filters.color!= null){options_id.push(parseInt(option_filters.color))}
+    if (option_filters.type_hd.length != 0){options_id.push(...option_filters.type_hd)}
+    if (option_filters.taille_ecran.length != 0){options_id.push(...option_filters.taille_ecran)}
+    if (option_filters.size.length != 0){options_id.push(...option_filters.size)}
+    if (option_filters.ram.length != 0){options_id.push(...option_filters.ram)}
+    if (option_filters.stockage.length != 0){options_id.push(...option_filters.stockage)}
+
+    let pyloadData = {
+      search_key_word : search_key_word,
+      category : option_filters.category,
+      brand : option_filters.brand,
+      min_price : option_filters.min_price,
+      max_price : option_filters.max_price,
+      options : options_id
+    }
+    console.log(`posting to /search_product?page=${number}`, pyloadData)
+    await this.$axios.post(`http://localhost:8000/api/search_product?page=${number}`, pyloadData).then( (res) => {
       commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
       let calculated_total = res.data.links.length-2 //Passed
       commit('SET_TOTALE' , calculated_total)

@@ -1,5 +1,8 @@
 const state = () => ({
-  cats_data:null,
+  cats_data:{
+    nested_json:{},
+    parents:[]
+  },
   cats_ids:null,
 })
 

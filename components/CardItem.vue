@@ -48,7 +48,6 @@
 export default {
   props : ['pro_title', 'prod_best_price', 'img_url','slug']
 }
-
 </script>
 
 <style scoped>

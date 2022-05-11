@@ -10,12 +10,12 @@
                   Top Magasins
                 </div>
                 <div class="col-4 mb-2">
-                  <a href="http://127.0.0.1:8000/Products_list">
+                  <NuxtLink to="/stores">
                     <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">
                       <span class="ul-btn__text"> Voir tous</span>
                       <i class="fas fa-chevron-circle-right ml-1"></i>
                     </button>
-                  </a>
+                  </NuxtLink>
                 </div>
               </div>
 
@@ -86,5 +86,4 @@ export default {
 .fix_max_width{
   max-width: 116px;
 }
-
 </style>

@@ -55,7 +55,7 @@
               <div class="col-2 p-0">
                 <NuxtLink type="button"
                         id="submit_search"
-                        class="btn btn-outline-success btn-rounded btn-icon btn-lg w-100"
+                        class="btn btn-outline-success btn-icon btn-lg w-100"
                         @click.native="handleClick"
                         to="/search-results"
                 >

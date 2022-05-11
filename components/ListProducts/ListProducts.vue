@@ -36,7 +36,18 @@
               <p>
                 Tags:
                 <span class="badge badge-pill badge-success" v-if="search_key_word">{{ search_key_word }}</span>
-                <span class="badge badge-pill badge-success" v-if="filters">{{ filters }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters">{{ filters.category }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters">{{ filters.brand }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters">{{ filters.min_price }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters">{{ filters.max_price }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters">{{ filters.store }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters">{{ filters.color }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters.color">{{ filters.color }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters.type_hd">{{ filters.type_hd }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters.taille_ecran">{{ filters.taille_ecran }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters.size">{{ filters.size }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters.ram">{{ filters.ram }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters.stockage">{{ filters.stockage }}</span>
               </p>
             </div>
           </fieldset>

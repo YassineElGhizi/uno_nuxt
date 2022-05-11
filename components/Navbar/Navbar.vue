@@ -7,10 +7,10 @@
           </NuxtLink>
         </div>
         <div class="pt-4">
-          <a href="#" class="text-18 typo_link text-success black_color"
+          <NuxtLink to="/stores" class="text-18 typo_link text-success black_color"
              style="color: black !important;">
             Magasins
-          </a>
+          </NuxtLink>
         </div>
         <div class="pt-4">
           <a href="#" class="text-18 typo_link text-success black_color"

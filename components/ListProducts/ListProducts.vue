@@ -8,8 +8,6 @@
               Liste des produits
             </h3>
             <p>
-              Tags:
-              <span class="badge badge-success">Light</span>
             </p>
           </div>
           <div>
@@ -17,7 +15,9 @@
               <ul class="nav nav-pills" id="myPillTab" role="tablist">
                 <li class="nav-item">
                   <a class="view-icon btn-md active show" id="home-icon-pill" data-toggle="pill"
-                     href="#tab_list_view" role="tab"><i class="fas fa-list"></i></a>
+                     href="#tab_list_view" role="tab">
+                    <i class="fas fa-list"></i>
+                  </a>
                 </li>
                 <li class="nav-item">
                   <a class="view-icon btn-md" id="profile-icon-pill" data-toggle="pill"
@@ -33,6 +33,11 @@
         <div class="ul-widget__head">
           <fieldset>
             <div class="tagBox tagging">
+              <p>
+                Tags:
+                <span class="badge badge-pill badge-success" v-if="search_key_word">{{ search_key_word }}</span>
+                <span class="badge badge-pill badge-success" v-if="filters">{{ filters }}</span>
+              </p>
             </div>
           </fieldset>
         </div>
@@ -114,6 +119,12 @@ export default {
     },
     current_index(){
       return this.$store.getters["search/get_current_index"]
+    },
+    search_key_word(){
+      return this.$store.getters["search/getSearchKeyWord"]
+    },
+    filters(){
+      return this.$store.getters["search/getFilters"]
     }
   },
   watch:{

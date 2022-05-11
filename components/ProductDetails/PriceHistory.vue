@@ -2,7 +2,7 @@
   <div class="col-11">
     <div class="card">
       <div class="card-body">
-        <div class="card-title">Traçage de prix</div>
+        <div class="card-title">représentation graphique de l'evolution de prix</div>
         <div id="Price-tracking-chart">
 
           <highchart
@@ -135,5 +135,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

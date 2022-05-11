@@ -3,7 +3,6 @@
     <div class="app-admin-wrap layout-horizontal-bar clearfix">
 
           <Search/>
-
       <div class="d-flex flex-column flex-grow-1">
         <div class="main-content">
           <div class="container">

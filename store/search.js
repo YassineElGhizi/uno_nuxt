@@ -13,6 +13,7 @@ const state = () => ({
     'brand' : null,
     'min_price' : null,
     'max_price' : null,
+    'store': null,
     //Options:
     'color' : null,
     'type_hd' : [],
@@ -129,6 +130,9 @@ const mutations = {
     state.filters.min_price = price.min_price
     state.filters.max_price = price.max_price
   },
+  SET_FILTER_STORE(state, store){
+    state.filters.store = store
+  },
 
 
 //  Pagination Related
@@ -191,11 +195,13 @@ const actions = {
   setFilterPrice({commit}, price){
     commit('SET_PRICE' , price)
   },
+  setFilterStore({commit}, store){
+    commit('SET_FILTER_STORE', store)
+  },
 
 
 
   async paginated_search_results({commit,getters}){
-
     let search_key_word = getters.getSearchKeyWord
     //MapReduce the Options using Javascript spreed Operator
     let options_id = []
@@ -213,7 +219,8 @@ const actions = {
       brand : option_filters.brand,
       min_price : option_filters.min_price,
       max_price : option_filters.max_price,
-      options : options_id
+      options : options_id,
+      sort : getters.get_sort_option
     }
 
     console.log('POSTING TO /search_product' , pyloadData)
@@ -226,12 +233,12 @@ const actions = {
     })
   },
 
-  //  Paginated Related
+  //  Pagination Related
   set_current_page({commit}, current_page){
     commit('SET_CURRENT_PAGE' , current_page)
   },
 
-  //Get Paginated Data based on page value
+  //Get Paginated Data based on page number
   async get_n_page_data({commit, getters}, number){
     let search_key_word = getters.getSearchKeyWord
     //MapReduce the Options using Javascript spreed Operator
@@ -250,7 +257,8 @@ const actions = {
       brand : option_filters.brand,
       min_price : option_filters.min_price,
       max_price : option_filters.max_price,
-      options : options_id
+      options : options_id,
+      sort : getters.get_sort_option
     }
     console.log(`posting to /search_product?page=${number}`, pyloadData)
     await this.$axios.post(`http://localhost:8000/api/search_product?page=${number}`, pyloadData).then( (res) => {
@@ -265,8 +273,7 @@ const actions = {
   // Sort Related
   async change_filter_choice({commit,dispatch,getters} , choice){
     commit('SET_SORT' , choice)
-    let search_keywork =getters.getSearchKeyWord
-    await dispatch('paginated_search_results', search_keywork)
+    await dispatch('paginated_search_results')
   },
 }
 

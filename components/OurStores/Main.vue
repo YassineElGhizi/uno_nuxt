@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="app-admin-wrap layout-horizontal-bar clearfix colored_background" >
-        <search size="12"/>
+<!--        <search size="12"/>-->
+      <Navbar/>
       <div class="mt-4">
         <div class="main-content colored_background" >
           <div class="container">

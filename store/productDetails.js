@@ -84,13 +84,8 @@ const mutations = {
 
 const actions = {
     async get_product_details({getters, commit}){
-      let id = getters.get_global_id
       let pyload = {}
-      if (id == null){
-        pyload.slug =  getters.get_slug
-      }
-      pyload.id = id
-
+      pyload.slug =  getters.get_slug
       this.$axios.post(this.$axios.defaults.baseURL + '/product_details' , pyload).then( (res) => {
         commit('SET_PRODUCT' , res.data)
       })
@@ -103,7 +98,7 @@ const actions = {
         pyload.slug =  getters.get_slug
       }
       pyload.id = id
-
+      console.log('posting to /product_related_options' , pyload)
       this.$axios.post(this.$axios.defaults.baseURL + '/product_related_options' , pyload).then( (res) => {
         commit('SET_FILTER_OPTIONS' , res.data)
       })
@@ -145,8 +140,8 @@ const actions = {
     if (id == null){
       pyload.slug =  getters.get_slug
     }
-    pyload.id = id
-
+    pyload.parent_id = id
+    console.log('posting to /similar_products with pyload :', pyload)
     this.$axios.post(this.$axios.defaults.baseURL + '/similar_products' , pyload).then( (res) => {
       commit('SET_SIMILAR_PRODUCTS' , res.data)
     })

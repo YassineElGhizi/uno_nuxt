@@ -27,12 +27,14 @@
                 {{prod_best_price}} DH  </p>
             </div>
             <div class="col mt-1">
-              <a href="http://127.0.0.1:8000/Product_Details/apple-iphone-12-pro-max-256-gb-or-neuf-1-an-de-garantie-66657034">
+              <NuxtLink
+                :to="slug"
+              >
                 <button type="button" class="ma_btn btn btn-outline-success btn-rounded btn-icon float-right">
                   <span class="ul-btn__text">Détails</span>
                   <i class="fas fa-chevron-circle-right ml-1"></i>
                 </button>
-              </a>
+              </NuxtLink>
             </div>
           </div>
         </div>
@@ -44,7 +46,7 @@
 
 <script>
 export default {
-  props : ['pro_title', 'prod_best_price', 'img_url',]
+  props : ['pro_title', 'prod_best_price', 'img_url','slug']
 }
 
 </script>

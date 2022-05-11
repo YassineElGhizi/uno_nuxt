@@ -17,16 +17,16 @@ triggerTabList.forEach(function(triggerEl) {
 })
 
 
-content.addEventListener('mouseleave', function(event) {
-  tabs_pane.forEach(function(tab) {
-    tab.className = 'tab-pane '
-
-  })
+// content.addEventListener('mouseleave', function(event) {
+//   tabs_pane.forEach(function(tab) {
+//     tab.className = 'tab-pane '
+//
+//   })
 
   Buttons.forEach(function(Button) {
     Button.className = 'list-group-item  t-font-boldest border-0'
 
   })
-  index_home.className = 'tab-pane active show'
-
-})
+//   index_home.className = 'tab-pane active show'
+//
+// })

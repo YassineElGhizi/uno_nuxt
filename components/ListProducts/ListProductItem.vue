@@ -47,11 +47,6 @@ export default {
     clicked : async function (id){
       this.$store.dispatch('productDetails/save_global_id' , id)
       this.$store.dispatch('priceHistory/save_global_id' , id)
-      // await this.$store.dispatch('productDetails/get_product_details' , id)
-      // await this.$store.dispatch('productDetails/get_related_products_options' , id)
-      // await this.$store.dispatch('productDetails/get_products_children' , id)
-      // await this.$store.dispatch('productDetails/get_similar_products' , id)
-      // await this.$store.dispatch('priceHistory/get_price_history' , id)
     }
   }
 }

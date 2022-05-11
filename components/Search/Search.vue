@@ -53,15 +53,18 @@
                 </div>
               </div>
               <div class="col-2 p-0">
-                <button type="button" id="submit_search"
+                <NuxtLink type="button"
+                        id="submit_search"
                         class="btn btn-outline-success btn-rounded btn-icon btn-lg w-100"
+                        @click.native="handleClick"
+                        to="/search-results"
                 >
                   <span class="ul-btn__text">Search</span>
                   <span class="ul-btn__icon">
                     <i class="fas fa-search" style="transform: rotateY(180deg);"></i>
                     <font-awesome-icon icon="magnifying-glass" />
                   </span>
-                </button>
+                </NuxtLink>
               </div>
               <div class="col-lg-9 pl-5 mt-3">
 
@@ -135,6 +138,9 @@ export default {
     },
     toggle_visibility_fx: function () {
       this.search_input === '' ? this.toggle_visibility = false : this.toggle_visibility = true
+    },
+    handleClick(){
+      this.$store.dispatch('search/paginated_search_results')
     },
   }
 }

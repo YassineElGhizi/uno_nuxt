@@ -72,6 +72,7 @@
                         :prod_best_price="p.best_price"
                         :img_url="p.images"
                         v-bind:key="p.id"
+                        :slug="p.slug"
                       ></CardItem>
 
                     </div>
@@ -97,7 +98,6 @@
 import axios from 'axios'
 export default {
   components: {},
-
   computed:{
     categories(){
       return this.$store.getters["categories/getData"]

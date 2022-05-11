@@ -1,7 +1,7 @@
 <template>
   <div class="app-admin-wrap clearfix">
-    <search size="12"/>
-
+<!--    <search size="12"/>-->
+    <Navbar/>
     <div class="pt-6 d-flex flex-column flex-grow-1 my_grey_background">
       <div class="main-content">
         <div class="row justify-content-center">

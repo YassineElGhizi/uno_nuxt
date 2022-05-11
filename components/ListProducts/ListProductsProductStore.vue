@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="row align-items-start">
-        <div class="col col-sm-3 text-small mt-2">Disponible en:</div>
+        <div class="col col-sm-3 text-small mt-2">Disponible:</div>
 
         <Loading v-if="stores.length === 0"/>
 

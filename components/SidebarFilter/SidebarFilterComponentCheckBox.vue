@@ -1,10 +1,6 @@
 <template>
-  <li
-    class="nav-item dropdown-sidemenu"
-    :class="{open : clicked}"
-    @click="toggle_open_class"
-  >
-    <a>
+  <li :class="decision">
+    <a @click="toggle_open_class">
       <font-awesome-icon icon="filter"/>
       &nbsp;&nbsp;&nbsp
       <span class="item-name text-18 font-weight-semibold  ">{{ name }}</span>
@@ -34,12 +30,14 @@ export default {
   data: function (){
     return{
       clicked : false,
+      decision : "nav-item dropdown-sidemenu",
       checkedValues: [],
     }
   },
   methods :{
     toggle_open_class(){
-      this.clicked ? this.clicked = true : this.clicked = true
+      this.clicked ? this.decision = "nav-item dropdown-sidemenu" : this.decision = "nav-item dropdown-sidemenu open"
+      this.clicked ? this.clicked  = false : this.clicked = true
     },
     updateFilter(newval){
       switch (this.$props.name){

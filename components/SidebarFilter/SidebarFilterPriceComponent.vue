@@ -1,10 +1,6 @@
 <template>
-  <li
-    class="nav-item dropdown-sidemenu"
-    :class="{open : clicked}"
-    @click="toggle_open_class"
-  >
-    <a>
+  <li :class="decision">
+    <a @click="toggle_open_class">
       <font-awesome-icon icon="filter"/>
       &nbsp;&nbsp;&nbsp
       <span class="item-name text-18 font-weight-semibold  ">Prix </span>
@@ -74,12 +70,14 @@ export default {
       value:[5500, 35000],
       priceformatter: "{value} DH",
       min:null,
-      max:null
+      max:null,
+      decision : "nav-item dropdown-sidemenu open"
     }
   },
   methods :{
     toggle_open_class(){
-      this.clicked ? this.clicked = true : this.clicked = true
+      this.clicked ? this.decision = "nav-item dropdown-sidemenu open" : this.decision = "nav-item dropdown-sidemenu"
+      this.clicked ? this.clicked  = false : this.clicked = true
     },
     handleChange(){
       this.max = this.value[1]

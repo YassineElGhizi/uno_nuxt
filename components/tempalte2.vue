@@ -2,7 +2,13 @@
   <div>
     <div class="app-admin-wrap layout-horizontal-bar clearfix">
 
-          <Search/>
+      <Navbar/>
+      <div style="margin-bottom: 1rem"></div>
+
+      <div class="container">
+        <Search/>
+      </div>
+
       <div class="d-flex flex-column flex-grow-1">
         <div class="main-content">
           <div class="container">

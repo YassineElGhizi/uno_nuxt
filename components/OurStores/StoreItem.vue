@@ -1,6 +1,6 @@
 <template>
   <div class="col">
-    <NuxtLink :to="/stores/+id">
+<!--    <NuxtLink :to="/stores">-->
       <div class="card o-hidden border mb-4 d-flex flex-column">
         <div class="list-thumb d-flex p-3">
           <img alt="" :src="logo">
@@ -13,7 +13,7 @@
           </div>
         </div>
       </div>
-    </NuxtLink>
+<!--    </NuxtLink>-->
   </div>
 
 </template>

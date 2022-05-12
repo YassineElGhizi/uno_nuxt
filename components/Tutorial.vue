@@ -1,14 +1,12 @@
 <template>
   <div>
     <div class="app-admin-wrap layout-sidebar-large clearfix mybackground">
-
-<!--    <NavbarUpperNav/>-->
-    <Navbar/>
-
-      <div class="main-content-wrap d-flex flex-column flex-grow-1 ">
-        <div class="main-content mybackground">
-          <section>
-            <LazySearch/>
+      <Navbar/>
+      <div class="container">
+        <div class="main-content-wrap d-flex flex-column flex-grow-1 ">
+          <div class="main-content mybackground">
+            <section>
+              <LazySearch/>
               <div class="row justify-content-center" id='index_content'>
                 <div class="col col-sm-3">
                   <div class="card border h-100">
@@ -24,7 +22,7 @@
                   </div>
                 </div>
 
-                <div class="col col-sm-8 d-flex align-items-stretch">
+                <div class="col col-sm-9 d-flex align-items-stretch">
                   <div class="tab-content p-0 pl-2" style="width: 100%">
                     <div class="tab-pane show active" id="index-Home">
                       <div class="row">
@@ -43,53 +41,56 @@
                       </div>
                     </div>
 
-                      <Pane
-                        v-for="y in Object.keys(categories.parents)"
-                        :cat="categories.nested_json[categories.parents[y].name]"
-                        :id_count=" parseInt(y)"
-                        v-bind:key="y"
-                      >
-                      </Pane>
+                    <Pane
+                      v-for="y in Object.keys(categories.parents)"
+                      :cat="categories.nested_json[categories.parents[y].name]"
+                      :id_count=" parseInt(y)"
+                      v-bind:key="y"
+                    >
+                    </Pane>
 
                   </div>
                 </div>
               </div>
-          </section>
+            </section>
 
-          <div class="row justify-content-center mb-3 pt-5">
-            <div class="col col-xl-11 col-lg-11  col-md-12 p-0">
-              <div class="card border mb-4">
-                <div class="card-body">
+            <div class="row justify-content-center mb-3 pt-5">
+              <div class="col col-xl-12 col-lg-12  col-md-12 p-0">
+                <div class="card border mb-4">
+                  <div class="card-body">
 
-                  <CardHeader :card_title="String('Produit populaire')"></CardHeader>
+                    <CardHeader :card_title="String('Produit populaire')"></CardHeader>
 
-                  <section class="product-cart">
-                    <div class="row list-grid">
+                    <section class="product-cart">
+                      <div class="row list-grid">
 
-                      <CardItem
-                        v-for="p in top_products"
-                        :pro_title="p.name"
-                        :prod_best_price="p.best_price"
-                        :img_url="p.images"
-                        v-bind:key="p.id"
-                        :slug="p.slug"
-                      ></CardItem>
+                        <CardItem
+                          v-for="p in top_products"
+                          :pro_title="p.name"
+                          :prod_best_price="p.best_price"
+                          :img_url="p.images"
+                          v-bind:key="p.id"
+                          :slug="p.slug"
+                        ></CardItem>
 
-                    </div>
-                  </section>
+                      </div>
+                    </section>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <LazyTopStore></LazyTopStore>
+
           </div>
-
-          <LazyTopStore></LazyTopStore>
-
+          <div class="flex-grow-1"></div>
+          <div class="flex-grow-1"></div>
+          <Footer></Footer>
         </div>
-        <div class="flex-grow-1"></div>
-        <div class="flex-grow-1"></div>
-        <Footer></Footer>
+        </div>
       </div>
-    </div>
+
+
   </div>
 </template>
 

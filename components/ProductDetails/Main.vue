@@ -1,7 +1,8 @@
 <template>
-  <div class="app-admin-wrap clearfix">
+  <div class="app-admin-wrap clearfix" style="background-color: #F0F2F5">
 <!--    <search size="12"/>-->
     <Navbar/>
+    <div style="margin-bottom: 1rem;"  ></div>
     <div class="pt-6 d-flex flex-column flex-grow-1 my_grey_background">
       <div class="main-content">
         <div class="row justify-content-center">

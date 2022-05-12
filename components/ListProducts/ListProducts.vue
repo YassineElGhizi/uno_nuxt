@@ -1,5 +1,5 @@
 <template>
-  <div class="col col-sm-8">
+  <div class="col col-sm-9">
     <div class="card border mb-3">
       <div class="card-body">
         <div class="ul-widget__head" style="border-bottom: none ;">
@@ -11,23 +11,7 @@
             </p>
           </div>
           <div>
-            <div class="d-none d-sm-inline-block">
-              <ul class="nav nav-pills" id="myPillTab" role="tablist">
-                <li class="nav-item">
-                  <a class="view-icon btn-md active show" id="home-icon-pill" data-toggle="pill"
-                     href="#tab_list_view" role="tab">
-                    <i class="fas fa-list"></i>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="view-icon btn-md" id="profile-icon-pill" data-toggle="pill"
-                     href="#tab_grid_view" role="tab"><i class="fas fa-th-large"></i></a>
-                </li>
-              </ul>
-            </div>
-
             <ListProductsSortButton/>
-
           </div>
         </div>
         <div class="ul-widget__head">

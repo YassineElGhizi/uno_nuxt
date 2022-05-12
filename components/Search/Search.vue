@@ -1,34 +1,27 @@
 <template>
   <div>
-<!--    <div class="row justify-content-center mb-3">-->
     <div :class="toggle_margin">
-<!--      <div class="col col-sm-11">-->
-      <div :class="toggle_size">
+      <div class="col-sm-12">
         <div class="card border">
           <div class="card-body">
-            <div class="row justify-content-center w-100">
-              <div class="col col-lg-2 col-md-2 p-0">
-
+            <div class="row justify-content-center">
+              <div class="aligne_items_in_same_height col-lg-2 col-sm-12">
                 <div class="d-flex justify-content-center">
                   <NuxtLink to="/">
                     <img src="/logo_supero.jpg" alt="" width='180'>
                   </NuxtLink>
                 </div>
               </div>
-
-              <div class="col col-lg-8 col-md-3 pr-0 pl-6">
-                <div class="row justify-content-center ml-1">
-                  <div class="card shadow-sm border pr-0 w-90" id="search_card"
-                       style="overflow: hidden;position: absolute;z-index: 7;border-radius:1.25rem;">
+              <div class="aligne_items_in_same_height col-lg-8 col-sm-12">
+                  <div class="card shadow-sm border" id="search_card" style="overflow: hidden;position: absolute;z-index: 7;border-radius:1rem; width: 100%">
                     <div class="card-body p-1">
-                      <input type="hidden" name="_token" value="33mdN0P3qtNMUTbx5kZ684WcLUyvAwAgyYFtd0BR">
                       <div class="input-group input-group">
                         <input
-                          class="search-bar shadow-none border-0 py-1 pl-4 w-100"
+                          class="search-bar shadow-none border-0 py-1 pl-4"
                           type="text"
                           placeholder="Cherchez un produit"
                           v-model="search_input"
-                        >
+                          style="width: 100%">
                       </div>
                       <div v-if="toggle_visibility" class="ul-widget__body" id="search_body" style="display: block;">
                         <div class="separator-breadcrumb border-top m-2"></div>
@@ -50,28 +43,21 @@
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-2 p-0">
+              </div >
+              <div class="aligne_items_in_same_height col-lg-2 col-sm-12">
                 <NuxtLink type="button"
                         id="submit_search"
-                        class="btn btn-outline-success btn-icon btn-lg w-100"
+                        class="btn btn-outline-success btn-icon btn-lg"
                         @click.native="handleClick"
                         to="/search-results"
-                >
+                          style="width: 100%;">
                   <span class="ul-btn__text">Search</span>
-                  <span class="ul-btn__icon">
-                    <i class="fas fa-search" style="transform: rotateY(180deg);"></i>
                     <font-awesome-icon icon="magnifying-glass" />
-                  </span>
                 </NuxtLink>
               </div>
-              <div class="col-lg-9 pl-5 mt-3">
-
+              <div class="col-lg-9 pl-5 mt-3 ">
                 <Tendance/>
-
               </div>
-
             </div>
           </div>
         </div>
@@ -157,6 +143,10 @@ export default {
 
 img{
   object-fit: cover;
+}
+
+.aligne_items_in_same_height{
+  margin-top: 1rem
 }
 
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row justify-content-center mb-3">
-      <div class="col col-xl-11 col-lg-11  col-md-12 p-0">
+      <div class="col-sm-12 p-0">
         <div class="card border mb-4">
           <div class="card-body">
             <div class="card-title">
@@ -21,16 +21,14 @@
 
             </div>
             <section class="product-cart">
-              <div class="row justify-content-center row-cols-1 row-cols-md-6 g-4 m-3">
-                <div
-                  class="col"
-                  v-for="s in eco_stores"
-                >
-                  <div class="card o-hidden border mb-4 d-flex flex-column containerFixedSize fix_max_width">
-                    <img :src=s.logo alt="" class="fixedSize">
+              <div class="row g-4 m-3">
+                <div class="col-sm-12 col-lg-2"
+                  v-for="s in eco_stores">
+                  <div class="card o-hidden border mb-4 ">
+                    <img :src=s.logo alt="" class="fixedSize ">
                     <a class="" href="#" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>
                     <div class="flex-grow-1 d-bock">
-                      <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center py-1">
+                      <div class="card-body align-self-center d-flex flex-column justify-content-center align-items-lg-center py-1">
                         <a href="">
                           <div class="item-title text-12  font-weight-500 text-wrap">
                             {{s.name}}
@@ -79,9 +77,6 @@ export default {
   height: 7rem;
 }
 
-.containerFixedSize{
-  width: fit-content;
-}
 
 .fix_max_width{
   max-width: 116px;

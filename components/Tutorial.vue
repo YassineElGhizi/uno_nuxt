@@ -8,7 +8,7 @@
             <section>
               <LazySearch/>
               <div class="row justify-content-center" id='index_content'>
-                <div class="col col-sm-3">
+                <div class="col-sm-3 d-none d-lg-block">
                   <div class="card border h-100">
                     <div class="card-body p-3 ">
                       <div class="card-title" style="margin-bottom:0.6rem">
@@ -22,11 +22,11 @@
                   </div>
                 </div>
 
-                <div class="col col-sm-9 d-flex align-items-stretch">
+                <div class="col-sm-12 col-lg-9 d-flex align-items-stretch">
                   <div class="tab-content p-0 pl-2" style="width: 100%">
                     <div class="tab-pane show active" id="index-Home">
                       <div class="row">
-                        <div class="col-sm-9">
+                        <div class="col-sm-12 col-lg-9">
                           <div class="card border" id='slider_image_selector'>
                             <div class="card-img">
                               <div class="carousel_wrap">

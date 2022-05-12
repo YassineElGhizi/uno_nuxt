@@ -13,7 +13,8 @@
                 </div>
               </div>
               <div class="aligne_items_in_same_height col-lg-8 col-sm-12">
-                  <div class="card shadow-sm border" id="search_card" style="overflow: hidden;position: absolute;z-index: 7;border-radius:1rem; width: 100%">
+                  <div class="card shadow-sm border" id="search_card"
+                       style="overflow: hidden;border-radius:1rem;position: absolute;z-index: 7; width: 94%">
                     <div class="card-body p-1">
                       <div class="input-group input-group">
                         <input
@@ -43,6 +44,37 @@
                       </div>
                     </div>
                   </div>
+<!--                NAVBAR WITHOUT POSITION ABSOLUTE FOR MOBILE-->
+                <div class="card shadow-sm border d-lg-none" id="search_card" style="overflow: hidden;border-radius:1rem; width: 100%">
+                  <div class="card-body p-1">
+                    <div class="input-group input-group">
+                      <input
+                        class="search-bar shadow-none border-0 py-1 pl-4"
+                        type="text"
+                        placeholder="Cherchez un produit"
+                        v-model="search_input"
+                        style="width: 100%">
+                    </div>
+                    <div v-if="toggle_visibility" class="ul-widget__body" id="search_body" style="display: block;">
+                      <div class="separator-breadcrumb border-top m-2"></div>
+                      <div class="ul-widget1 mx-3" id="search_resultat_slector">
+
+                        <SearchResultsItem
+                          v-for="sr in search_results"
+                          :id="sr.id"
+                          :key="sr.id"
+                          :name="sr.name"
+                          :img="sr.images"
+                          :search_input="search_input"
+                        />
+                        <div v-if="search_results.length == 0">
+                          <SearchEmptyResults/>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div >
               <div class="aligne_items_in_same_height col-lg-2 col-sm-12">
                 <NuxtLink type="button"
@@ -55,7 +87,7 @@
                     <font-awesome-icon icon="magnifying-glass" />
                 </NuxtLink>
               </div>
-              <div class="col-lg-9 pl-5 mt-3 ">
+              <div class="col-lg-12 pl-5 mt-3 d-sm-block">
                 <Tendance/>
               </div>
             </div>

@@ -34,8 +34,7 @@
                             :key="sr.id"
                             :name="sr.name"
                             :img="sr.images"
-                            :search_input="search_input"
-                          />
+                            :search_input="search_input"/>
                           <div v-if="search_results.length == 0">
                             <SearchEmptyResults/>
                           </div>
@@ -77,15 +76,26 @@
                 </div>
               </div >
               <div class="aligne_items_in_same_height col-lg-2 col-sm-12">
-                <NuxtLink type="button"
+                <NuxtLink v-if="search_input.length > 4"
+                        type="button"
                         id="submit_search"
                         class="btn btn-outline-success btn-icon btn-lg"
                         @click.native="handleClick"
                         to="/search-results"
-                          style="width: 100%;">
+                        style="width: 100%;">
                   <span class="ul-btn__text">Search</span>
                     <font-awesome-icon icon="magnifying-glass" />
                 </NuxtLink>
+                <a v-else
+                          type="button"
+                          id="submit_search"
+                          class="btn btn-outline-success btn-icon btn-lg"
+                          @click="handleClickNotValid"
+                          style="width: 100%;">
+                  <span class="ul-btn__text">Search</span>
+                  <font-awesome-icon icon="magnifying-glass" />
+                </a>
+
               </div>
               <div class="col-lg-12 pl-5 mt-3 d-sm-block">
                 <Tendance/>
@@ -160,6 +170,9 @@ export default {
     handleClick(){
       this.$store.dispatch('search/paginated_search_results')
     },
+    handleClickNotValid(){
+      alert('Le mot-clé que vous avez renseigné est court ( minimum : 4 lettres)')
+    }
   }
 }
 </script>

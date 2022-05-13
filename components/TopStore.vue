@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row justify-content-center mb-3">
+    <div class="justify-content-center mb-3">
       <div class="col-sm-12 p-0">
         <div class="card border mb-4">
           <div class="card-body">
@@ -27,7 +27,7 @@
                   <div class="card o-hidden border mb-4 ">
                     <img :src=s.logo alt="" class="fixedSize ">
                     <a class="" href="#" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>
-                    <div class="flex-grow-1 d-bock">
+                    <div class="text-center flex-grow-1 d-bock">
                       <div class="card-body align-self-center d-flex flex-column justify-content-center align-items-lg-center py-1">
                         <a href="">
                           <div class="item-title text-12  font-weight-500 text-wrap">

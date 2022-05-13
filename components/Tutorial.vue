@@ -45,8 +45,7 @@
                       v-for="y in Object.keys(categories.parents)"
                       :cat="categories.nested_json[categories.parents[y].name]"
                       :id_count=" parseInt(y)"
-                      v-bind:key="y"
-                    >
+                      v-bind:key="y">
                     </Pane>
 
                   </div>
@@ -54,7 +53,7 @@
               </div>
             </section>
 
-            <div class="row justify-content-center mb-3 pt-5">
+            <div class="justify-content-center mb-3 pt-5">
               <div class="col col-xl-12 col-lg-12  col-md-12 p-0">
                 <div class="card border mb-4">
                   <div class="card-body">
@@ -160,6 +159,10 @@ export default {
 
 .mybackground{
   background-color: rgba(244, 248, 244, 0.35);
+}
+
+.container{
+  max-width: 1440px !important;
 }
 
 </style>

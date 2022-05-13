@@ -18,14 +18,12 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900'},
       { rel: 'stylesheet', href: '/css/metisMenu.min.css'},
       { rel: 'stylesheet', href: '/css/lite-purple.min.css'},
-      // { rel: 'stylesheet', href: '/css/perfect-scrollbar.css'},
       { rel: 'stylesheet', href: '/css/splide.min.css'},
       { rel: 'stylesheet', href: '/css/app2.css'},
     ],
 
     script: [
       { src: "/js/common-bundle-script.js", body : true},
-      // { src: "/js/echarts.min.js", body : true},
       { src: "/js/echart.options.min.js", body : true},
       { src: "/js/dashboard.v1.script.js", body : true},
       { src: "/js/script01.js", body : true},
@@ -74,6 +72,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'nuxt-highcharts',
+    'vue-sweetalert2/nuxt',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

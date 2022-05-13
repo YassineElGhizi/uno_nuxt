@@ -1,6 +1,6 @@
 <template>
   <nav class="border sticky-top navbar navbar-expand-xl" style="background-color: white;">
-    <div class=" container centre_my-nav">
+    <div class=" container">
           <NuxtLink to="/" class="navbar-brand no_margin">
             <img src="/logo_supero.jpg" alt="" width='180'>
           </NuxtLink>

@@ -1,3 +1,6 @@
+import Vue from "vue";
+import Swal from "vue-sweetalert2";
+
 const state = () => ({
   search_results:[],
   paginated_search_results:null,
@@ -202,16 +205,23 @@ const actions = {
 
 
   async paginated_search_results({commit,getters}){
+
+    let is_a_filter = false
+
     let search_key_word = getters.getSearchKeyWord
     //MapReduce the Options using Javascript spreed Operator
     let options_id = []
     let option_filters = getters.getFilters
-    if (option_filters.color!= null){options_id.push(parseInt(option_filters.color))}
-    if (option_filters.type_hd.length != 0){options_id.push(...option_filters.type_hd)}
-    if (option_filters.taille_ecran.length != 0){options_id.push(...option_filters.taille_ecran)}
-    if (option_filters.size.length != 0){options_id.push(...option_filters.size)}
-    if (option_filters.ram.length != 0){options_id.push(...option_filters.ram)}
-    if (option_filters.stockage.length != 0){options_id.push(...option_filters.stockage)}
+    if (option_filters.color!= null){options_id.push(parseInt(option_filters.color)); is_a_filter = true}
+    if (option_filters.type_hd.length != 0){options_id.push(...option_filters.type_hd); is_a_filter = true}
+    if (option_filters.taille_ecran.length != 0){options_id.push(...option_filters.taille_ecran); is_a_filter = true}
+    if (option_filters.size.length != 0){options_id.push(...option_filters.size); is_a_filter = true}
+    if (option_filters.ram.length != 0){options_id.push(...option_filters.ram); is_a_filter = true}
+    if (option_filters.stockage.length != 0){options_id.push(...option_filters.stockage); is_a_filter = true}
+
+    if (option_filters.min_price || option_filters.max_price || option_filters.brand){
+      is_a_filter = true
+    }
 
     let pyloadData = {
       search_key_word : search_key_word,
@@ -223,13 +233,28 @@ const actions = {
       sort : getters.get_sort_option
     }
 
-    console.log('POSTING TO /search_product' , pyloadData)
     await this.$axios.post(this.$axios.defaults.baseURL + '/search_product', pyloadData).then( (res) => {
       commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
       let calculated_total = res.data.links.length-2 //Passed
       commit('SET_TOTALE' , calculated_total)
       commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
       commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
+      if(is_a_filter){
+        this.$swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 750,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', this.$swal.stopTimer)
+            toast.addEventListener('mouseleave', this.$swal.resumeTimer)
+          }
+        }).fire({
+          icon: 'success',
+          title: 'Filtre Appliqué'
+        })
+      }
     })
   },
 
@@ -260,13 +285,27 @@ const actions = {
       options : options_id,
       sort : getters.get_sort_option
     }
-    console.log(`posting to /search_product?page=${number}`, pyloadData)
-    await this.$axios.post(`http://localhost:8000/api/search_product?page=${number}`, pyloadData).then( (res) => {
+
+    await this.$axios.post('http://localhost:8000/api/search_product?page=${number}`', pyloadData).then( (res) => {
       commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
       let calculated_total = res.data.links.length-2 //Passed
       commit('SET_TOTALE' , calculated_total)
       commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
       commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
+      this.$swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 1000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', this.$swal.stopTimer)
+          toast.addEventListener('mouseleave', this.$swal.resumeTimer)
+        }
+      }).fire({
+        icon: 'success',
+        title: `Page ${number}`
+      })
     })
   },
 
@@ -274,6 +313,37 @@ const actions = {
   async change_filter_choice({commit,dispatch,getters} , choice){
     commit('SET_SORT' , choice)
     await dispatch('paginated_search_results')
+    let str_choice = ''
+    switch (choice){
+      case 'asc':
+        str_choice = 'Prix Croissant'
+        break
+      case 'desc':
+        str_choice = 'Prix Décroissant'
+        break
+      case 'best':
+        str_choice = 'Meilleur Classement'
+        break
+      case 'new':
+        str_choice = 'Nouveau'
+        break
+    }
+
+
+    this.$swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 1000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', this.$swal.stopTimer)
+        toast.addEventListener('mouseleave', this.$swal.resumeTimer)
+      }
+    }).fire({
+      icon: 'success',
+      title: str_choice
+    })
   },
 }
 

@@ -43,12 +43,12 @@
         />
 
         <SidebarFilterComponentCheckBox
-          name="RAM In GB"
+          name="RAM En GB"
           :body_content="ram"
         />
 
         <SidebarFilterComponentCheckBox
-          name="Stockage in GB"
+          name="Stockage En GB"
           :body_content="storage"
         />
 

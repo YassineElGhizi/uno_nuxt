@@ -30,13 +30,13 @@ export default {
   data: function (){
     return{
       clicked : false,
-      decision : "nav-item dropdown-sidemenu",
+      decision : "nav-item dropdown-sidemenu d-none d-lg-block",
       checkedValues: [],
     }
   },
   methods :{
     toggle_open_class(){
-      this.clicked ? this.decision = "nav-item dropdown-sidemenu" : this.decision = "nav-item dropdown-sidemenu open"
+      this.clicked ? this.decision = "nav-item dropdown-sidemenu d-none d-lg-block" : this.decision = "nav-item dropdown-sidemenu open d-none d-lg-block"
       this.clicked ? this.clicked  = false : this.clicked = true
     },
     updateFilter(newval){

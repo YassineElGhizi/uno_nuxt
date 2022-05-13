@@ -3,17 +3,17 @@
     <div :class="toggle_margin">
       <div class="col-sm-12">
         <div class="card border">
-          <div class="card-body">
+          <div class="card-body pt-3">
             <div class="row justify-content-center">
-              <div class="aligne_items_in_same_height col-lg-2 col-sm-12">
-                <div class="d-flex justify-content-center">
+              <div class="aligne_items_in_same_height col-lg-2 col-sm-12 d-none d-lg-block">
+                <div class=" justify-content-center">
                   <NuxtLink to="/">
                     <img src="/logo_supero.jpg" alt="" width='180'>
                   </NuxtLink>
                 </div>
               </div>
-              <div class="aligne_items_in_same_height col-lg-8 col-sm-12">
-                  <div class="card shadow-sm border" id="search_card"
+              <div class="aligne_items_in_same_height col-lg-8 col-sm-12 ">
+                  <div class="card shadow-sm border d-none d-lg-block" id="search_card"
                        style="overflow: hidden;border-radius:1rem;position: absolute;z-index: 7; width: 94%">
                     <div class="card-body p-1">
                       <div class="input-group input-group">

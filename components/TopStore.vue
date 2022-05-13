@@ -22,7 +22,7 @@
             </div>
             <section class="product-cart">
               <div class="row g-4 m-3">
-                <div class="col-sm-12 col-lg-2"
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
                   v-for="s in eco_stores">
                   <div class="card o-hidden border mb-4 ">
                     <img :src=s.logo alt="" class="fixedSize ">

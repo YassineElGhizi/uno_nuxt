@@ -1,16 +1,13 @@
 <template>
   <div>
-    <a
-      class="list-group-item  t-font-boldest border-0"
-      style="padding: 0.40rem 0.5rem;"
-      id="list-settings-list"
-      data-toggle="tab"
-      :href="'#index-Category-' + cat.id"
-      role="tab"
-      v-on:mouseleave="toggleClass()"
-      ref="a_cat"
-    >
-
+    <a class="list-group-item  t-font-boldest border-0"
+       style="padding: 0.40rem 0.5rem;"
+       id="list-settings-list"
+       data-toggle="tab"
+       :href="'#index-Category-' + cat.id"
+       role="tab"
+       v-on:mouseleave="toggleClass()"
+       ref="a_cat">
         {{cat.name}}
     </a>
   </div>

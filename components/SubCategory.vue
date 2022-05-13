@@ -3,7 +3,7 @@
     <p class="
       text-success
       font-weight-semibold
-      text-14
+      text-12
       t-font-boldest
       text--cap
       border-bottom-success
@@ -13,7 +13,7 @@
       {{title}}
     </p>
 
-    <ul class="links">
+    <ul class="links text-12">
       <li v-for="b in body[`${title}`]">
         <NuxtLink
           to="/search-results"

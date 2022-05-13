@@ -11,14 +11,14 @@
                   src="https://ae.pricenacdn.com/img?d=ax182&src=https%3A%2F%2Ft.infibeam.com%2Fimg%2Fothe%2F0441617%2Fa7%2Fcf%2Fiphone13prosierrabluepdpimageposition1aen.jpg.7c8d93a7cf.999x800x800.jpg"
                   alt="">
               </div>
-              <div class="row justify-content-center">
-                <div class="col-md-2 p-1 m-1"
+              <div class="row ">
+                <div class="col-xs-12 p-1 m-1"
                   v-for="x in 9">
-                  <div class="card text-white border o-hidden change_border_color_on_hover">
+                  <div class="card text-white border o-hidden change_border_color_on_hover ">
                     <img
                       ref="img_tag"
                       @mouseenter="toggle_src()"
-                      class="card-img my_curssor"
+                      class="card-img my_curssor my_min_height"
                       src="https://ae.pricenacdn.com/img?d=ax182&src=https%3A%2F%2Ft.infibeam.com%2Fimg%2Fothe%2F0441617%2Fa7%2Fcf%2Fiphone13prosierrabluepdpimageposition1aen.jpg.7c8d93a7cf.999x800x800.jpg"
                       alt="">
                   </div>
@@ -204,6 +204,10 @@ img{
 }
 .change_border_color_on_hover:hover{
   border-color: #17B960 !important;
+}
+
+.my_min_height{
+  min-height: 2rem;
 }
 
 </style>

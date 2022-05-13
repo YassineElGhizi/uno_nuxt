@@ -1,6 +1,5 @@
 <template>
   <div class="app-admin-wrap clearfix" style="background-color: #F0F2F5">
-<!--    <search size="12"/>-->
     <Navbar/>
     <div style="margin-bottom: 1rem;"  ></div>
     <div class="pt-6 d-flex flex-column flex-grow-1 my_grey_background">
@@ -27,7 +26,7 @@
           <div class="col-11">
             <section class="ul-product-detail__box">
               <div class="row justify-content-center">
-                <div class="col col-lg-3 col-md-3 col-sm-12">
+                <div class="col col-lg-3 col-md-3 col-sm-12 d-none d-lg-block">
                   <div class="card h-100 w-100">
                     <section class="product-cart p-4">
                       <div class="row list-grid">

@@ -1,7 +1,7 @@
 <template>
-  <nav class="border sticky-top navbar navbar-expand-lg" style="background-color: white;">
+  <nav class="border sticky-top navbar navbar-expand-xl" style="background-color: white;">
     <div class=" container centre_my-nav">
-          <NuxtLink to="/" class="navbar-brand">
+          <NuxtLink to="/" class="navbar-brand no_margin">
             <img src="/logo_supero.jpg" alt="" width='180'>
           </NuxtLink>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -45,6 +45,10 @@ a.text-success:hover, a.text-success:focus {
 
 .black_color{
 
+}
+
+.no_margin{
+  margin-right: 0px !important;
 }
 
 </style>

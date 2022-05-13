@@ -1,5 +1,5 @@
 <template>
-  <div class="col col-sm-9">
+  <div class="col-sm-12 col-xl-9">
     <div class="card border mb-3">
       <div class="card-body">
         <div class="ul-widget__head" style="border-bottom: none ;">

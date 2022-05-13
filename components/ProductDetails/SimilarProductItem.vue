@@ -1,5 +1,5 @@
 <template>
-  <div class="col-lg-3 col-md-3 mt-4 text-center">
+  <div class="col-lg-3 col-md-6 col-sm-12 mt-4 text-center">
     <div class="card">
       <div class="card-body">
         <div class="ul-product-detail__border-box">

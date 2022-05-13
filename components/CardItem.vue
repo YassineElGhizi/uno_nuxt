@@ -1,5 +1,5 @@
 <template>
-  <div class="list-item col-lg-3 col-md-3 col-sm-6">
+  <div class="list-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
     <div class="card o-hidden border mb-4 d-flex flex-column">
       <div>
         <div class="list-thumb d-flex"

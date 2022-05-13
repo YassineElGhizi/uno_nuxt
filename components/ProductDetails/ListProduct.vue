@@ -19,12 +19,12 @@
     </div>
     <div class="ul-widget4__actions col-sm-3">
       <div class="row justify-content-center">
-        <span class="ul-widget__number text-success align-top mb-2">
+        <span class="ul-widget__number text-success align-top mb-2 col-sm-12">
           {{product.price}} DH
         </span>
         <button
           type="button"
-          class="btn btn-outline-success btn-lg m-1"
+          class="btn btn-outline-success btn-lg m-1 col-sm-12"
           @click="goTo(product.link , product.id)">
           Go to Shop
         </button>

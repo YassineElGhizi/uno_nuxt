@@ -13,7 +13,7 @@
         <div class="main-content">
           <div class="container">
             <div class="row justify-content-center mb-3">
-              <div class="col col-sm-3">
+              <div class="col-sm-12 col-xl-3" style="padding-bottom: 6rem">
                 <SidebarFilter/>
               </div>
 

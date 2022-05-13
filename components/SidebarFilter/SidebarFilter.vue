@@ -1,7 +1,7 @@
 <template>
   <div class="side-content-wrap rounded-3" style="display: block;">
-    <div class="sidebar-left-secondary position-relative w-100 h-auto my_border_radius"
-         style="left:auto;top:auto;z-index: auto;border-radius: 10px;border: 1px solid #dee2e6">
+    <div class="sidebar-left-secondary position-relative w-100 my_border_radius pb-4"
+         style="left:auto;top:auto !important;z-index: auto;border-radius: 10px;border: 1px solid #dee2e6; height:fit-content !important;">
       <p class="text-success text-20  border-bottom-primary-200 m-1 ml-3 my_title">
         Filtrer : {{ products_count }} produits
       </p>
@@ -51,7 +51,6 @@
           name="Stockage in GB"
           :body_content="storage"
         />
-
 
       </ul>
       <div class="d-flex justify-content-center">

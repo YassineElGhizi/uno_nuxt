@@ -33,7 +33,7 @@ export default {
     },
   },
   mounted() {
-    axios.get(this.$axios.defaults.baseURL + '/trends').then( (res) => {
+      axios.get(this.$axios.defaults.baseURL + '/trends').then( (res) => {
       this.update_trends(res.data)
     })
   }

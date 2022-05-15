@@ -1,6 +1,3 @@
-import Vue from "vue";
-import Swal from "vue-sweetalert2";
-
 const state = () => ({
   search_results:[],
   paginated_search_results:null,
@@ -98,7 +95,8 @@ const mutations = {
       'size' : [],
       'ram' : [],
       'stockage' : []
-    }
+    },
+      state.current_index = 1
   },
   SET_SEARCH_KEYWORD(state, keyword){
     state.search_keyword = keyword
@@ -232,7 +230,7 @@ const actions = {
       options : options_id,
       sort : getters.get_sort_option
     }
-
+    console.log('posting ' , pyloadData , ' to' , 'search_product')
     await this.$axios.post(this.$axios.defaults.baseURL + '/search_product', pyloadData).then( (res) => {
       commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
       let calculated_total = res.data.links.length-2 //Passed
@@ -285,13 +283,17 @@ const actions = {
       options : options_id,
       sort : getters.get_sort_option
     }
-
-    await this.$axios.post('http://localhost:8000/api/search_product?page=${number}`', pyloadData).then( (res) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    await this.$axios.post(`http://localhost:8000/api/search_product?page=${number}`, pyloadData).then( (res) => {
       commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
       let calculated_total = res.data.links.length-2 //Passed
       commit('SET_TOTALE' , calculated_total)
       commit('SET_NEXT_PAGE_URL' , res.data.next_page_url)
       commit('SET_PREV_PAGE_URL' , res.data.prev_page_url)
+
       this.$swal.mixin({
         toast: true,
         position: 'top-end',

@@ -57,7 +57,7 @@ export default {
           this.$store.dispatch('search/setFilterStockage', newval)
           break;
         default:
-          alert('WARNING FILTER IS UNKNOWN')
+          alert('Fatal Error : Filter Id is unknown')
       }
 
 

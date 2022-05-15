@@ -79,7 +79,49 @@ const mutations = {
   },
   ALLOCATE_SLUG(state){
     state.slug = window.location.pathname.slice(1)
+  },
+
+  SET_DEFAULT(state){
+    state.global_id=null,
+      state.slug=null,
+      state.product={
+      id:null,
+        name:null,
+        best_price:null,
+        options:[],
+        store: {
+        id:null,
+          store:{
+          id:null,
+            name:null
+        }
+      },
+      category:{
+        id:null,
+          name :null,
+          parent:{
+          id:null,
+            name:null
+        }},
+      brand:{
+        id:null,
+          name:null,
+          description:null
+      },
+      product_details:{
+        id:null,
+          short_description:null,
+          description:null,
+          rating_value:null
+      }
+    },
+
+    state.Filteroptions=[],
+      state.listProducts=[],
+      state.chosen_options=null,
+      state.similar_products=[]
   }
+
 }
 
 const actions = {
@@ -153,7 +195,11 @@ const actions = {
   },
   async get_slug({commit}){
       commit('ALLOCATE_SLUG')
-  }
+  },
+
+  empty_product_details({commit}){
+      commit('SET_DEFAULT')
+  },
 
 }
 

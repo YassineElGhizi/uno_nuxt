@@ -37,10 +37,10 @@
           :body_content="taille_ecran"
         />
 
-        <SidebarFilterComponentCheckBox
-          name="Longueur en mètres"
-          :body_content="size"
-        />
+<!--        <SidebarFilterComponentCheckBox-->
+<!--          name="Longueur en mètres"-->
+<!--          :body_content="size"-->
+<!--        />-->
 
         <SidebarFilterComponentCheckBox
           name="RAM En GB"
@@ -111,6 +111,10 @@ export default {
   },
   methods:{
     async perforemFilter(){
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
       await this.$store.dispatch('search/paginated_search_results')
     }
   }

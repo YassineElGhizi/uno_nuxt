@@ -3,15 +3,15 @@ const state = () => ({
   colors:null,
   Type_hd:null,
   taille_ecran:null,
-  size:null,
+  // size:null,
   ram:null,
   storage:null
 })
 
 const getters = {
-  get_options(state){
-    return state.options
-  },
+  // get_options(state){
+  //   return state.options
+  // },
   get_colors(state){
     return state.colors
   },
@@ -21,9 +21,9 @@ const getters = {
   get_taille_ecran(state){
     return state.taille_ecran
   },
-  get_size(state){
-    return state.size
-  },
+  // get_size(state){
+  //   return state.size
+  // },
   get_ram(state){
     return state.ram
   },
@@ -45,9 +45,9 @@ const mutations = {
   SET_TAILLE_ECRAN(state, taille_ecran){
     state.taille_ecran = taille_ecran
   },
-  SET_SIZE(state, size){
-    state.size = size
-  },
+  // SET_SIZE(state, size){
+  //   state.size = size
+  // },
   SET_RAM(state, ram){
     state.ram = ram
   },
@@ -102,9 +102,9 @@ const actions = {
         case 'Taille de l\'écran':
           commit('SET_TAILLE_ECRAN', e_obj.children)
           break;
-        case 'size':
-          commit('SET_SIZE', e_obj.children)
-          break;
+        // case 'size':
+        //   commit('SET_SIZE', e_obj.children)
+        //   break;
         case 'RAM':
           commit('SET_RAM', e_obj.children)
           break;
@@ -112,7 +112,6 @@ const actions = {
           commit('SET_STORAGE', e_obj.children)
           break;
         default:
-          // console.log('the folowwing has been pass', e_obj.name)
       }
     }
 

@@ -10,7 +10,7 @@
                   Top Magasins
                 </div>
                 <div class="col-4 mb-2">
-                  <NuxtLink to="/stores">
+                  <NuxtLink to="/">
                     <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">
                       <span class="ul-btn__text"> Voir tous</span>
                       <i class="fas fa-chevron-circle-right ml-1"></i>

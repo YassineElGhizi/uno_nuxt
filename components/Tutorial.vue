@@ -82,13 +82,13 @@
             <LazyTopStore></LazyTopStore>
 
           </div>
-          <div class="flex-grow-1"></div>
-          <div class="flex-grow-1"></div>
-          <Footer></Footer>
+
         </div>
         </div>
       </div>
-
+    <div class="flex-grow-1"></div>
+    <div class="flex-grow-1"></div>
+    <Footer></Footer>
 
   </div>
 </template>
@@ -117,6 +117,7 @@ export default {
   mounted() {
     this.$store.dispatch('search/SearchSetDefault')
     this.$store.dispatch('search/emptyData')
+    this.$store.dispatch('productDetails/empty_product_details')
   }
 
 }

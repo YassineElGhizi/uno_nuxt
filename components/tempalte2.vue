@@ -31,7 +31,10 @@
 <script>
 export default {
   name: "tempalte2",
-  components: {}
+  components: {},
+  mounted(){
+    this.$store.dispatch('productDetails/empty_product_details')
+  },
 }
 </script>
 

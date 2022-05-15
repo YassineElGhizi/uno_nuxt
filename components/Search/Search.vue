@@ -76,7 +76,7 @@
                 </div>
               </div >
               <div class="aligne_items_in_same_height col-lg-2 col-sm-12">
-                <NuxtLink v-if="search_input.length > 3"
+                <NuxtLink v-if="search_input.length > 4"
                         type="button"
                         id="submit_search"
                         class="btn btn-outline-success btn-icon btn-lg"
@@ -175,7 +175,7 @@ export default {
         {
           icon: 'error',
           title: 'Mot-Clé Tres Court',
-          text: 'Minimum : 4 lettres!',
+          text: 'Minimum : 5 lettres!',
           showConfirmButton: false
         }
       )

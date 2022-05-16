@@ -30,7 +30,7 @@
                     <div class="text-center flex-grow-1 d-bock">
                       <div class="card-body align-self-center d-flex flex-column justify-content-center align-items-lg-center py-1">
                         <a href="">
-                          <div class="item-title text-12  font-weight-500 text-wrap">
+                          <div class="item-title text-14  font-weight-700 text-wrap ">
                             {{s.name}}
                           </div>
                         </a>

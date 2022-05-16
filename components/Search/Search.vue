@@ -12,7 +12,7 @@
                   </NuxtLink>
                 </div>
               </div>
-              <div class="aligne_items_in_same_height col-lg-8 col-sm-12 ">
+              <div class="aligne_items_in_same_height col-lg-8 col-sm-12 " v-on-clickaway="closeMenu">
                   <div class="card shadow-sm border d-none d-lg-block" id="search_card"
                        style="overflow: hidden;border-radius:1rem;position: absolute;z-index: 7; width: 94%">
                     <div class="card-body p-1">
@@ -87,11 +87,11 @@
                     <font-awesome-icon icon="magnifying-glass" />
                 </NuxtLink>
                 <a v-else
-                          type="button"
-                          id="submit_search"
-                          class="btn btn-outline-success btn-icon btn-lg"
-                          @click="handleClickNotValid"
-                          style="width: 100%;">
+                    type="button"
+                    id="submit_search"
+                    class="btn btn-outline-success btn-icon btn-lg"
+                    @click="handleClickNotValid"
+                    style="width: 100%;">
                   <span class="ul-btn__text">Search</span>
                   <font-awesome-icon icon="magnifying-glass" />
                 </a>
@@ -115,7 +115,7 @@ export default {
   data() {
     return {
       search_input: '',
-      toggle_visibility: false
+      toggle_visibility: false,
     }
   },
 
@@ -179,6 +179,10 @@ export default {
           showConfirmButton: false
         }
       )
+    },
+
+    closeMenu: function(){
+      this.search_input = ''
     }
   }
 }

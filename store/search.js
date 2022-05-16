@@ -22,7 +22,7 @@ const state = () => ({
     'ram' : [],
     'stockage' : []
   },
-  sort:null
+  sort:null,
 })
 
 const getters = {

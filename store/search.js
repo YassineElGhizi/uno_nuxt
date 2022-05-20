@@ -96,7 +96,8 @@ const mutations = {
       'ram' : [],
       'stockage' : []
     },
-      state.current_index = 1
+      state.current_index = 1,
+      state.sort = null
   },
   SET_SEARCH_KEYWORD(state, keyword){
     state.search_keyword = keyword

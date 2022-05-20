@@ -1,6 +1,6 @@
 <template>
   <div class="ul-widget4__item  ul-widget4__users row">
-    <div  class="col-xm-2 col-lg-2 ul-widget4__img col-xm-2">
+    <div  class="col-sm-2 col-md-2 col-lg-2 ul-widget4__img col-xm-2">
       <img
         :src="images"
         id="userDropdown" alt=""
@@ -8,7 +8,7 @@
         aria-haspopup="true"
         aria-expanded="false">
     </div>
-    <div  class="col-xm-6 col-lg-5 d-none d-md-block ">
+    <div  class="col-sm-6 col-lg-5  ">
       <div class="card-body p-0">
         <h5 class="card-title ul-widget2__title text_black smaller_font">
           {{ title }}
@@ -26,10 +26,10 @@
         <ListProductsProductStore :id="id"/>
       </div>
     </div>
-    <div   class="col-xm-3 col-lg-3  ">
+    <div class="col-sm-3 col-md-3 col-lg-3 justify-content-center">
       <p class="text-22 text-success align-top">Best Price</p>
-      <p class="ul-widget__number text-default align-top mb-3"> {{ best_price }} DH </p>
-      <div class="d-flex justify-content-center">
+      <p class="ul-widget__number text-default align-top mb-3 "> {{ best_price }} DH </p>
+      <div class="d-flex ">
         <NuxtLink
           type="button"
           class="btn btn-outline-success float-right"

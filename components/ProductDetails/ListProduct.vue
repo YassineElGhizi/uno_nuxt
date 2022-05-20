@@ -2,7 +2,7 @@
   <div class="ul-widget4__item  ul-widget4__users row">
     <div class="ul-widget4__img col-sm-2">
       <img
-        src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-family-select-2021?wid=940&hei=1112&fmt=jpeg&qlt=90&.v=1617135051000"
+        :src="product.images[0]"
         id="userDropdown"
         alt=""
         data-toggle="dropdown"
@@ -10,11 +10,11 @@
         aria-expanded="false"/>
     </div>
     <div class="pt-2 ul-widget2__info ul-widget4__users-info col-sm-6">
-      <a href="#" class="ul-widget2__title">
-        {{product.name}}
-      </a>
-      <span href="#" class="ul-widget2__username">
+      <a class="ul-widget2__title smaller_text">
         {{product.title}}
+      </a>
+      <span  class="ul-widget2__username">
+        <img class="custom_css" :src="product.store.logo" >
       </span>
     </div>
     <div class="ul-widget4__actions col-sm-3">
@@ -47,5 +47,18 @@ export default {
 </script>
 
 <style scoped>
+.custom_css{
+  height: 2rem !important;
+  width: 5rem !important;
+  object-fit: cover !important;
+  margin: auto !important;
+  margin-top: 1rem !important;
+  border-radius: 3px;
+  object-fit: cover !important;
+}
 
+.smaller_text{
+  font-weight: 400;
+  font-size: 14px;
+}
 </style>

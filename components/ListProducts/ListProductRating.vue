@@ -2,7 +2,7 @@
   <div>
     <div class="rate-icon">
       <font-awesome-icon
-        v-for="(x, i) in rating+1"
+        v-for="(x, i) in rating+4"
         icon="star"
         class="start_color"
         :key="i"

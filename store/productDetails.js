@@ -7,6 +7,9 @@ const state = () => ({
     name:null,
     best_price:null,
     options:[],
+    images:[
+      "https://ae.pricenacdn.com/img?d=ax182&src=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F314Rp%252B8XKWL._SL500_.jpg",
+    ],
     store: {
       id:null,
       store:{
@@ -128,6 +131,7 @@ const actions = {
     async get_product_details({getters, commit}){
       let pyload = {}
       pyload.slug =  getters.get_slug
+      console.log('BIG AFFICHAGE ', pyload, ' to : /product_details')
       this.$axios.post(this.$axios.defaults.baseURL + '/product_details' , pyload).then( (res) => {
         commit('SET_PRODUCT' , res.data)
       })
@@ -146,14 +150,12 @@ const actions = {
       })
     },
     async get_products_children({getters, commit}){
-
       let id = getters.get_global_id
       let pyload = {}
       if (id == null){
         pyload.slug =  getters.get_slug
       }
       pyload.id = id
-
       this.$axios.post(this.$axios.defaults.baseURL + '/product_children' , pyload).then( (res) => {
         commit('SET_LIST_PRODUCTS' , res.data)
       })

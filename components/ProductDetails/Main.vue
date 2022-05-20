@@ -21,6 +21,7 @@
             :best_price="product.best_price"
             :options="options"
             :product_link="product.store.link"
+            :images="product.images"
           />
 
           <div class="col-11">
@@ -116,14 +117,6 @@ export default {
     await this.$store.dispatch('priceHistory/get_price_history')
   },
   components: {},
-  // async fetch(){
-  //   // await this.$store.dispatch('productDetails/get_slug')
-  //   await this.$store.dispatch('productDetails/get_product_details')
-  //   await this.$store.dispatch('productDetails/get_related_products_options')
-  //   await this.$store.dispatch('productDetails/get_products_children')
-  //   await this.$store.dispatch('productDetails/get_similar_products')
-  //   await this.$store.dispatch('priceHistory/get_price_history')
-  // },
   computed: {
     product: function () {
       return this.$store.getters["productDetails/get_product"]

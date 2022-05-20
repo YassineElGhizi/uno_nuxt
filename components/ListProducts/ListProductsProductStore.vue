@@ -1,18 +1,10 @@
 <template>
     <div>
       <div class="row align-items-start">
-        <div class="col col-sm-3 text-small mt-2">Disponible:</div>
-
+<!--        <div class="col col-sm-3 text-small mt-2">Disponible:</div>-->
         <Loading v-if="stores.length === 0"/>
-
-        <div
-          class="col col-sm-3"
-          v-for="s in stores">
-          <img
-            :src="s.store.logo"
-            alt=""
-            class="img_style"
-          >
+        <div class="col col-sm-12 mt-2 mb-2" v-for="s in stores">
+          <img :src="s.store.logo" alt="" class="img_style">
         </div>
       </div>
     </div>

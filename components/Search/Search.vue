@@ -32,7 +32,7 @@
                             v-for="sr in search_results"
                             :id="sr.id"
                             :key="sr.id"
-                            :name="sr.name"
+                            :name="sr.title"
                             :img="sr.images"
                             :search_input="search_input"/>
                           <div v-if="search_results.length == 0">
@@ -62,7 +62,7 @@
                           v-for="sr in search_results"
                           :id="sr.id"
                           :key="sr.id"
-                          :name="sr.name"
+                          :name="sr.title"
                           :img="sr.images"
                           :search_input="search_input"
                         />
@@ -97,9 +97,9 @@
                 </a>
 
               </div>
-              <div class="col-lg-12 pl-5 mt-3 d-sm-block">
-                <Tendance/>
-              </div>
+<!--              <div class="col-lg-12 pl-5 mt-3 d-sm-block">-->
+<!--                <Tendance/>-->
+<!--              </div>-->
             </div>
           </div>
         </div>
@@ -202,7 +202,8 @@ img{
 }
 
 .aligne_items_in_same_height{
-  margin-top: 1rem
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 </style>

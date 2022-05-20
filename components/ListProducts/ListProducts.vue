@@ -44,8 +44,8 @@
 
               <LazyListProductItem
                 v-for="p in paginated"
-                :title = "p.name"
-                :desc = "p.title"
+                :title = "p.title"
+                :desc = "p.name"
                 :best_price = "p.best_price"
                 :images = "p.images"
                 :id="p.id"

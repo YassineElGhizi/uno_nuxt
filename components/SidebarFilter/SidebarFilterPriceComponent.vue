@@ -3,7 +3,7 @@
     <a @click="toggle_open_class">
       <font-awesome-icon icon="filter"/>
       &nbsp;&nbsp;&nbsp
-      <span class="item-name text-18 font-weight-semibold  ">Prix </span>
+      <span class="item-name text-18 font-weight-semibold">Prix </span>
       <i class="dd-arrow fas fa-sort-down"></i>
     </a>
     <div class="submenu">

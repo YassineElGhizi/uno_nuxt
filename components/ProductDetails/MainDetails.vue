@@ -7,7 +7,7 @@
             <div class="col-sm-3 flex-column">
               <div class="ul-product-detail__image">
                 <img
-                  style="object-fit: cover;"
+                  style="object-fit: fill;"
                   class="myCustomImage"
                   :src="images"
                   alt="">

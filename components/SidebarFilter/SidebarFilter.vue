@@ -10,47 +10,40 @@
         <SidebarFilteComponent
           name="Categories"
           :body_content="categories"
-          :select_space_holder="'Choisir une catégorie ...'"
-        />
+          :select_space_holder="'Choisir une catégorie ...'"/>
 
         <SidebarFilteComponent
           name="Marques"
           :body_content="brands"
-          :select_space_holder="'Choisir une marque ...'"
-        />
+          :select_space_holder="'Choisir une marque ...'"/>
 
         <SidebarFilterPriceComponent/>
 
         <SidebarFilteComponentValueBased
           name="Couleurs"
           :body_content="colors"
-          :select_space_holder="'Choisir une couleur ...'"
-        />
+          :select_space_holder="'Choisir une couleur ...'"/>
 
-        <SidebarFilterComponentCheckBox
-          name="Type HD"
-          :body_content="type_hd"
-        />
+<!--        <SidebarFilterComponentCheckBox-->
+<!--          name="Type HD"-->
+<!--          :body_content="type_hd"/>-->
 
-        <SidebarFilterComponentCheckBox
-          name="Taille d'ecran"
-          :body_content="taille_ecran"
-        />
+<!--        <SidebarFilterComponentCheckBox-->
+<!--          name="Taille d'ecran"-->
+<!--          :body_content="taille_ecran"/>-->
 
 <!--        <SidebarFilterComponentCheckBox-->
 <!--          name="Longueur en mètres"-->
 <!--          :body_content="size"-->
 <!--        />-->
 
-        <SidebarFilterComponentCheckBox
-          name="RAM En GB"
-          :body_content="ram"
-        />
+<!--        <SidebarFilterComponentCheckBox-->
+<!--          name="RAM En GB"-->
+<!--          :body_content="ram"/>-->
 
-        <SidebarFilterComponentCheckBox
-          name="Stockage En GB"
-          :body_content="storage"
-        />
+<!--        <SidebarFilterComponentCheckBox-->
+<!--          name="Stockage En GB"-->
+<!--          :body_content="storage"/>-->
 
       </ul>
       <div class="d-flex justify-content-center">

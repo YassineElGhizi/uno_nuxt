@@ -288,7 +288,7 @@ const actions = {
       top: 0,
       behavior: 'smooth',
     });
-    await this.$axios.post(`http://localhost:8000/api/search_product?page=${number}`, pyloadData).then( (res) => {
+    await this.$axios.post(`${this.$axios.defaults.baseURL}/search_product?page=${number}`, pyloadData).then( (res) => {
       commit('SET_PAGINATED_SEARCH_RESULTS', res.data)
       let calculated_total = res.data.links.length-2 //Passed
       commit('SET_TOTALE' , calculated_total)

@@ -7,19 +7,19 @@
           <NuxtLink to="/">Home</NuxtLink>
         </li>
         <li>
-          <NuxtLink
+          <div
             v-if="product_category_parent"
             :to="'category/'+product_category_parent">
             {{ product_category_parent }}
-          </NuxtLink>
+          </div>
           <Loading v-else style="width: 10px; height: 10px; margin-bottom: 4px; margin-right: 2px"/>
         </li>
         <li>
-          <NuxtLink
+          <div
             v-if="product_category"
             :to="'category/'+product_category">
             {{ product_category }}
-          </NuxtLink>
+          </div>
           <Loading v-else style="width: 10px; height: 10px; margin-bottom: 4px; margin-right: 2px"/>
         </li>
           <li> <p v-if="product_name" >

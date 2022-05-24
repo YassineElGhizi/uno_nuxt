@@ -2,14 +2,13 @@
   <div class="d-flex justify-content-center">
     <div class="d-none d-lg-block">
       <strong class="text-16 text-success mr-2">Tendances : </strong>
-      <NuxtLink
-        class="font-weight-semibold text-default text-14 mr-3 black_color"
+      <NuxtLink class="font-weight-semibold text-default text-14 mr-3 black_color"
         v-for="t in tendances"
         @click.native="postSearch(t.name)"
         :id="t.id"
         v-bind:key="t.id"
         to="/search-results">
-        {{t.name}}
+        {{t.name.split(' ').slice(0, 4).join(' ')}}
       </NuxtLink>
     </div>
   </div>

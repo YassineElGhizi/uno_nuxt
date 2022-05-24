@@ -5,9 +5,7 @@
         <div class="card-title">représentation graphique de l'evolution de prix</div>
         <div id="Price-tracking-chart">
 
-          <highchart
-            :options="chartOptions"
-          />
+          <highchart :options="chartOptions"/>
 
         </div>
       </div>
@@ -85,11 +83,6 @@ export default {
               }
             }
           }},
-        // legend: {
-        //   layout: 'vertical',
-        //   align: 'right',
-        //   verticalAlign: 'middle'
-        // },
         series: [
           {
             name:"Meilleur Prix de produit",

@@ -97,9 +97,9 @@
                 </a>
 
               </div>
-<!--              <div class="col-lg-12 pl-5 mt-3 d-sm-block">-->
-<!--                <Tendance/>-->
-<!--              </div>-->
+              <div class="col-lg-12 pl-5 mt-3 d-sm-block">
+                <Tendance/>
+              </div>
             </div>
           </div>
         </div>
@@ -203,7 +203,7 @@ img{
 
 .aligne_items_in_same_height{
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  /*margin-bottom: 1rem;*/
 }
 
 </style>

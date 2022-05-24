@@ -8,13 +8,13 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block card-img w-100 " src="https://ma.jumia.is/cms/000_2021/Week10/712x384.jpg" alt="First slide">
+          <img class="d-block card-img w-100" style="object-fit: cover" src="/images/carousel/iphone_green.webp" alt="First slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block card-img w-100 " src="https://ma.jumia.is/cms/000_2021/Week10/Slider/MA_W10_SX_Le-printemps-arrive.jpg" alt="Second slide">
+          <img class="d-block card-img w-100"  src="/images/carousel/laptop_green.webp" alt="Second slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block card-img w-100 " src="https://ma.jumia.is/cms/000_2021/Week10/Slider/MA_SX_Welcome20_02032021.jpg" alt="Third slide">
+          <img class="d-block card-img w-100" src="/images/carousel/washing_machine.webp"   alt="Third slide">
         </div>
       </div>
     </div>

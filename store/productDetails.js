@@ -178,7 +178,6 @@ const actions = {
 
   //Similar Products
   async get_similar_products({commit, getters}){
-
     let id = getters.get_global_id
     let pyload = {}
     if (id == null){

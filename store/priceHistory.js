@@ -44,6 +44,7 @@ const actions = {
       pyload.slug =  getters.get_slug
     }
     pyload.id = id
+    console.log('posting to price history ', pyload)
     await this.$axios.post(this.$axios.defaults.baseURL + '/price_tracking' , pyload).then( (res) => {
       commit('SET_BEST_PRICE_HISTORY' , res.data.best_price_history)
       commit('SET_AVERAGE_PRICE_HISTORY' , res.data.average_price_history)

@@ -6,11 +6,10 @@
       <div class="main-content">
         <div class="row justify-content-center">
 
-          <ProductDetailsHeader
-            :product_name="product.store.title"
-            :product_category_parent="product.category.parent.name"
-            :product_category="product.category.name"
-          />
+<!--          <ProductDetailsHeader-->
+<!--            :product_name="product.store.title"-->
+<!--            :product_category_parent="product.category.parent.name"-->
+<!--            :product_category="product.category.name"/>-->
 
           <ProductDetailsMainDetails
             :product_id="product.id"
@@ -21,8 +20,7 @@
             :best_price="product.best_price"
             :options="options"
             :product_link="product.store.link"
-            :images="product.images"
-          />
+            :images="product.images"/>
 
           <div class="col-11">
             <section class="ul-product-detail__box">
@@ -71,20 +69,19 @@
             </div>
             <div class="separator-breadcrumb border-top mb-0"></div>
           </div>
+
           <productDescription
             :short_description="product.product_details.short_description"
             :description="product.product_details.description"
             :rating_value="product.product_details.rating_value"
             :brand_description="product.brand.description"
-            :brand_name="product.brand.name"
-          />
+            :brand_name="product.brand.name"/>
 
           <ProductDetailsPriceHistory
             :id_product="product.id"
             :product_name="product.name"
             :best_price_history="best_price_histort"
-            :average_price_history="average_price_histort"
-          />
+            :average_price_history="average_price_histort"/>
 
           <div class="col-10 m-4 mb-0">
             <div class="breadcrumb">

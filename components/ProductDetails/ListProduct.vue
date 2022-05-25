@@ -53,7 +53,7 @@ export default {
   object-fit: cover !important;
   margin: auto !important;
   margin-top: 1rem !important;
-  border-radius: 3px;
+  border-radius: 0px !important;
   object-fit: cover !important;
 }
 

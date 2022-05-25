@@ -1,6 +1,6 @@
 <template>
   <div class="ul-widget4__item  ul-widget4__users row">
-    <NuxtLink :to="slug" @click.native="clicked(id)" class="ul-widget4__item  ul-widget4__users row">
+    <NuxtLink :to="slug" @click.native="clicked(id)" class="ul-widget4__item  ul-widget4__users col-sm-12">
       <div  class="col-sm-2 col-md-2 col-lg-2 ul-widget4__img col-xm-2">
         <img
           :src="images"

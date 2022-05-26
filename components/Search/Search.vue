@@ -20,7 +20,7 @@
                         <input
                           class="search-bar shadow-none border-0 py-1 pl-4"
                           type="text"
-                          placeholder="Cherchez un produit"
+                          :placeholder="`Cherchez ${total_products} produits à partir ${total_stores} store`"
                           v-model="search_input"
                           style="width: 100%">
                       </div>
@@ -50,7 +50,7 @@
                       <input
                         class="search-bar shadow-none border-0 py-1 pl-4"
                         type="text"
-                        placeholder="Cherchez un produit"
+                        :placeholder="`Cherchez ${total_products} produits à partir ${total_stores} store`"
                         v-model="search_input"
                         style="width: 100%">
                     </div>
@@ -136,6 +136,12 @@ export default {
       }else{
         return 'row justify-content-center mb-3'
       }
+    },
+    total_products(){
+      return this.$store.getters['stats/get_total_products']
+    },
+    total_stores(){
+      return this.$store.getters['stats/get_total_stores']
     }
   },
   watch: {
@@ -184,6 +190,10 @@ export default {
     closeMenu: function(){
       this.search_input = ''
     }
+  },
+
+  async fetch(){
+    this.$store.dispatch('stats/get_general_stats')
   }
 }
 </script>

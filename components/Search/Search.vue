@@ -20,7 +20,7 @@
                         <input
                           class="search-bar shadow-none border-0 py-1 pl-4"
                           type="text"
-                          :placeholder="`Cherchez ${total_products} produits à partir ${total_stores} store`"
+                          :placeholder="`Cherchez ${total_products} produits à partir ${total_stores+1} magasins`"
                           v-model="search_input"
                           style="width: 100%">
                       </div>

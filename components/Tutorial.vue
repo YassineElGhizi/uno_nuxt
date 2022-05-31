@@ -79,7 +79,7 @@
               </div>
             </div>
 
-            <LazyTopStore></LazyTopStore>
+            <TopStore/>
 
           </div>
 

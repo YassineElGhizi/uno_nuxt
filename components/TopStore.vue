@@ -10,12 +10,12 @@
                   Top Magasins
                 </div>
                 <div class="col-4 mb-2">
-                  <NuxtLink to="/">
+<!--                  <NuxtLink to="/">-->
                     <button type="button" class="btn btn-outline-success btn-rounded btn-icon float-right">
                       <span class="ul-btn__text"> Voir tous</span>
                       <i class="fas fa-chevron-circle-right ml-1"></i>
                     </button>
-                  </NuxtLink>
+<!--                  </NuxtLink>-->
                 </div>
               </div>
 
@@ -26,7 +26,6 @@
                   v-for="s in eco_stores">
                   <div class="card o-hidden border mb-4 ">
                     <img :src=s.logo alt="" class="fixedSize ">
-                    <a class="" href="#" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>
                     <div class="text-center flex-grow-1 d-bock">
                       <div class="card-body align-self-center d-flex flex-column justify-content-center align-items-lg-center py-1">
                         <a href="">

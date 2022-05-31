@@ -12,19 +12,19 @@
                   :src="images"
                   alt="">
               </div>
-              <div class="row ">
-                <div class="col-xs-12 p-1 m-1"
-                  v-for="x in 4">
-                  <div class="card text-white border o-hidden change_border_color_on_hover ">
-                    <img
-                      ref="img_tag"
-                      @mouseenter="toggle_src()"
-                      class="card-img my_curssor my_min_height"
-                      src="https://ae.pricenacdn.com/img?d=ax182&src=https%3A%2F%2Ft.infibeam.com%2Fimg%2Fothe%2F0441617%2Fa7%2Fcf%2Fiphone13prosierrabluepdpimageposition1aen.jpg.7c8d93a7cf.999x800x800.jpg"
-                      alt="">
-                  </div>
-                </div>
-              </div>
+<!--              <div class="row ">-->
+<!--                <div class="col-xs-12 p-1 m-1"-->
+<!--                  v-for="x in 4">-->
+<!--                  <div class="card text-white border o-hidden change_border_color_on_hover ">-->
+<!--                    <img-->
+<!--                      ref="img_tag"-->
+<!--                      @mouseenter="toggle_src()"-->
+<!--                      class="card-img my_curssor my_min_height"-->
+<!--                      src="https://ae.pricenacdn.com/img?d=ax182&src=https%3A%2F%2Ft.infibeam.com%2Fimg%2Fothe%2F0441617%2Fa7%2Fcf%2Fiphone13prosierrabluepdpimageposition1aen.jpg.7c8d93a7cf.999x800x800.jpg"-->
+<!--                      alt="">-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
             </div>
             <div class="col-sm-9">
               <div class="ul-product-detail__brand-name">

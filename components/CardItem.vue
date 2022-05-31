@@ -3,12 +3,9 @@
     <div class="card o-hidden border mb-4 d-flex flex-column">
       <div>
         <div class="list-thumb d-flex"
-             style="width:100%;height: 180px;background-position: center;
-                    background-image:url('/images/headphone-3.jpg');
-                    background-repeat: no-repeat;background-size:contain;"
-        >
+             style="width:100%;height: 180px;background-position: center;background-repeat: no-repeat;background-size:contain;"
+            :style="backgroundStyles(img_url.slice(2,-2))">
         </div>
-        <a class="" href="#" style="position: absolute;top: 0;left: 0;bottom: 0;width: 100%;"></a>
       </div>
 
       <div class="flex-grow-1 d-bock">
@@ -46,7 +43,15 @@
 
 <script>
 export default {
-  props : ['pro_title', 'prod_best_price', 'img_url','slug']
+  props : ['pro_title', 'prod_best_price', 'img_url','slug'],
+  methods:{
+    backgroundStyles(image) {
+      return {
+        // any other styles you might need to add on as an example
+        'background-image': `url(${image})`,
+      }
+    }
+  }
 }
 </script>
 

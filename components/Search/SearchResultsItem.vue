@@ -1,20 +1,8 @@
 <template>
-  <NuxtLink
-    to="/search-results"
-    @click.native="postSearch(p_tag_str)"
-  >
+  <NuxtLink to="/search-results" @click.native="postSearch(p_tag_str)">
     <div class="ul-widget10__item  ul-widget4__users">
-      <div class="ul-widget4__img ml-3">
-        <img
-          src="#"
-          id="userDropdown"
-          style="width: 1.75rem;"
-          alt=""
-          data-toggle="dropdown"
-          aria=""
-          haspopup="true"
-          ariaexpanded="false"
-        >
+      <div>
+        <img class="cutom_img_dimention" :src="img" id="userDropdown" data-toggle="dropdown" ariaexpanded="false">
       </div>
       <div class="ul-widget2__info">
         <p class="ul-widget2__title" v-html="p_tag_str" ></p>
@@ -58,6 +46,12 @@ export default {
   mounted() {
     this.handle_detecting_search_input()
   },
-
 }
 </script>
+
+<style scoped>
+.cutom_img_dimention{
+  max-width: 3rem;
+  height: 3rem;
+}
+</style>
